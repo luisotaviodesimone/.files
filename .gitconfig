@@ -1,0 +1,13 @@
+[core]
+	editor = \"C:\\Users\\luiso\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	autocrlf = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Luís Otávio De Simone
+	email = 85963351+luisotaviodesimone@users.noreply.github.com
+[init]
+	defaultBranch = master
