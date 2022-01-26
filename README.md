@@ -2,7 +2,7 @@
 
 This is the repository to host my automatic initial configuration to my windows developing environment
 
-# Setup
+## Setup
 1. First you should set you execution policy to `Bypass` in order to run the script:
 ```
 
