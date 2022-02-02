@@ -15,5 +15,5 @@ Set-ExecutionPolicy Bypass
 https://user-images.githubusercontent.com/85963351/151077220-b16abfc8-8ed5-4019-a12d-338197e0b134.mp4
 
 2. After that, since it is a automatic setup, when you download the repository you should just `cd` into the directory and run `./first_config.ps1`
-
-3. If you want to install my personal tools you can run the `./personal_tools.ps1`
+3. Don't forget to go to go [here](https://github.com/romkatv/dotfiles-public/tree/master/.local/share/fonts/NerdFonts) to download the NerdFonts and install it.
+4. If you want to install my personal tools you can run the `./personal_tools.ps1`
