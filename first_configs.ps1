@@ -14,11 +14,14 @@ cp my_custom_theme.omp.json  ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_T
 New-Item -ItemType SymbolicLink -Force -Path "~/.gitconfig" -Target ".gitconfig"
 New-Item -ItemType SymbolicLink -Force -Path $profile -Target "profile.ps1"
 
+. $profile
+
 Write-Output "The following tools will be installed"
 Write-Output node yarn ' '
 
 Read-Host -Prompt "Do you wish to continue? Yes(Enter) No(ctrl+c)"
 
-nvm install lts
-nvm use lts
-npm install -g yarn
+nvm install 14.19.0
+nvm use 14.19.0
+
+Write-Output "You now have nodejs installed on your machine"

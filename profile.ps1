@@ -6,7 +6,7 @@ oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\them
 function .. { set-location "../"}
 function ~ { set-location "~"}
 function GitHub { set-location "E:/GitHub"}
-function profile { set-location "~/OneDrive/Documentos/WindowsPowerShell"}
+function profile { set-location $home/Documents/WindowsPowerShell}
 function wtSettings { set-location "~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"}
 
 # Shows navigable menu of all options when hitting Tab
