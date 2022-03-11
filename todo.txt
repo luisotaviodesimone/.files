@@ -1,0 +1,2 @@
+1. Criar um script para fazer instalações primeiro, depois clonar o repositório, depois, em outro script, realizar os symbolic links.
+2. Orientar no readme.md para que use o comando `iex ((new-object net.webclient).DownloadString('https://raw.github.com/luisotaviodesimone/.files/master/first_configs.ps1'))` para executar os scripts de instalações
