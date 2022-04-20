@@ -4,6 +4,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 # Installing scoop package manager
 iwr -useb get.scoop.sh | iex
 
+Write-Output "The following tools will be installed"
+Write-Output vscode git oh-my-posh nvm neovim ' '
+
 # Installing the following choco packages
 choco install vscode -y
 choco install git.install -y
