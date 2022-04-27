@@ -29,9 +29,11 @@ Set-Alias which Get-Command
 
 # Set Aliases functions
 function Get-GitStatus { & git status $args }
+function Open-Pr { & gh pr create -a "@me" $args }
 
-# Setting git aliases
+# Setting github aliases
 Set-Alias gst -Value Get-GitStatus
+Set-Alias ghpr -Value Open-Pr
 
 # Shows navigable menu of all options when hitting Tab
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete

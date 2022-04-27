@@ -5,10 +5,11 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 iwr -useb get.scoop.sh | iex
 
 Write-Output "The following tools will be installed"
-Write-Output vscode git oh-my-posh nvm neovim ' '
+Write-Output vscode git github-cli oh-my-posh nvm neovim ' '
 
 # Installing the following scoop packages
 scoop install git
+scoop install gh
 scoop install nvm
 scoop install neovim gcc
 
@@ -21,9 +22,16 @@ choco install oh-my-posh -y
 # Adding my custom theme (similar to patricksvensson)
 cp my_custom_theme.omp.json ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json
 
-# Creating symbolic links for the .gitconfig and the powershell profile
-New-Item -ItemType SymbolicLink -Force -Path $HOME/.gitconfig -Target .\.gitconfig
-New-Item -ItemType SymbolicLink -Force -Path $PROFILE -Target .\profile.ps1
+$major,$minor = $PSVersionTable.PSVersion.Major, $PSVersionTable.PSVersion.Minor
+
+if ($major -eq 5 -and $minor -eq 1) {
+  # Creating symbolic links for the .gitconfig and the powershell profile
+  New-Item -ItemType SymbolicLink -Force -Path $HOME/.gitconfig -Target .\.gitconfig
+  New-Item -ItemType SymbolicLink -Force -Path $PROFILE -Target .\profile.ps1
+  }
+else {
+  Write-Host "`r`nThe Symbolink Links were not created"
+  }
 
 . $PROFILE
 

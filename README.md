@@ -22,4 +22,8 @@ Set-ExecutionPolicy Bypass
 iwr -useb https://raw.github.com/luisotaviodesimone/.files/master/first_configs.ps1 | iex
 
 ```
-4. If you want to install my personal tools cd into the `~\.files` directory and you can run `. .\personal_tools.ps1`
+4. Now you can go ahead and, in the Microsoft Store, download:
+    - Windows Terminal
+    - PowerShell v7.2
+
+5. If you want to install my personal tools cd into the `~\.files` directory and you can run `. .\personal_tools.ps1`
