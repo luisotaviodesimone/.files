@@ -24,11 +24,14 @@ if (Test-Path alias:curl) {
 # Neovim directory and configuration file
 Set-Variable -Name "VIMCONFIG" -Value "C:\Users\luiso\AppData\Local\nvim\init.vim" 
 Set-Variable -Name "VIMDIRECTORY" -Value "C:\Users\luiso\AppData\Local\nvim" 
+Set-Variable -Name "TERMINAL_HISTORY" -Value (Get-PSReadlineOption).HistorySavePath
 
 # Setting new aliases
 Set-Alias curl curl.exe
 Set-Alias vim nvim
+Set-Alias which Get-Command
 
+# Setting git aliases
 Set-Alias gst -Value Get-GitStatus
 
 # Shows navigable menu of all options when hitting Tab
@@ -46,4 +49,3 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
-clear
