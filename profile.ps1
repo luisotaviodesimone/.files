@@ -12,13 +12,9 @@ function profile { set-location $home/Documents/WindowsPowerShell}
 function themes { set-location ~\AppData\Local\Programs\oh-my-posh\themes}
 function wtSettings { set-location "~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"}
 
-# Set Aliases functions
-function Get-GitStatus { & git status $args }
-
-
 # Removing alias (curl alias for Invoke-Web-Request)
 if (Test-Path alias:curl) {
-	Remove-Item alias:curl
+  Remove-Item alias:curl
 }
 
 # Neovim directory and configuration file
@@ -30,6 +26,9 @@ Set-Variable -Name "TERMINAL_HISTORY" -Value (Get-PSReadlineOption).HistorySaveP
 Set-Alias curl curl.exe
 Set-Alias vim nvim
 Set-Alias which Get-Command
+
+# Set Aliases functions
+function Get-GitStatus { & git status $args }
 
 # Setting git aliases
 Set-Alias gst -Value Get-GitStatus
