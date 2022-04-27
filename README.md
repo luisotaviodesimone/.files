@@ -11,10 +11,15 @@ Set-ExecutionPolicy Bypass
 ```
 2. Next, don't forget to go [here](https://github.com/ryanoasis/nerd-fonts/releases) to download the NerdFonts and install it so that the terminal looks pretty with the oh-my-posh icons 💅. I particularly use the `Hack NerdFonts`
 
-3. After that, since it is a automatic setup, if your shell is PowerShell, by default in Windows 10, the 5.1 version, you should be able to run the `first_configs.ps1` script to install some initial dev tools by running the following command:
+3. After that, since it is a automatic setup, you just have to run the following command. But first, you need be sure:
+
+    - That your shell is PowersShell 5.1 version
+    - That your running the script on an elevated shell
+
+    With that said, you should be able to run the `first_configs.ps1` script to install some initial dev tools by running the following command:
 ```
 
-iex ((new-object net.webclient).DownloadString('https://raw.github.com/luisotaviodesimone/.files/master/first_configs.ps1'))
+iwr -useb https://raw.github.com/luisotaviodesimone/.files/master/first_configs.ps1 | iex
 
 ```
-4. If you want to install my personal tools cd into the `.files` directory and you can run `. ./personal_tools.ps1`
+4. If you want to install my personal tools cd into the `~\.files` directory and you can run `. .\personal_tools.ps1`
