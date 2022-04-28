@@ -22,7 +22,7 @@ choco install vscode -y
 choco install oh-my-posh -y
 
 # Insert git clone here to guarantee below files existance
-$dotFilesPath = "$HOME\.files-test" # Name of your dotfiles directory
+$dotFilesPath = "$HOME\.files" # Name of your dotfiles directory
 
 git clone https://github.com/luisotaviodesimone/.files $dotFilesPath
 
