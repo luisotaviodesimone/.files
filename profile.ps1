@@ -22,16 +22,16 @@ Set-Variable -Name "VIMCONFIG" -Value "C:\Users\luiso\AppData\Local\nvim\init.vi
 Set-Variable -Name "VIMDIRECTORY" -Value "C:\Users\luiso\AppData\Local\nvim" 
 Set-Variable -Name "TERMINAL_HISTORY" -Value (Get-PSReadlineOption).HistorySavePath
 
+# Set Aliases functions
+function Get-GitStatus { & git status $args }
+function Open-Pr { & gh pr create -a "@me" $args }
+function Get-Version { Get-Host | Select-Object Version }
+
 # Setting new aliases
 Set-Alias curl curl.exe
 Set-Alias vim nvim
 Set-Alias which Get-Command
 Set-Alias psversion Get-Version
-
-# Set Aliases functions
-function Get-GitStatus { & git status $args }
-function Open-Pr { & gh pr create -a "@me" $args }
-function Get-Version { Get-Host | Select-Object Version }
 
 # Setting github aliases
 Set-Alias gst -Value Get-GitStatus
