@@ -12,7 +12,7 @@ if ($major -ne 5 -and $minor -ne 1) {
 }
 
 # Installs PSModules
-Install-Module -Name PSReadLine -AllowPrerelease -Force
+Install-Module -Name PSReadLine -Force
 Install-Module -Name z -Force
 
 # Installing chocolotay package manager
