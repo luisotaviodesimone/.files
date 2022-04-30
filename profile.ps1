@@ -26,12 +26,14 @@ Set-Variable -Name "TERMINAL_HISTORY" -Value (Get-PSReadlineOption).HistorySaveP
 function Get-GitStatus { & git status $args }
 function Open-Pr { & gh pr create -a "@me" $args }
 function Get-Version { Get-Host | Select-Object Version }
+function Request-ChildItem { Get-ChildItem -Force }
 
 # Setting new aliases
 Set-Alias curl curl.exe
 Set-Alias vim nvim
 Set-Alias which Get-Command
 Set-Alias psversion Get-Version
+Set-Alias la Request-ChildItem
 
 # Setting github aliases
 Set-Alias gst -Value Get-GitStatus
