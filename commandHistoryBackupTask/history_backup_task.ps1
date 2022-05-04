@@ -2,5 +2,13 @@ $dotFilesPath = "$HOME\.files\commandHistoryBackupTask"
 $consoleHistoryCopy = "$dotFilesPath\ConsoleHost_history.txt"
 
 . $dotFilesPath\create_unique_commands_history.ps1
-gh gist edit 6995cd5f61538f67881e2bef26f00a8c $consoleHistoryCopy
+$array = gh gist list
+foreach ($item in $array) {
+  if ($item.contains("My whole console commands history")) {
+    $gistToken = $item.substring(0, 32)
+    gh gist delete $gistToken 
+  }
+}
+
+gh gist create $consoleHistoryCopy -d "My whole console commands history"
 Remove-Item $consoleHistoryCopy 
