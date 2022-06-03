@@ -1,4 +1,4 @@
-clear
+Clear-Host
 oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json | Invoke-Expression
 
 # Import/ Enable features
@@ -6,11 +6,11 @@ Enable-PoshTooltips
 Import-Module Terminal-Icons 
 
 # Set navigational functions
-function .. { set-location "../"}
-function ~ { set-location "~"}
-function profile { set-location $home/Documents/WindowsPowerShell}
-function themes { set-location ~\AppData\Local\Programs\oh-my-posh\themes}
-function wtSettings { set-location "~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"}
+function .. { set-location "../" }
+function ~ { set-location "~" }
+function profile { set-location $home/Documents/WindowsPowerShell }
+function themes { set-location ~\AppData\Local\Programs\oh-my-posh\themes }
+function wtSettings { set-location "~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState" }
 
 # Removing alias (curl alias for Invoke-Web-Request)
 if (Test-Path alias:curl) {
@@ -27,6 +27,7 @@ function Get-GitStatus { & git status $args }
 function Open-Pr { & gh pr create -a "@me" $args }
 function Get-Version { Get-Host | Select-Object Version }
 function Request-ChildItem { Get-ChildItem -Force }
+function Get-Size { "{0} MB" -f ((Get-ChildItem $PWD\$args -Recurse | Measure-Object -Property Length -Sum -ErrorAction Stop).Sum / 1MB) }
 
 # Setting new aliases
 Set-Alias curl curl.exe
@@ -34,6 +35,7 @@ Set-Alias vim nvim
 Set-Alias which Get-Command
 Set-Alias psversion Get-Version
 Set-Alias la Request-ChildItem
+Set-Alias size Get-Size
 
 # Setting github aliases
 Set-Alias gst -Value Get-GitStatus
@@ -45,6 +47,7 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 # Autocompletion for Arrow keys
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -MaximumHistoryCount 16384
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 

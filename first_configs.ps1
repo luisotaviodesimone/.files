@@ -23,19 +23,14 @@ Invoke-WebRequest -useb get.scoop.sh -Outfile 'install.ps1'
 . .\install.ps1 -RunAsAdmin
 Remove-Item .\install.ps1
 
-Write-Output "The following tools will be installed"
-Write-Output vscode git github-cli oh-my-posh nvm neovim ' '
+Write-Output "The following tools will be installed:"
+$devTools = @('vscode', 'git', 'github-cli', 'oh-my-posh', 'nvm', 'neovim')
+Write-Output $devTools
 
-# Installing the following scoop packages
-scoop install git
-scoop install gh
-scoop install nvm
-scoop install sudo
-scoop install neovim gcc
-
-# Installing the following choco packages
-choco install vscode -y
-choco install oh-my-posh -y
+# Installing the development tools with scoop
+ForEach ($tool in $devTools) {
+  scoop install $tool
+}
 
 # Insert git clone here to guarantee below files existance
 $dotFilesPath = "$HOME\.files" # Name of your dotfiles directory
