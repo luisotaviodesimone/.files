@@ -9,7 +9,7 @@ This is the repository to host my automatic initial configuration to my Windows 
 Set-ExecutionPolicy Bypass
 
 ```
-2. Next, don't forget to go [here](https://github.com/ryanoasis/nerd-fonts/releases) to download the NerdFonts and install it so that the terminal looks pretty with the oh-my-posh icons 💅. I particularly use the `Hack NerdFonts`
+2. Next, one thing that you should know is that in order to make the terminal look pretty with the oh-my-posh icons 💅, the NerdFonts are required. I particularly use the `CascadiaCode` font (patched as Caskaydia Cove), but you can choose your's [here](https://github.com/ryanoasis/nerd-fonts/releases).
 
 3. After that, since it is a automatic setup, you just have to run the following command. But first, you need be sure:
 
@@ -26,4 +26,6 @@ iwr -useb https://raw.github.com/luisotaviodesimone/.files/master/first_configs.
     - Windows Terminal
     - PowerShell v7.2
 
-5. If you want to install my personal tools cd into the `~\.files` directory and you can run `. .\personal_tools.ps1`
+OBS: In order to use the fonts and the themes you should configure your Windows Terminal
+
+5. If you want to install my personal tools, `cd` into the `~\.files` directory and you can run `. .\personal_tools.ps1`
