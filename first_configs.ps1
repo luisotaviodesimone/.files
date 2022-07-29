@@ -24,7 +24,7 @@ Invoke-WebRequest -useb get.scoop.sh -Outfile 'install.ps1'
 Remove-Item .\install.ps1
 
 Write-Output "The following tools will be installed:"
-$devTools = @('vscode', 'git', 'github-cli', 'oh-my-posh', 'nvm', 'neovim')
+$devTools = @('vscode', 'git', 'github-cli', 'oh-my-posh', 'nvm', 'neovim', 'sudo')
 Write-Output $devTools
 
 # Installing the development tools with scoop
