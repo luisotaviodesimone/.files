@@ -28,6 +28,7 @@
             "{{ if gt .Behind 0 }}green{{ end }}"
           ],
           "properties": {
+            "fetch_worktree_count": true,
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,

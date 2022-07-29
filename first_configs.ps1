@@ -43,6 +43,7 @@ Copy-Item $dotFilesPath\my_custom_theme.omp.json ~\AppData\Local\Programs\oh-my-
 New-Item -ItemType SymbolicLink -Force -Path $HOME/.gitconfig -Target $dotFilesPath\.gitconfig
 New-Item -ItemType SymbolicLink -Force -Path $PROFILE -Target $dotFilesPath\profile.ps1
 New-Item -ItemType SymbolicLink -Force -Path $HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 -Target $dotFilesPath\profile.ps1
+New-Item -ItemType SymbolicLink -Force -Path $HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 -Target $dotFilesPath\profile.ps1
 
 . $PROFILE
 
