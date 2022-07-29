@@ -15,6 +15,9 @@ if ($major -ne 5 -and $minor -ne 1) {
 Install-Module -Name PSReadLine -Force
 Install-Module -Name z -Force
 
+# Installs fonts
+. .\fonts\install_fonts.ps1
+
 # Installing chocolotay package manager
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
