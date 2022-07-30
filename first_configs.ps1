@@ -41,7 +41,7 @@ $dotFilesPath = "$HOME\.files" # Name of your dotfiles directory
 git clone https://github.com/luisotaviodesimone/.files $dotFilesPath
 
 # Adding my custom theme (similar to patricksvensson) and installing fonts
-Copy-Item $dotFilesPath\my_custom_theme.omp.json ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json
+New-Item -ItemType SymbolicLink -Force -Path ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json -Target $dotFilesPath\terminal\my_custom_theme.omp.json
 . .\fonts\install_fonts.ps1
 
 New-Item -ItemType SymbolicLink -Force -Path $HOME/.gitconfig -Target $dotFilesPath\.gitconfig
