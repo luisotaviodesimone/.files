@@ -1,4 +1,4 @@
-$personalTools = @('googlechrome', 'whatsapp', 'notion', 'discord', 'slack', 'github-desktop', 'authy-desktop', 'postgresql', 'insomnia-rest-api-client')
+$personalTools = @('googlechrome', 'whatsapp', 'notion', 'discord', 'slack', 'github-desktop', 'authy-desktop', 'dbeaver', 'insomnia-rest-api-client')
 Write-Output "The following personal tools will be installed"
 Write-Output $personalTools
 
