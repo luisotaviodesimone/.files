@@ -29,3 +29,9 @@ iwr -useb https://raw.github.com/luisotaviodesimone/.files/master/first_configs.
 OBS: In order to use the fonts and the themes you should configure your Windows Terminal
 
 5. If you want to install my personal tools, `cd` into the `~\.files` directory and you can run `. .\personal_tools.ps1`
+
+---
+
+## Also...
+
+- Don't forget to check out my personal cli tool [here](https://github.com/luisotaviodesimone/my-powershell-cli)
