@@ -39,7 +39,7 @@ Set-Alias which Get-Command
 Set-Alias psversion Get-Version
 Set-Alias la Request-ChildItem
 Set-Alias size Get-Size
-Set-Alias meu-cli ~\Documents\Pessoal\cli.ps1
+Set-Alias meu-cli $HOME\Documents\GitHub\my-powershell-cli\cli.ps1
 
 # Setting github aliases
 Set-Alias gst -Value Get-GitStatus
