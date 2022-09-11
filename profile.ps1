@@ -30,7 +30,6 @@ function Get-GitStatus { & git status $args }
 function Open-Pr { & gh pr create -a "@me" $args }
 function Get-Version { Get-Host | Select-Object Version }
 function Request-ChildItem { Get-ChildItem -Force }
-function Get-Size { "{0} MB" -f ((Get-ChildItem $PWD\$args -Recurse | Measure-Object -Property Length -Sum -ErrorAction Stop).Sum / 1MB) }
 
 # Setting new aliases
 Set-Alias curl curl.exe
@@ -38,7 +37,6 @@ Set-Alias vim nvim
 Set-Alias which Get-Command
 Set-Alias psversion Get-Version
 Set-Alias la Request-ChildItem
-Set-Alias size Get-Size
 Set-Alias meu-cli $HOME\Documents\GitHub\my-powershell-cli\cli.ps1
 
 # Setting github aliases
