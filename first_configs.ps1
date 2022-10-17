@@ -13,7 +13,7 @@ if ($major -ne 5 -and $minor -ne 1) {
 
 # Installs PSModules
 Install-Module -Name PSReadLine -Force
-Install-Module -Name z -Force
+Install-Module -Name z -Force -AllowClobber
 
 # Installs fonts
 . .\fonts\install_fonts.ps1
