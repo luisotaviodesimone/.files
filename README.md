@@ -26,9 +26,9 @@ iwr -useb https://raw.github.com/luisotaviodesimone/.files/master/first_configs.
     - Windows Terminal
     - PowerShell v7.2
 
-OBS: In order to use the fonts and the themes you should configure your Windows Terminal
+OBS: In order to use the Nerd fonts and the themes you should configure your Windows Terminal (I included my configurations in the `settings.json` file)
 
-5. If you want to install my personal tools, `cd` into the `~\.files` directory and you can run `. .\personal_tools.ps1`
+1. If you want to install my personal tools, `cd` into the `~\.files` directory and you can run `. .\personal_tools.ps1`
 
 ---
 
