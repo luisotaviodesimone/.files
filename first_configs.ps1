@@ -1,5 +1,5 @@
 #Requires -RunAsAdministrator
-$ErrorActionPreference = "stop"
+$ErrorActionPreference = "continue"
 
 $major, $minor = $PSVersionTable.PSVersion.Major, $PSVersionTable.PSVersion.Minor
 
