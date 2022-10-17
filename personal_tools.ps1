@@ -1,15 +1,14 @@
+$personalTools = @('googlechrome', 'whatsapp', 'notion', 'discord', 'slack', 'github-desktop', 'authy-desktop', 'dbeaver', 'insomnia-rest-api-client', 'zoom')
 Write-Output "The following personal tools will be installed"
-Write-Output chrome whatsapp notion discord slack "github desktop" authy ' '
+Write-Output $personalTools
 
 Read-Host -Prompt "Do you wish to continue? Yes(enter) No(ctrl+c)"
 
-choco install googlechrome -y
-choco install whatsapp -y
-choco install notion -y
-choco install discord.install -y
-choco install slack -y
-choco install github-desktop -y
-choco install authy-desktop -y
+foreach ($personalTool in $personalTools) {
+  Write-Output "Installing $personalTool"
+  choco install $personalTool -y
+}
+
 
 Write-Output "The following personal tools were installed"
-Write-Output chrome whatsapp notion discord slack "github desktop" authy ' '
+Write-Output $personalTools

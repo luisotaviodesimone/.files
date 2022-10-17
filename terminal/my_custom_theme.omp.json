@@ -6,19 +6,17 @@
       "segments": [
         {
           "foreground": "lightYellow",
-          "properties": {
-            "template": "{{ .UserName }} "
-          },
           "style": "plain",
+          "template": "{{ .UserName }} ",
           "type": "session"
         },
         {
           "foreground": "cyan",
           "properties": {
-            "style": "folder",
-            "template": "<#ffffff>in</> {{ .Path }} "
+            "style": "folder"
           },
           "style": "plain",
+          "template": "<#ffffff>in</> {{ .Path }} ",
           "type": "path"
         },
         {
@@ -30,13 +28,14 @@
             "{{ if gt .Behind 0 }}green{{ end }}"
           ],
           "properties": {
+            "fetch_worktree_count": true,
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
-            "github_icon": "",
-            "template": "on {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}<red> \uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<yellow> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}"
+            "github_icon": ""
           },
           "style": "plain",
+          "template": "on {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}<red> \uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<yellow> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}",
           "type": "git"
         }
       ],
@@ -48,10 +47,8 @@
       "segments": [
         {
           "foreground": "lightGreen",
-          "properties": {
-            "template": "\u276f"
-          },
           "style": "plain",
+          "template": "\u276f",
           "type": "text"
         }
       ],
@@ -59,5 +56,5 @@
     }
   ],
   "final_space": true,
-  "version": 1
+  "version": 2
 }

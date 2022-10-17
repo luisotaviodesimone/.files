@@ -15,6 +15,9 @@ if ($major -ne 5 -and $minor -ne 1) {
 Install-Module -Name PSReadLine -Force
 Install-Module -Name z -Force
 
+# Installs fonts
+. .\fonts\install_fonts.ps1
+
 # Installing chocolotay package manager
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
@@ -23,31 +26,28 @@ Invoke-WebRequest -useb get.scoop.sh -Outfile 'install.ps1'
 . .\install.ps1 -RunAsAdmin
 Remove-Item .\install.ps1
 
-Write-Output "The following tools will be installed"
-Write-Output vscode git github-cli oh-my-posh nvm neovim ' '
+Write-Output "The following tools will be installed:"
+$devTools = @('vscode', 'git', 'github-cli', 'oh-my-posh', 'nvm', 'gcc', 'neovim', 'sudo', 'gh')
+Write-Output $devTools
 
-# Installing the following scoop packages
-scoop install git
-scoop install gh
-scoop install nvm
-scoop install sudo
-scoop install neovim gcc
-
-# Installing the following choco packages
-choco install vscode -y
-choco install oh-my-posh -y
+# Installing the development tools with scoop
+ForEach ($tool in $devTools) {
+  scoop install $tool
+}
 
 # Insert git clone here to guarantee below files existance
 $dotFilesPath = "$HOME\.files" # Name of your dotfiles directory
 
 git clone https://github.com/luisotaviodesimone/.files $dotFilesPath
 
-# Adding my custom theme (similar to patricksvensson)
-Copy-Item $dotFilesPath\my_custom_theme.omp.json ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json
+# Adding my custom theme (similar to patricksvensson) and installing fonts
+New-Item -ItemType SymbolicLink -Force -Path ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json -Target $dotFilesPath\terminal\my_custom_theme.omp.json
+. .\fonts\install_fonts.ps1
 
 New-Item -ItemType SymbolicLink -Force -Path $HOME/.gitconfig -Target $dotFilesPath\.gitconfig
 New-Item -ItemType SymbolicLink -Force -Path $PROFILE -Target $dotFilesPath\profile.ps1
 New-Item -ItemType SymbolicLink -Force -Path $HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 -Target $dotFilesPath\profile.ps1
+New-Item -ItemType SymbolicLink -Force -Path $HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 -Target $dotFilesPath\profile.ps1
 
 . $PROFILE
 
