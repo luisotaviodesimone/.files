@@ -14,9 +14,7 @@ if ($major -ne 5 -and $minor -ne 1) {
 # Installs PSModules
 Install-Module -Name PSReadLine -Force
 Install-Module -Name z -Force -AllowClobber
-
-# Installs fonts
-. .\fonts\install_fonts.ps1
+Install-Module -Name Terminal-Icons -Force
 
 # Installing chocolotay package manager
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -42,7 +40,7 @@ git clone https://github.com/luisotaviodesimone/.files $dotFilesPath
 
 # Adding my custom theme (similar to patricksvensson) and installing fonts
 New-Item -ItemType SymbolicLink -Force -Path ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json -Target $dotFilesPath\terminal\my_custom_theme.omp.json
-. .\fonts\install_fonts.ps1
+. $dotFilesPath\fonts\install_fonts.ps1
 
 New-Item -ItemType SymbolicLink -Force -Path $HOME/.gitconfig -Target $dotFilesPath\.gitconfig
 New-Item -ItemType SymbolicLink -Force -Path $PROFILE -Target $dotFilesPath\profile.ps1
