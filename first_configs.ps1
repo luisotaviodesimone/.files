@@ -53,8 +53,7 @@ New-Item -ItemType SymbolicLink -Force -Path $HOME\Documents\WindowsPowerShell\M
 Write-Output "The following tools will be installed"
 Write-Output node yarn ' '
 
-nvm install 14.19.0
-nvm use 14.19.0
+nvm install 16
 
 . $PROFILE
 
