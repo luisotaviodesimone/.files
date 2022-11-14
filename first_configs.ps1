@@ -55,6 +55,7 @@ Write-Output "The following tools will be installed"
 Write-Output node yarn ' '
 
 nvm install 16
+nvm use 16
 
 . $PROFILE
 
