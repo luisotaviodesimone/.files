@@ -11,3 +11,5 @@
   email = 85963351+luisotaviodesimone@users.noreply.github.com
 [init]
   defaultBranch = master
+[safe]
+	directory = C:/Users/luiso/.files
