@@ -66,4 +66,3 @@ Write-Output typescript yarn
 npm i -g typescript
 npm i -g yarn
 
-exit
