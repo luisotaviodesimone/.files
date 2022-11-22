@@ -27,7 +27,7 @@ Set-Variable -Name "GIT_SSH" -Value "C:\Windows\System32\OpenSSH\ssh.exe"
 
 # Set Aliases functions
 function Get-GitStatus { & git status $args }
-function Open-Pr { & gh pr create -a "@me" $args }
+function Open-Pr { & gh pr create -w -a "@me" $args }
 function Get-Version { Get-Host | Select-Object Version }
 function Request-ChildItem { Get-ChildItem -Force }
 

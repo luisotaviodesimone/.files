@@ -40,8 +40,9 @@ $dotFilesPath = "$HOME\.files" # Name of your dotfiles directory
 
 git clone https://github.com/luisotaviodesimone/.files $dotFilesPath
 
-# Adding my custom theme (similar to patricksvensson) and installing fonts
+# Customizing windows terminal and installing fonts
 New-Item -ItemType SymbolicLink -Force -Path ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json -Target $dotFilesPath\terminal\my_custom_theme.omp.json
+New-Item -ItemType SymbolicLink -Force -Path $HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8we3d8bbwe\LocalState\settings.json -Target $dotFilesPath\terminal\settings.json
 . $dotFilesPath\fonts\install_fonts.ps1
 
 New-Item -ItemType SymbolicLink -Force -Path $HOME/.gitconfig -Target $dotFilesPath\.gitconfig
