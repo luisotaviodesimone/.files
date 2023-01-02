@@ -15,3 +15,5 @@
   directory = C:/Users/luiso/scoop/buckets/extras
 [credential]
   helper = manager
+[credential "helperselector"]
+	selected = manager
