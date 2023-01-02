@@ -1,5 +1,4 @@
 [core]
-  editor = \"C:\\Users\\luiso\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
   autocrlf = false
 [filter "lfs"]
   process = git-lfs filter-process
@@ -12,4 +11,7 @@
 [init]
   defaultBranch = master
 [safe]
-	directory = C:/Users/luiso/.files
+  directory = C:/Users/luiso/.files
+  directory = C:/Users/luiso/scoop/buckets/extras
+[credential]
+  helper = manager
