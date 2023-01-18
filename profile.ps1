@@ -30,11 +30,12 @@ function Get-GitStatus { & git status $args }
 function Open-Pr { & gh pr create -w -a "@me" $args }
 function Get-Version { Get-Host | Select-Object Version }
 function Request-ChildItem { Get-ChildItem -Force }
+function Invoke-WhichEquivalent { (Get-Command $args -ErrorAction SilentlyContinue).Source }
 
 # Setting new aliases
 Set-Alias curl curl.exe
 Set-Alias vim nvim
-Set-Alias which Get-Command
+Set-Alias which Invoke-WhichEquivalent
 Set-Alias psversion Get-Version
 Set-Alias la Request-ChildItem
 Set-Alias meu-cli $HOME\Documents\GitHub\my-powershell-cli\cli.ps1
