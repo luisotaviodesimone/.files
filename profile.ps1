@@ -21,7 +21,7 @@ if (Test-Path alias:curl) {
 Set-Variable -Name "VIMCONFIG" -Value "C:\Users\luiso\AppData\Local\nvim\init.vim" 
 Set-Variable -Name "VIMDIRECTORY" -Value "C:\Users\luiso\AppData\Local\nvim" 
 Set-Variable -Name "TERMINAL_HISTORY" -Value (Get-PSReadlineOption).HistorySavePath
-Set-Variable -Name "HOSTS_FILE" -Value "Windows\System32\Drivers\etc\hosts"
+Set-Variable -Name "HOSTS_FILE" -Value "C:\Windows\System32\Drivers\etc\hosts"
 # Check this later
 Set-Variable -Name "GIT_SSH" -Value "C:\Windows\System32\OpenSSH\ssh.exe"
 
