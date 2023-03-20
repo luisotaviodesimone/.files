@@ -18,8 +18,8 @@ if (Test-Path alias:curl) {
 }
 
 # Neovim directory and configuration file
-Set-Variable -Name "VIMCONFIG" -Value "C:\Users\luiso\AppData\Local\nvim\init.vim" 
-Set-Variable -Name "VIMDIRECTORY" -Value "C:\Users\luiso\AppData\Local\nvim" 
+Set-Variable -Name "VIMCONFIG" -Value $HOME\AppData\Local\nvim\init.vim
+Set-Variable -Name "VIMDIRECTORY" -Value $HOME\AppData\Local\nvim
 Set-Variable -Name "TERMINAL_HISTORY" -Value (Get-PSReadlineOption).HistorySavePath
 Set-Variable -Name "HOSTS_FILE" -Value "C:\Windows\System32\Drivers\etc\hosts"
 # Check this later
@@ -38,7 +38,7 @@ Set-Alias vim nvim
 Set-Alias which Invoke-WhichEquivalent
 Set-Alias psversion Get-Version
 Set-Alias la Request-ChildItem
-Set-Alias meu-cli $HOME\Documents\GitHub\my-powershell-cli\cli.ps1
+Set-Alias lods $HOME\Documents\GitHub\my-powershell-cli\cli.ps1
 
 # Setting github aliases
 Set-Alias gst -Value Get-GitStatus
