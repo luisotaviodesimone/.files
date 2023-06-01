@@ -1,5 +1,5 @@
 Clear-Host
-oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\CUSTOM_THEME.omp.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config $HOME\scoop\apps\oh-my-posh\current\themes\CUSTOM_THEME.omp.json | Invoke-Expression
 
 # Import/ Enable features
 Enable-PoshTooltips 
