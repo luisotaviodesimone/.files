@@ -9,7 +9,7 @@ This is the repository to host my automatic initial configuration to my Windows 
 Set-ExecutionPolicy Bypass
 
 ```
-2. Next, one thing that you should know is that in order to make the terminal look pretty with the oh-my-posh icons 💅, the NerdFonts are required. I included the fonts installation script execution in the `first_configs.ps1` file so you don't have to bother installing them. I particularly use the `CascadiaCode` font (patched as Caskaydia Cove), but you can choose your's [here](https://github.com/ryanoasis/nerd-fonts/releases).
+2. Next, one thing that you should know is that in order to make the terminal look pretty with the oh-my-posh icons 💅, the NerdFonts are required. I included the fonts installation script execution in the `first_configs.ps1` file so you don't have to bother installing them. I particularly use the `CascadiaCode` font (patched as Caskaydia Cove), but you can choose yours [here](https://github.com/ryanoasis/nerd-fonts/releases).
 
 3. After that, since it is a automatic setup, you just have to run the following command. But first, you need be sure:
 
