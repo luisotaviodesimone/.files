@@ -1,4 +1,5 @@
 [core]
+  editor = code --wait
   autocrlf = false
 [filter "lfs"]
   process = git-lfs filter-process
