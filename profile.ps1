@@ -1,5 +1,12 @@
 Clear-Host
-oh-my-posh --init --shell pwsh --config $HOME\scoop\apps\oh-my-posh\current\themes\CUSTOM_THEME.omp.json | Invoke-Expression
+
+$customThemePath = "$HOME\scoop\apps\oh-my-posh\current\themes\CUSTOM_THEME.omp.json"
+
+if (-not (Test-Path $customThemePath)) {
+  Copy-Item $HOME\.files\terminal\my_custom_theme.omp.json $customThemePath
+}
+
+oh-my-posh --init --shell pwsh --config $customThemePath | Invoke-Expression
 
 # Import/ Enable features
 Enable-PoshTooltips 
@@ -39,6 +46,7 @@ Set-Alias which Invoke-WhichEquivalent
 Set-Alias psversion Get-Version
 Set-Alias la Request-ChildItem
 Set-Alias lods $HOME\Documents\GitHub\my-powershell-cli\cli.ps1
+Set-Alias glods $HOME\Documents\Pessoal\scripts-go\my-go-cli\main.exe
 
 # Setting github aliases
 Set-Alias gst -Value Get-GitStatus
