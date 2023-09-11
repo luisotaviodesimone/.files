@@ -26,9 +26,11 @@ iwr -useb https://raw.github.com/luisotaviodesimone/.files/master/first_configs.
     - Windows Terminal
     - PowerShell v7.2
 
+5. You should set your git configuration file according your own info and manage the terminal settings configuration as you like.
+
 OBS: In order to use the Nerd fonts and the themes you should configure your Windows Terminal (I included my configurations in the `settings.json` file)
 
-1. If you want to install my personal tools, `cd` into the `~\.files` directory and you can run `. .\personal_tools.ps1`
+1. If you want to install my personal tools, `cd` into the `~\.files` directory and you can run `. .\personal_tools.ps1`. It also includes the automatic configuration for the windows terminal.
 
 ---
 
