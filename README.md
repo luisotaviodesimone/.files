@@ -34,4 +34,4 @@ OBS: In order to use the Nerd fonts and the themes you should configure your Win
 
 ## Also...
 
-- Don't forget to check out my personal cli tool [here](https://github.com/luisotaviodesimone/my-powershell-cli)
+- Don't forget to check out my personal cli tool [here](https://github.com/luisotaviodesimone/my-powershell-cli) and have been migrating it to its Go version [here](https://github.com/luisotaviodesimone/my-go-cli)
