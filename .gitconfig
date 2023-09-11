@@ -7,13 +7,13 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
 [user]
-  name = Luís Otávio De Simone
-  email = 85963351+luisotaviodesimone@users.noreply.github.com
+  name = 
+  email = 
 [init]
   defaultBranch = master
 [safe]
-  directory = C:/Users/luiso/.files
-  directory = C:/Users/luiso/scoop/buckets/extras
+  directory = 
+  directory = 
 [credential]
   helper = manager
 [credential "helperselector"]
