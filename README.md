@@ -26,7 +26,7 @@ iwr -useb https://raw.github.com/luisotaviodesimone/.files/master/first_configs.
     - Windows Terminal
     - PowerShell v7.2
 
-5. You should set your git configuration file according your own info and manage the terminal settings configuration as you like.
+5. You should set your git configuration file (`.gitconfig`) according your own info and manage the terminal settings configuration as you like (`settings.json`).
 
 OBS: In order to use the Nerd fonts and the themes you should configure your Windows Terminal (I included my configurations in the `settings.json` file)
 
