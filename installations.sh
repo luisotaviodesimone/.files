@@ -5,3 +5,4 @@
 # sudo apt install zsh
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 # sudo apt install gh
+# sudo apt install code_1.82.0-1694039253_amd64.deb
