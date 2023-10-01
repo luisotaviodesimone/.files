@@ -98,7 +98,7 @@ export PATH=$PATH:/usr/local/go/bin
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias lods="~/Documents/GitHub/my-go-cli/main"
+. ./.files/aliases.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
