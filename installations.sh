@@ -2,8 +2,9 @@
 sudo apt install neovim
 sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+. ./install-kitty.sh
 
-cp .zshrc ~/.zshrc
+ln .zshrc ~/.zshrc
 
 # Install oh-my-zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
