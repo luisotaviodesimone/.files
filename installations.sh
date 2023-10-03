@@ -1,10 +1,10 @@
 ### Apt Installations
-sudo apt install neovim
-sudo apt install zsh
-sudo apt install gh
-sudo apt install golang
-sudo apt install libasound2-dev # Necessary for some sound golang packages
-sudo apt install libudev-dev    # Necessary for some sound golang packages
+sudo apt install neovim -y
+sudo apt install zsh -y
+sudo apt install gh -y
+sudo apt install golang -y
+sudo apt install libasound2-dev -y # Necessary for some sound golang packages
+sudo apt install libudev-dev -y    # Necessary for some sound golang packages
 
 ### Install Oh-My-Zsh
 chsh -s $(which zsh)
@@ -23,4 +23,3 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 . ./install-vscode.sh
 . ./install-chrome.sh
 . ./install-kitty.sh
-
