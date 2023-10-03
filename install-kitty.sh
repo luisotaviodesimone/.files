@@ -1,4 +1,4 @@
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
 
 # Create symbolic links to add kitty and kitten to PATH (assuming ~/.local/bin is in
 # your system-wide PATH)
@@ -19,7 +19,4 @@ rm -rf ~/.config/kitty
 cp -r kitty ~/.config/kitty
 
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
-
-echo '\n Now select the default terminal as `kitty` \n'
-
-sudo update-alternatives --config x-terminal-emulator
+sudo update-alternatives --auto x-terminal-emulator
