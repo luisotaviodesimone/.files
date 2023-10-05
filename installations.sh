@@ -1,3 +1,7 @@
+#!/usr/bin/sh
+
+export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
+
 ### Apt Installations
 sudo apt install neovim -y
 sudo apt install zsh -y
