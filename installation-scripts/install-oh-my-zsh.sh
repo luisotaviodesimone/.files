@@ -7,7 +7,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Make hard links to dotfiles
-ln $DOT_FILES_DIR/.zshrc ~/.zshrc --force
+ln -sf $DOT_FILES_DIR/.zshrc $HOME/.zshrc
 
 ### Install oh-my-zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

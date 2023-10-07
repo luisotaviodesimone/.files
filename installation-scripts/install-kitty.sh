@@ -15,7 +15,7 @@ sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x2
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 
 # Configure kitty with `conf` file
-ln -sf $DOT_FILES_DIR/kitty ~/.config/kitty
+ln -sf $DOT_FILES_DIR/kitty $HOME/.config/kitty
 
 # Set kitty as default terminal
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
