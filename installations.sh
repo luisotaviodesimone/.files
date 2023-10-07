@@ -18,6 +18,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 ### Add modularized and personal installation scripts
 . $DOT_FILES_DIR/installation-scripts/install-oh-my-zsh.sh
+. $DOT_FILES_DIR/installation-scripts/install-kitty.sh
+
+### Substitute for flatpak installations
 . $DOT_FILES_DIR/installation-scripts/install-vscode.sh
 . $DOT_FILES_DIR/installation-scripts/install-chrome.sh
-. $DOT_FILES_DIR/installation-scripts/install-kitty.sh
