@@ -6,33 +6,33 @@ YELLOW='\033[1;33m'
 RESET='\033[0;0m'
 
 ### Apt Installations
-echo "$YELLOW Installing neovim...$RESET"
+echo -e "$YELLOW Installing neovim...$RESET"
 sudo apt install neovim -y
-echo "$YELLOW Installing zsh...$RESET"
+echo -e "$YELLOW Installing zsh...$RESET"
 sudo apt install zsh -y
-echo "$YELLOW Installing gh...$RESET"
+echo -e "$YELLOW Installing gh...$RESET"
 sudo apt install gh -y
-echo "$YELLOW Installing golang...$RESET"
+echo -e "$YELLOW Installing golang...$RESET"
 sudo apt install golang -y
 sudo apt install libasound2-dev -y # Necessary for some sound golang packages
 sudo apt install libudev-dev -y    # Necessary for some sound golang packages
 
-echo "$YELLOW Installing ranger...$RESET"
+echo -e "$YELLOW Installing ranger...$RESET"
 sudo apt install ranger -y
 echo "set preview_images true" >> ~/.config/ranger/rc.conf
 
 ### Install `nvm`
-echo "$YELLOW Installing nvm...$RESET"
+echo -e "$YELLOW Installing nvm...$RESET"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 ### Add modularized installation scripts
-echo "$YELLOW Installing oh-my-zsh...$RESET"
+echo -e "$YELLOW Installing oh-my-zsh...$RESET"
 . $DOT_FILES_DIR/installation-scripts/install-oh-my-zsh.sh
-echo "$YELLOW Installing kitty...$RESET"
+echo -e "$YELLOW Installing kitty...$RESET"
 . $DOT_FILES_DIR/installation-scripts/install-kitty.sh
-echo "$YELLOW Installing my-go-cli...$RESET"
+echo -e "$YELLOW Installing my-go-cli...$RESET"
 . $DOT_FILES_DIR/installation-scripts/install-my-go-cli.sh
-echo "$YELLOW Installing vscode...$RESET"
+echo -e "$YELLOW Installing vscode...$RESET"
 . $DOT_FILES_DIR/installation-scripts/install-vscode.sh
 
 ### Prompt for flatpak installations
