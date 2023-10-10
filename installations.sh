@@ -1,10 +1,5 @@
 #!/usr/bin/bash
 
-if [[ $(/usr/bin/id -u) -ne 0 ]]; then
-    echo "Please run as super user"
-    return
-fi
-
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
 YELLOW='\033[1;33m'
