@@ -16,10 +16,22 @@ echo "set preview_images true" >> ~/.config/ranger/rc.conf
 ### Install `nvm`
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
-### Add modularized and personal installation scripts
+### Add modularized installation scripts
 . $DOT_FILES_DIR/installation-scripts/install-oh-my-zsh.sh
 . $DOT_FILES_DIR/installation-scripts/install-kitty.sh
 
-### Substitute for flatpak installations
-. $DOT_FILES_DIR/installation-scripts/install-vscode.sh
-. $DOT_FILES_DIR/installation-scripts/install-chrome.sh
+### Prompt for flatpak installations
+
+while true; do
+    echo -n "Install flatpak apps? This will open another terminal window (y/n) "
+    read answer
+
+    case $answer in
+        [Yy]* ) kitty --hold --detach zsh -c ". $DOT_FILES_DIR/installation-scripts/install-flatpak-apps.sh"; break;;
+        [Nn]* ) echo "Finished all the setup"; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+# . $DOT_FILES_DIR/installation-scripts/install-vscode.sh
+# . $DOT_FILES_DIR/installation-scripts/install-chrome.sh

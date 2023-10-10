@@ -8,16 +8,14 @@ fi
 # Install apps
 
 flathub=(
-  com.spotify.Client
   com.google.Chrome
-  rest.insomnia.Insomnia
   com.visualstudio.code
+  com.spotify.Client
+  rest.insomnia.Insomnia
   com.discordapp.Discord
-  io.github.mimbrero.WhatsAppDesktop
   )
 
 for app in "${flathub[@]}"
 do
-    echo $app
-    # flatpak install flathub "$app" -y
+    flatpak install flathub "$app" -y
 done
