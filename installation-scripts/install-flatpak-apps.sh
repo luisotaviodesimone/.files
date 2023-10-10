@@ -9,7 +9,6 @@ fi
 
 flathub=(
   com.google.Chrome
-  com.visualstudio.code
   com.spotify.Client
   rest.insomnia.Insomnia
   com.discordapp.Discord
