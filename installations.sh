@@ -19,6 +19,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 ### Add modularized installation scripts
 . $DOT_FILES_DIR/installation-scripts/install-oh-my-zsh.sh
 . $DOT_FILES_DIR/installation-scripts/install-kitty.sh
+. $DOT_FILES_DIR/installation-scripts/install-my-go-cli.sh
 
 ### Prompt for flatpak installations
 
