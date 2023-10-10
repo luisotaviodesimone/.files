@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 # Check if flatpak is installed
 if ! command -v flatpak &> /dev/null
 then

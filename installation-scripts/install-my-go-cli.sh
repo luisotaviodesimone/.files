@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 myGoCliPath=$HOME/Documents/GitHub/my-go-cli
 
