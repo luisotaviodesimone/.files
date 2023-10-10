@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 # Set zsh as default shell
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 # Install oh-my-zsh with `unattended` flag
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
