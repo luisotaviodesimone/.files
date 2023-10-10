@@ -28,7 +28,7 @@ while true; do
     read answer
 
     case $answer in
-        [Yy]* ) kitty --hold --detach zsh -c ". $DOT_FILES_DIR/installation-scripts/install-flatpak-apps.sh"; break;;
+        [Yy]* ) x-terminal-emulator --hold --detach zsh -c ". $DOT_FILES_DIR/installation-scripts/install-flatpak-apps.sh"; break;;
         [Nn]* ) echo "Finished all the setup"; break;;
         * ) echo "Please answer yes or no.";;
     esac
