@@ -15,6 +15,9 @@ apt_apps=(
     ranger
     httpie
     wireguard
+    net-tools
+    dnsutils
+    btop
 )
 
 for app in "${apt_apps[@]}"; do
