@@ -37,6 +37,7 @@ modularized_installs=(
     oh-my-zsh
     kitty
     my-go-cli
+    kubectl
     vscode
 )
 
