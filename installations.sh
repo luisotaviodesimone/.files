@@ -8,7 +8,6 @@ RESET='\033[0;0m'
 apt_apps=(
     neovim
     zsh
-    gh
     golang
     libasound2-dev # Necessary for some sound golang packages
     libudev-dev    # Necessary for some sound golang packages
@@ -34,6 +33,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 ### Add modularized installation scripts
 modularized_installs=(
+    gh
     oh-my-zsh
     kitty
     my-go-cli
