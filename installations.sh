@@ -13,6 +13,7 @@ apt_apps=(
     libudev-dev    # Necessary for some sound golang packages
     ranger
     httpie
+    neofetch
     wireguard
     net-tools
     dnsutils

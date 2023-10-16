@@ -3,6 +3,6 @@ alias zshconfig="vim $HOME/.zshrc"
 alias kittyconfig="vim $HOME/.config/kitty/kitty.conf"
 alias apply="source $HOME/.zshrc"
 alias vim="nvim"
-alias .files="cd $DOT_FILES_DIR"
+alias k=kubectl
 alias copy="xclip -selection c"
 alias access="kitty +kitten ssh"
