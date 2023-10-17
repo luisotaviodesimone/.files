@@ -39,6 +39,7 @@ modularized_installs=(
     kitty
     my-go-cli
     kubectl
+    docker
     vscode
 )
 
