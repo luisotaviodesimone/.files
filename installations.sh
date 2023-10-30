@@ -49,6 +49,17 @@ for app in "${modularized_installs[@]}"; do
     . $DOT_FILES_DIR/installation-scripts/install-$app.sh
 done
 
+### Add modularized general configurations scripts
+
+modularized_configs=(
+    ssh
+)
+
+for app in "${modularized_configs[@]}"; do
+    echo -e "$YELLOW Configuring $app...$RESET"
+    . $DOT_FILES_DIR/installation-scripts/configure-$app.sh
+done
+
 ### Prompt for flatpak installations
 
 while true; do
