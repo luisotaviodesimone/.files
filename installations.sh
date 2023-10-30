@@ -18,6 +18,7 @@ apt_apps=(
     net-tools
     dnsutils
     btop
+    tldr
 )
 
 for app in "${apt_apps[@]}"; do
