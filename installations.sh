@@ -43,6 +43,7 @@ modularized_installs=(
     kubectl
     docker
     vscode
+    chrome
 )
 
 for app in "${modularized_installs[@]}"; do
@@ -79,5 +80,3 @@ while true; do
     *) echo "Please answer yes or no." ;;
     esac
 done
-
-# . $DOT_FILES_DIR/installation-scripts/install-chrome.sh

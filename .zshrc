@@ -98,15 +98,15 @@ export PATH=$PATH:/usr/local/go/bin
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-. $DOT_FILES_DIR/aliases.sh
+. ~/.files/aliases.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Environment variables
-. $DOT_FILES_DIR/env.sh
+. ~/.files/env.sh
 
 # Completion scripts
-. $DOT_FILES_DIR/configs/config-completions.sh
+. ~/.files/configs/config-completions.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
