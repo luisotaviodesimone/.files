@@ -39,6 +39,7 @@ modularized_installs=(
     oh-my-zsh
     kitty
     my-go-cli
+    helm
     kubectl
     docker
     vscode
@@ -57,7 +58,7 @@ modularized_configs=(
 
 for app in "${modularized_configs[@]}"; do
     echo -e "$YELLOW Configuring $app...$RESET"
-    . $DOT_FILES_DIR/installation-scripts/configure-$app.sh
+    . $DOT_FILES_DIR/configs/configure-$app.sh
 done
 
 ### Prompt for flatpak installations
