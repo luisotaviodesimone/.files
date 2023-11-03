@@ -18,7 +18,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 # Make possible to user docker without sudo
 if getent group docker | grep -q "$USER"; then
-echo "$RED User '$(whoami)' is already in group 'docker' $RESET"
+echo -e "$RED User '$(whoami)' is already in group 'docker' $RESET"
 else
 sudo groupadd docker
 sudo usermod -aG docker $USER

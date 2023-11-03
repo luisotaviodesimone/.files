@@ -2,7 +2,7 @@
 
 # Set zsh as default shell
 if [[ $SHELL == *"zsh"* ]]; then
-    echo "$RED 'zsh' is already the default shell $RESET"
+    echo -e "$RED 'zsh' is already the default shell $RESET"
 else
     echo "Setting zsh as default shell"
     chsh -s $(which zsh)
