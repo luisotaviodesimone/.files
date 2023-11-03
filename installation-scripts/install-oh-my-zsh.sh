@@ -1,7 +1,12 @@
 #!/usr/bin/bash
 
 # Set zsh as default shell
-chsh -s $(which zsh)
+if [[ $SHELL == *"zsh"* ]]; then
+    echo "$RED 'zsh' is already the default shell $RESET"
+else
+    echo "Setting zsh as default shell"
+    chsh -s $(which zsh)
+fi
 
 # Install oh-my-zsh with `unattended` flag
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended

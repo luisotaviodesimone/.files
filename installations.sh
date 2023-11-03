@@ -3,7 +3,10 @@
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
 YELLOW='\033[1;33m'
+RED='\033[0;31m'
 RESET='\033[0;0m'
+
+apt_installed_apps="$(sudo apt list | awk -F '/' '{ print $1 }')"
 
 apt_apps=(
     neovim
@@ -22,6 +25,10 @@ apt_apps=(
 )
 
 for app in "${apt_apps[@]}"; do
+    if [[ $(printf "%s\n" "$apt_installed_apps" | grep -x "$app") ]]; then
+        echo -e "$RED $app is already installed$RESET"
+        continue
+    fi
     echo -e "$YELLOW Installing $app...$RESET"
     sudo apt install "$app" -y
 done
@@ -59,7 +66,7 @@ modularized_configs=(
 
 for app in "${modularized_configs[@]}"; do
     echo -e "$YELLOW Configuring $app...$RESET"
-    . $DOT_FILES_DIR/configs/configure-$app.sh
+    . $DOT_FILES_DIR/configs/config-$app.sh
 done
 
 ### Prompt for flatpak installations
