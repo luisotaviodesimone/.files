@@ -17,6 +17,7 @@ apt_apps=(
     ranger
     httpie
     neofetch
+    resolvconf
     wireguard
     net-tools
     dnsutils
