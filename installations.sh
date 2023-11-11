@@ -33,8 +33,6 @@ for app in "${apt_apps[@]}"; do
     sudo apt install "$app" -y
 done
 
-# Configure ranger
-echo "set preview_images true" >>~/.config/ranger/rc.conf
 
 ### Install `nvm`
 echo -e "$YELLOW Installing nvm...$RESET"
@@ -62,6 +60,7 @@ done
 
 modularized_configs=(
     ssh
+    config-files
 )
 
 for app in "${modularized_configs[@]}"; do
