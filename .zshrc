@@ -106,6 +106,6 @@ export PATH=$PATH:/usr/local/go/bin
 . ~/.files/env.sh
 
 # Completion scripts
-. ~/.files/configs/config-completions.sh
+. ~/.files/completions.sh
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
