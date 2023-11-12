@@ -9,7 +9,6 @@ RESET='\033[0;0m'
 apt_installed_apps="$(sudo apt list | awk -F '/' '{ print $1 }')"
 
 apt_apps=(
-    neovim
     zsh
     golang
     libasound2-dev # Necessary for some sound golang packages
@@ -41,6 +40,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 ### Add modularized installation scripts
 modularized_installs=(
+    neovim
     gh
     oh-my-zsh
     kitty
