@@ -2,6 +2,8 @@
 
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
+source $DOT_FILES_DIR/utils.sh
+
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 RESET='\033[0;0m'
@@ -34,8 +36,10 @@ for app in "${apt_apps[@]}"; do
 done
 
 ### Install `nvm`
+if ! isCommandInstalled "nvm"; then
 echo -e "$YELLOW Installing nvm...$RESET"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+fi
 
 ### Add modularized installation scripts
 modularized_installs=(
@@ -43,15 +47,20 @@ modularized_installs=(
     gh
     oh-my-zsh
     kitty
-    my-go-cli
+    lods
     helm
     kubectl
     docker
-    vscode
+    code
     google-chrome-stable
 )
 
 for app in "${modularized_installs[@]}"; do
+
+    if isCommandInstalled "$app"; then
+        echo -e "$RED $app is already installed$RESET"
+        continue
+    fi
     echo -e "$YELLOW Installing $app...$RESET"
     . $DOT_FILES_DIR/installation-scripts/install-$app.sh
 done
