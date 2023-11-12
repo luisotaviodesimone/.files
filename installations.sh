@@ -3,6 +3,7 @@
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
 source $DOT_FILES_DIR/utils.sh
+source $DOT_FILES_DIR/aliases.sh
 
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
@@ -45,7 +46,7 @@ fi
 modularized_installs=(
     neovim
     gh
-    oh-my-zsh
+    omz
     kitty
     lods
     helm
