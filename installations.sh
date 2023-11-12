@@ -33,7 +33,6 @@ for app in "${apt_apps[@]}"; do
     sudo apt install "$app" -y
 done
 
-
 ### Install `nvm`
 echo -e "$YELLOW Installing nvm...$RESET"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
@@ -49,7 +48,7 @@ modularized_installs=(
     kubectl
     docker
     vscode
-    chrome
+    google-chrome-stable
 )
 
 for app in "${modularized_installs[@]}"; do
