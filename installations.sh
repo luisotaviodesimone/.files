@@ -6,6 +6,8 @@ source $DOT_FILES_DIR/utils.sh
 source $DOT_FILES_DIR/aliases.sh
 source $DOT_FILES_DIR/env.sh
 
+forceModularReinstall=$1
+
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 RESET='\033[0;0m'
@@ -39,8 +41,8 @@ done
 
 ### Install `nvm`
 if ! isCommandInstalled "nvm"; then
-echo -e "$YELLOW Installing nvm...$RESET"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+    echo -e "$YELLOW Installing nvm...$RESET"
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 fi
 
 ### Add modularized installation scripts
@@ -59,10 +61,13 @@ modularized_installs=(
 
 for app in "${modularized_installs[@]}"; do
 
-    if isCommandInstalled "$app"; then
-        echo -e "$RED $app is already installed$RESET"
-        continue
+    if [[ "$forceModularReinstall" != "--reinstall" ]]; then
+        if isCommandInstalled "$app"; then
+            echo -e "$RED $app is already installed$RESET"
+            continue
+        fi
     fi
+
     echo -e "$YELLOW Installing $app...$RESET"
     . $DOT_FILES_DIR/installation-scripts/install-$app.sh
 done
