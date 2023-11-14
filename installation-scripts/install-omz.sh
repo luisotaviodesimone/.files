@@ -11,7 +11,7 @@ fi
 # Install oh-my-zsh with `unattended` flag
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# Make hard links to dotfiles
+# Link .zshrc to home directory
 ln -sf $DOT_FILES_DIR/.zshrc $HOME/.zshrc
 
 ### Install oh-my-zsh plugins
