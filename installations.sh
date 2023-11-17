@@ -28,6 +28,8 @@ apt_apps=(
     dnsutils
     btop
     tldr
+    xclip
+    fzf
 )
 
 for app in "${apt_apps[@]}"; do
