@@ -30,6 +30,7 @@ apt_apps=(
     tldr
     xclip
     fzf
+    sshpass
 )
 
 for app in "${apt_apps[@]}"; do
