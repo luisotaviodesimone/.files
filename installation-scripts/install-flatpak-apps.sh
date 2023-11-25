@@ -10,10 +10,10 @@ fi
 # Install apps
 
 flathub=(
-  com.google.Chrome
   com.spotify.Client
   rest.insomnia.Insomnia
   com.discordapp.Discord
+  com.authy.Authy
   )
 
 for app in "${flathub[@]}"

@@ -12,7 +12,7 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 RESET='\033[0;0m'
 
-apt_installed_apps="$(sudo apt list | awk -F '/' '{ print $1 }')"
+apt_installed_apps="$(sudo apt list --installed | awk -F '/' '{ print $1 }')"
 
 apt_apps=(
     zsh
@@ -57,6 +57,7 @@ modularized_installs=(
     helm
     kubectl
     docker
+    ansible
     code
     google-chrome-stable
 )
