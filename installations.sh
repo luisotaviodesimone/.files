@@ -29,6 +29,7 @@ apt_apps=(
     btop
     tldr
     xclip
+    gpaste
     fzf
     sshpass
 )
