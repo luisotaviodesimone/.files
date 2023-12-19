@@ -1,9 +1,33 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = '''$all'''
+right_format = '''$kubernetes'''
+
 # Inserts a blank line between shell prompts
 add_newline = true
 
 # Disable the package module, hiding it from the prompt completely
 [package]
-disabled = true
+disabled = false
+
+[kubernetes]
+format = "[$symbol$context:$namespace]($style)"
+disabled = false
+
+[username]
+show_always = true
+
+[directory]
+style = 'green bold'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+untracked = '[$count?](green bold)'
+stashed = '[$count\$](blue bold)'
+modified = '$count!'
+staged = '$count+'
+renamed = '$count»'
+deleted = '$count✘'
+style = 'bold red'
