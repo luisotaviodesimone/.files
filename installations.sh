@@ -53,7 +53,7 @@ fi
 modularized_installs=(
     nvim
     gh
-    omz
+    starship
     kitty
     lods
     helm
