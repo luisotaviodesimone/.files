@@ -1,5 +1,6 @@
-# Path to your oh-my-zsh installation.
+# Oh-my-zsh configuration.
 export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="philips"
