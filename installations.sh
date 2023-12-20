@@ -52,13 +52,14 @@ fi
 ### Add modularized installation scripts
 modularized_installs=(
     nvim
-    gh
-    starship
     kitty
+    font
+    starship
+    gh
     lods
-    helm
-    kubectl
     docker
+    kubectl
+    helm
     ansible
     code
     google-chrome-stable
