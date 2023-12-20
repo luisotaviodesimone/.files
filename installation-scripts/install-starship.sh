@@ -5,7 +5,7 @@ if [[ $SHELL == *"zsh"* ]]; then
     echo -e "$RED 'zsh' is already the default shell $RESET"
 else
     echo "Setting zsh as default shell"
-    chsh -s $(which zsh)
+    sudo chsh -s $(which zsh) $USER
 fi
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y
