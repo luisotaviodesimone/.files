@@ -4,6 +4,11 @@
 # mkdir -p $HOME/.local/share/fonts
 # mv /tmp/CaskaydiaCoveNerdFont* $HOME/.local/share/fonts
 
+if [[ -f $HOME/.local/share/fonts/FiraCodeNerdFont-Regular.ttf ]]; then
+    echo -e "$RED FiraCode Nerd Font is already installed$RESET"
+    exit 0
+fi
+
 # Install FiraCode Nerd Font
 wget --directory-prefix /tmp https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip 
 unzip /tmp/FiraCode.zip -d /tmp
