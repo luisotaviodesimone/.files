@@ -8,6 +8,7 @@ fi
 
 if ! isCommandInstalled "ansible"; then
 	python3 -m pip install --user ansible
+	python3 -m pip install --user ansible-lint
 	return
 fi
 
