@@ -30,6 +30,7 @@ apt_apps=(
     tldr
     xclip
     gpaste
+    gnome-shell-extension-gpaste
     fzf
     sshpass
 )
