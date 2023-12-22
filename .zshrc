@@ -13,3 +13,5 @@ compinit
 # Completion scripts
 . ~/.files/completions.sh
 
+# Source `z` directory jumper
+. ~/.files/z.sh
