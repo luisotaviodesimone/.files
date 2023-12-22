@@ -50,7 +50,7 @@ modularized_installs=(
     nvim
     gh
     starship
-    z
+    plugins
     fonts
     kitty
     lods

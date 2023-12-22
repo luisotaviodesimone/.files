@@ -1,1 +1,0 @@
-wget --directory-prefix $DOT_FILES_DIR https://raw.githubusercontent.com/rupa/z/master/z.sh
