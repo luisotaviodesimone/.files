@@ -14,8 +14,6 @@ alias apply="source $HOME/.zshrc"
 alias copy="xclip -selection c"
 alias k-get-all="kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # Git Aliases
 alias gst="git status"
 
