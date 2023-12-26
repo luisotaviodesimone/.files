@@ -13,6 +13,7 @@ alias ss="starship"
 alias apply="source $HOME/.zshrc"
 alias copy="xclip -selection c"
 alias k-get-all="kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found"
+alias kuc="kubectl config use-context"
 
 # Git Aliases
 alias gst="git status"

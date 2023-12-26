@@ -12,7 +12,7 @@ add_newline = true
 disabled = false
 
 [kubernetes]
-format = "[$symbol$context:$namespace]($style)"
+format = "[$symbol$context(:$namespace)]($style)"
 disabled = false
 
 [username]
