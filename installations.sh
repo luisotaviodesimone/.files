@@ -8,10 +8,6 @@ source $DOT_FILES_DIR/env.sh
 
 forceModularReinstall=$1
 
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-RESET='\033[0;0m'
-
 apt_installed_apps="$(sudo apt list --installed | awk -F '/' '{ print $1 }')"
 
 apt_apps=(
@@ -54,7 +50,9 @@ fi
 modularized_installs=(
     nvim
     gh
-    omz
+    starship
+    plugins
+    fonts
     kitty
     lods
     helm
@@ -102,9 +100,9 @@ while true; do
         break
         ;;
     [Nn]*)
-        echo "Finished all the setup"
+        echo -e "$GREEN Configuração terminada! $RESET"
         break
         ;;
-    *) echo "Please answer yes or no." ;;
+    *) echo -e "$RED Please answer yes or no. $RESET" ;;
     esac
 done

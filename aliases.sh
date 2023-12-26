@@ -1,10 +1,25 @@
-alias lods="$HOME/Documents/GitHub/my-go-cli/main"
+# Configuration files shortcuts
 alias zshconfig="vim $HOME/.zshrc"
 alias kittyconfig="vim $HOME/.config/kitty/kitty.conf"
-alias apply="source $HOME/.zshrc"
-alias vim="nvim"
+alias ssconfig="vim $HOME/.config/starship/starship.toml"
+
+# CLI shortcuts
+alias lods="$HOME/Documents/GitHub/my-go-cli/main"
 alias k=kubectl
+alias vim="nvim"
+alias ss="starship"
+
+# Tools shortcuts
+alias apply="source $HOME/.zshrc"
 alias copy="xclip -selection c"
 alias k-get-all="kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found"
+alias kuc="kubectl config use-context"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# Git Aliases
+alias gst="git status"
+
+# Directory Aliases
+alias ..="cd .."
+alias ls="ls --color=auto"
+alias ll="ls -l"
+alias la="ls -la"

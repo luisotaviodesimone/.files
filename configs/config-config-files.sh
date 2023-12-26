@@ -1,2 +1,2 @@
 mkdir -p ~/.config
-ln -s $DOT_FILES_DIR/.config/* ~/.config/
+ln -sf $DOT_FILES_DIR/.config/* ~/.config/
