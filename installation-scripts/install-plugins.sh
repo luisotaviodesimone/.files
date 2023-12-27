@@ -7,4 +7,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $DOT_FILES_DIR/pl
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git $DOT_FILES_DIR/plugins/fast-syntax-highlighting
 wget -nc --directory-prefix $DOT_FILES_DIR/plugins/ https://raw.githubusercontent.com/rupa/z/master/z.sh
 wget -nc --directory-prefix $DOT_FILES_DIR/plugins/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/git/git.plugin.zsh
+wget -nc --directory-prefix $DOT_FILES_DIR/plugins/ https://raw.githubusercontent.com/zsh-users/zsh-history-substring-search/master/zsh-history-substring-search.zsh
 
