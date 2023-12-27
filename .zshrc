@@ -13,3 +13,5 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 # Completion scripts
 . ~/.files/completions.sh
 
+# Plugings sourcing
+. ~/.files/plugins.sh
