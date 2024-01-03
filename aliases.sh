@@ -5,7 +5,7 @@ alias ssconfig="vim $HOME/.config/starship/starship.toml"
 
 # CLI shortcuts
 alias lods="$HOME/Documents/GitHub/my-go-cli/main"
-alias k=kubectl
+alias k="kubectl"
 alias vim="nvim"
 alias ss="starship"
 
@@ -14,6 +14,7 @@ alias apply="source $HOME/.zshrc"
 alias copy="xclip -selection c"
 alias k-get-all="kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found"
 alias kuc="kubectl config use-context"
+alias ksn="kubectl config set-context --current --namespace"
 
 # Git Aliases
 alias gst="git status"
@@ -21,5 +22,5 @@ alias gst="git status"
 # Directory Aliases
 alias ..="cd .."
 alias ls="ls --color=auto"
-alias l="ls -l"
+alias ll="ls -l"
 alias la="ls -la"
