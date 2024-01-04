@@ -29,6 +29,7 @@ apt_apps=(
     gnome-shell-extension-gpaste
     fzf
     sshpass
+    ripgrep
 )
 
 for app in "${apt_apps[@]}"; do
