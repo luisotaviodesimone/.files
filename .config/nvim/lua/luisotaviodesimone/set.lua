@@ -3,6 +3,9 @@ vim.opt.relativenumber = true
 
 vim.opt.smartindent = true
 
+-- Disable mouse
+vim.opt.mouse = ""
+
 -- Set tabspaces
 vim.opt.tabstop = 4 
 vim.opt.shiftwidth = 4
