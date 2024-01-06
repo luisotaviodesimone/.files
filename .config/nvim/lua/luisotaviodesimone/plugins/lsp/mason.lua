@@ -26,7 +26,8 @@ return {
                 "emmet_ls",
                 "pyright",
                 "gopls",
-                "bashls"
+                "bashls",
+                "yamlls"
             },
             automatic_installation = true,
         })
