@@ -1,15 +1,17 @@
 # Allow autocompletion script loading
 autoload -Uz compinit && compinit
 
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt HIST_EXPIRE_DUPS_FIRST
+
 # Enable case insensitive matches if there are no case sensitive matches
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
-# Enable history search with arrow keys
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "$key[Up]" history-beginning-search-backward-end
-bindkey "$key[Down]" history-beginning-search-forward-end
+bindkey "$key[Up]" history-search-backward
+bindkey "$key[Down]" history-search-forward
 
 # Environment variables
 . ~/.files/env.sh
