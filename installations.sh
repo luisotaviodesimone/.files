@@ -41,12 +41,6 @@ for app in "${apt_apps[@]}"; do
     sudo apt install "$app" -y
 done
 
-### Install `nvm`
-if ! isCommandInstalled "nvm"; then
-    echo -e "$YELLOW Installing nvm...$RESET"
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-fi
-
 ### Add modularized installation scripts
 modularized_installs=(
     nvim
@@ -55,6 +49,7 @@ modularized_installs=(
     plugins
     fonts
     kitty
+    node
     lods
     helm
     kubectl
