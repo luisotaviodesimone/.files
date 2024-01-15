@@ -14,6 +14,7 @@ flathub=(
   rest.insomnia.Insomnia
   com.discordapp.Discord
   com.authy.Authy
+  io.dbeaver.DBeaverCommunity
   )
 
 for app in "${flathub[@]}"
