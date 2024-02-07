@@ -12,6 +12,9 @@ alias ss="starship"
 # Tools shortcuts
 alias apply="source $HOME/.zshrc"
 alias copy="xclip -selection c"
+
+# Kubectl shortcuts
+# alias kok="kubectl get pods --all-namespaces -o wide | awk -F " *|/" '($3!=$4 || $5!="Running") && $5!="Completed" {print $0}'"
 alias k-get-all="kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found"
 alias kc="kubectl config use-context"
 alias kn="kubectl config set-context --current --namespace"
