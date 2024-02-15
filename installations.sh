@@ -41,6 +41,9 @@ for app in "${apt_apps[@]}"; do
     sudo apt install "$app" -y
 done
 
+# Activate gnome-gpaste-extension
+gnome-extensions enable GPaste@gnome-shell-extensions.gnome.org
+
 ### Add modularized installation scripts
 modularized_installs=(
     nvim
@@ -50,6 +53,8 @@ modularized_installs=(
     fonts
     kitty
     node
+    virtualbox
+    vagrant
     lods
     helm
     kubectl

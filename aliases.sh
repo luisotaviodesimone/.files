@@ -12,6 +12,7 @@ alias ss="starship"
 # Tools shortcuts
 alias apply="source $HOME/.zshrc"
 alias copy="xclip -selection c"
+alias clc="fc -ln -1 | copy"
 
 # Kubectl shortcuts
 # alias kok="kubectl get pods --all-namespaces -o wide | awk -F " *|/" '($3!=$4 || $5!="Running") && $5!="Completed" {print $0}'"

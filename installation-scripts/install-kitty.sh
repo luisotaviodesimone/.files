@@ -23,3 +23,6 @@ ln -sf $DOT_FILES_DIR/kitty $HOME/.config/
 # Set kitty as default terminal
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
 sudo update-alternatives --auto x-terminal-emulator
+
+# Configure favourites bar
+gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'kitty.desktop', 'firefox.desktop']"
