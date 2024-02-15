@@ -1,5 +1,5 @@
 # Allow autocompletion script loading
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -i
 
 setopt SHARE_HISTORY
 HISTFILE=$HOME/.zhistory
