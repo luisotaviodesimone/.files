@@ -6,3 +6,6 @@ export GREEN='\033[0;32m'
 function isCommandInstalled() {
     command -v "$1" >/dev/null 2>&1 || alias | grep -q "$1"
 }
+
+function removeSshKeys() {
+}

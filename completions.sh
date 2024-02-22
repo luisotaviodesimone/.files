@@ -2,6 +2,7 @@ source <(kubectl completion zsh)
 source <(helm completion zsh)
 eval "$(starship init zsh)"
 source <(starship completions zsh)
+source <(k3d completion zsh)
 source $DOT_FILES_DIR/utils.sh
 
 if isCommandInstalled "vagrant"; then
