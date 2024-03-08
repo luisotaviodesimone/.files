@@ -16,13 +16,13 @@ vim.bo.softtabstop = 4
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
--- Append backup files with timestamp
-vim.api.nvim_create_autocmd("BufWritePre", {
-	callback = function()
-		local extension = os.getenv("HOME") .. vim.fn.strftime("%Y-%m-%d-%H%M%S")
-		vim.o.backupext = extension
-	end,
-})
+-- -- Append backup files with timestamp
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--     callback = function()
+--         local extension = os.getenv("HOME") .. vim.fn.strftime("%Y-%m-%d-%H%M%S")
+--         vim.o.backupext = extension
+--     end,
+-- })
 
 -- Set swap directory
 vim.opt.directory = os.getenv("HOME") .. "/.vim/swapdir"
