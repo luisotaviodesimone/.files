@@ -7,15 +7,11 @@
         "action": "copy",
         "singleLine": false
       },
-      "keys": "ctrl+c"
+      "keys": "ctrl+shift+c"
     },
     {
       "command": "paste",
-      "keys": "ctrl+v"
-    },
-    {
-      "command": "find",
-      "keys": "ctrl+shift+f"
+      "keys": "ctrl+shift+v"
     },
     {
       "command": {
@@ -23,6 +19,10 @@
         "splitMode": "duplicate"
       },
       "keys": "alt+shift+d"
+    },
+    {
+      "command": "find",
+      "keys": "ctrl+shift+f"
     }
   ],
   "copyFormatting": "none",
@@ -33,13 +33,18 @@
   "focusFollowMouse": false,
   "launchMode": "default",
   "minimizeToNotificationArea": false,
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
   "profiles": {
     "defaults": {
       "colorScheme": "One Half Dark",
       "experimental.retroTerminalEffect": false,
       "font": {
         "face": "CaskaydiaCove Nerd Font",
-        "size": 14
+        "size": 14.0
       },
       "opacity": 73,
       "padding": "4",
@@ -69,47 +74,22 @@
         "source": "Windows.Terminal.Azure"
       },
       {
-        "commandline": "%PROGRAMFILES%/PostgreSQL/14/scripts/runpsql.bat -i -l",
-        "guid": "{a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11}",
-        "hidden": false,
-        "icon": "%SystemDrive%/PROGRA~1/PostgreSQL/14/scripts/images/pg-psql.ico",
-        "name": "SQL psql"
-      },
-      {
         "commandline": "%PROGRAMFILES%/Git/usr/bin/bash.exe -i -l",
         "guid": "{00000000-0000-0000-ba54-000000000001}",
         "hidden": false,
         "name": "Git Bash"
       },
       {
-        "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-        "hidden": false,
-        "name": "Ubuntu",
-        "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+        "guid": "{28ed0ad0-bc4f-5d42-9add-d17aee9088bf}",
+        "hidden": true,
+        "name": "Developer Command Prompt for VS 2017",
+        "source": "Windows.Terminal.VisualStudio"
       },
       {
-        "guid": "{f9ceaf27-504c-58d7-927c-d1d6a7ac7d3c}",
+        "guid": "{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}",
         "hidden": false,
-        "name": "Ubuntu 22.04.1 LTS",
+        "name": "Ubuntu 22.04.3 LTS",
         "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
-      },
-      {
-        "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
-        "hidden": true,
-        "name": "Ubuntu-22.04",
-        "source": "Windows.Terminal.Wsl"
-      },
-      {
-        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-        "hidden": true,
-        "name": "Ubuntu",
-        "source": "Windows.Terminal.Wsl"
-      },
-      {
-        "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
-        "hidden": false,
-        "name": "Debian",
-        "source": "Windows.Terminal.Wsl"
       }
     ]
   },
@@ -417,5 +397,6 @@
   "startOnUserLogin": false,
   "tabWidthMode": "equal",
   "theme": "dark",
+  "themes": [],
   "useAcrylicInTabRow": true
 }
