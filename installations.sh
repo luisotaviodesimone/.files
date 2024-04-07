@@ -60,6 +60,7 @@ modularized_installs=(
     kubectl
     docker
     ansible
+    terraform
     k3d
     code
     google-chrome-stable
