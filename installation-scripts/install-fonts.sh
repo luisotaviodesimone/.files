@@ -6,6 +6,7 @@
 
 if [[ -f $HOME/.local/share/fonts/FiraCodeNerdFont-Regular.ttf ]]; then
     echo -e "$RED FiraCode Nerd Font is already installed$RESET"
+    return
 fi
 
 # Install FiraCode Nerd Font

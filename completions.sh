@@ -4,6 +4,9 @@ eval "$(starship init zsh)"
 source <(starship completions zsh)
 source <(k3d completion zsh)
 source $DOT_FILES_DIR/utils.sh
+
+# terraform
+autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 
 if isCommandInstalled "vagrant"; then
