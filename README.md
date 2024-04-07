@@ -12,7 +12,10 @@ git submodule update --init --recursive
 git pull --recurse-submodules
 ```
 
+### lods
+
+This script also comes with my custom made CLI to automate some usual tasks that I have to do. To set it up properly, please visit its [github page](https://github.com/luisotaviodesimone/my-go-cli), as I already set some things up in this automatic installation script.
+
 # TODOs
 
 - Make rust installation script run automatically.
-- Add nvim persistent undo tree
