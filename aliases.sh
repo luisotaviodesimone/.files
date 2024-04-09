@@ -4,7 +4,6 @@ alias kittyconfig="vim $HOME/.config/kitty/kitty.conf"
 alias ssconfig="vim $HOME/.config/starship/starship.toml"
 
 # CLI shortcuts
-alias lods="$HOME/Documents/GitHub/my-go-cli/main"
 alias k="kubectl"
 alias vim="nvim"
 alias ss="starship"
