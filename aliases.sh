@@ -7,6 +7,7 @@ alias ssconfig="vim $HOME/.config/starship/starship.toml"
 alias k="kubectl"
 alias vim="nvim"
 alias ss="starship"
+alias tf="terraform"
 
 # Tools shortcuts
 alias apply="source $HOME/.zshrc"
