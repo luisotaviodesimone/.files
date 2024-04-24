@@ -1,6 +1,6 @@
 # .files
 
-This is the repository to host my automatic initial configuration to my Linux developing environment
+This is the repository to host my automatic initial configuration to my Linux developing environment and also some other tool configuration in the `.config` directory
 
 ### Submodule
 
