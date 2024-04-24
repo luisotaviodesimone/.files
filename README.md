@@ -19,3 +19,7 @@ This script also comes with my custom made CLI to automate some usual tasks that
 # TODOs
 
 - Make rust installation script run automatically.
+- Create environment variables for jenkins:
+  - `JENKINS_USER_ID`  
+  - `JENKINS_PASSWORD`
+  - `JENKINS_URL`
