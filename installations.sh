@@ -12,9 +12,6 @@ apt_installed_apps="$(sudo apt list --installed | awk -F '/' '{ print $1 }')"
 
 apt_apps=(
     zsh
-    golang
-    libasound2-dev # Necessary for some sound golang packages
-    libudev-dev    # Necessary for some sound golang packages
     ranger
     httpie
     neofetch
@@ -52,6 +49,7 @@ modularized_installs=(
     plugins
     fonts
     kitty
+    go
     node
     virtualbox
     vagrant
