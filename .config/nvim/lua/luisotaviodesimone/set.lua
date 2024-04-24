@@ -12,6 +12,9 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.bo.softtabstop = 4
 
+-- Set highlight on search
+vim.opt.hlsearch = true
+
 -- Set persistent undo
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
