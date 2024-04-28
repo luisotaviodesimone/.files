@@ -18,6 +18,7 @@ apt_apps=(
     resolvconf
     wireguard
     net-tools
+    postgresql-client
     dnsutils
     btop
     tldr
