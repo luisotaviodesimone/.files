@@ -13,6 +13,7 @@ alias tf="terraform"
 alias apply="source $HOME/.zshrc"
 alias copy="xclip -selection c"
 alias clc="fc -ln -1 | copy"
+alias instaK8s="k3d cluster create --image rancher/k3d:latest-dind --servers 3 --agents 3 local-cluster && k3d kubeconfig get local-cluster | sed s/k3d-//g > ~/.kube/configs/local-cluster"
 
 # Kubectl shortcuts
 # alias kok="kubectl get pods --all-namespaces -o wide | awk -F " *|/" '($3!=$4 || $5!="Running") && $5!="Completed" {print $0}'"
