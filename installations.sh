@@ -57,6 +57,7 @@ modularized_installs=(
     lods
     helm
     kubectl
+    yq
     docker
     ansible
     terraform
