@@ -1,0 +1,29 @@
+import = [
+  "/home/luisotaviodesimone/.nvm/versions/node/v20.12.2/lib/node_modules/alacritty-themes/themes/3024.dark.toml"
+]
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Alt"
+chars = "\u001bF"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Alt"
+chars = "\u001bB"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+style = "Bold Italic"
