@@ -1,5 +1,5 @@
 import = [
-  "Dracula.toml"
+  "/home/luisotaviodesimone/.files/.config/alacritty/Dracula.toml"
 ]
 
 [keyboard]
@@ -9,7 +9,7 @@ bindings = [
 ]
 
 [font]
-normal = { family = "Hack Nerd Font", style = "Regular" }
-bold = { family = "Hack Nerd Font", style = "Bold" }
-italic = { family = "Hack Nerd Font", style = "Italic" }
-bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+bold = { family = "FiraCode Nerd Font", style = "Bold" }
+italic = { family = "FiraCode Nerd Font", style = "Italic" }
+bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
