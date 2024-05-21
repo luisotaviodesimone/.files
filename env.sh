@@ -5,3 +5,4 @@ export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
 . $DOT_FILES_DIR/configs/config-kubectl.sh
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export KUBE_EDITOR="/home/luisotaviodesimone/.local/bin/nvim"
+export SDKMAN_DIR="$HOME/.sdkman"

@@ -57,6 +57,7 @@ modularized_installs=(
     lods
     helm
     kubectl
+    sdkman
     docker
     ansible
     terraform
