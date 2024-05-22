@@ -3,6 +3,7 @@ alias zshconfig="nvim $HOME/.zshrc"
 alias kittyconfig="nvim $HOME/.config/kitty/kitty.conf"
 alias ssconfig="nvim $HOME/.config/starship/starship.toml"
 alias alctyconfig="nvim $HOME/.config/alacritty/alacritty.toml"
+alias tmuxconfig="nvim $HOME/.config/tmux/tmux.conf"
 
 # CLI shortcuts
 alias k="kubectl"
