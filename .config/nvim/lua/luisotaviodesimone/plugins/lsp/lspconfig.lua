@@ -89,6 +89,12 @@ return {
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     })
 
+    -- configure clangd server
+    lspconfig["clangd"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure python server
     lspconfig["pyright"].setup({
       capabilities = capabilities,

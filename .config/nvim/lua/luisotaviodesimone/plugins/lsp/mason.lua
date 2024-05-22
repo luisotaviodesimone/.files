@@ -27,7 +27,8 @@ return {
                 "pyright",
                 "gopls",
                 "bashls",
-                "yamlls"
+                "yamlls",
+                "clangd"
             },
             automatic_installation = true,
         })
