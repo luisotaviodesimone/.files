@@ -7,7 +7,9 @@ return {
     config = function ()
       local dracula = require 'dracula'
 
-      dracula.setup()
+      dracula.setup({
+        transparent = true,
+      })
 
       vim.cmd.colorscheme 'dracula'
     end
