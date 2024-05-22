@@ -1,7 +1,8 @@
 # Configuration files shortcuts
-alias zshconfig="vim $HOME/.zshrc"
-alias kittyconfig="vim $HOME/.config/kitty/kitty.conf"
-alias ssconfig="vim $HOME/.config/starship/starship.toml"
+alias zshconfig="nvim $HOME/.zshrc"
+alias kittyconfig="nvim $HOME/.config/kitty/kitty.conf"
+alias ssconfig="nvim $HOME/.config/starship/starship.toml"
+alias alctyconfig="nvim $HOME/.config/alacritty/alacritty.toml"
 
 # CLI shortcuts
 alias k="kubectl"
