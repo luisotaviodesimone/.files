@@ -13,6 +13,7 @@ apt_installed_apps="$(sudo apt list --installed | awk -F '/' '{ print $1 }')"
 apt_apps=(
     zsh
     ranger
+    tmux
     httpie
     neofetch
     resolvconf
