@@ -14,6 +14,7 @@ apt_apps=(
     zsh
     ranger
     tmux
+    mlocate
     httpie
     neofetch
     resolvconf
