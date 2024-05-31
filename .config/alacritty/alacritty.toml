@@ -15,4 +15,4 @@ italic = { family = "FiraCode Nerd Font", style = "Italic" }
 bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
 
 [window]
-opacity = 0.75
+opacity = 0.90
