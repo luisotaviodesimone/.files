@@ -13,7 +13,7 @@ if output1 and output2:
 
     name = lines1[0].split(':')[-1].replace('"', '').strip()
     # dbm = lines1[5].split('=')[-1].split(' ')[0]
-    dbm = round((float(lines1[5].split('=')[-1].split(' ')[0])/-90)*100)
+    dbm = round(((float(lines1[5].split('=')[-1].split(' ')[0]) + 20)/-70)*100)
     state = lines2[0].split()[8].strip()
 
     dbm_color = ''
