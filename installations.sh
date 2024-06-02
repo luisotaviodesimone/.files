@@ -33,6 +33,8 @@ apt_apps=(
     ripgrep
 )
 
+sudo gpasswd -a luisotaviodesimone video
+
 for app in "${apt_apps[@]}"; do
     if [[ $(printf "%s\n" "$apt_installed_apps" | grep -x "$app") ]]; then
         echo -e "$RED $app is already installed$RESET"
