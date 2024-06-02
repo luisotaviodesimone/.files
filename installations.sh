@@ -28,6 +28,7 @@ apt_apps=(
     gpaste
     gnome-shell-extension-gpaste
     fzf
+    brightnessctl
     sshpass
     ripgrep
 )
