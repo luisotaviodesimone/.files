@@ -6,6 +6,8 @@ import = [
 bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },
   { key = "Left",  mods = "Alt", chars = "\u001BB" },
+  { key = "k",  mods = "Control|Shift", action = "ScrollLineUp" },
+  { key = "j",  mods = "Control|Shift", action = "ScrollLineDown" },
 ]
 
 [font]
