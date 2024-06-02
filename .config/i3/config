@@ -17,6 +17,8 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always feh --bg-scale ~/.config/i3/i3-wallpaper-$(xrandr --query | grep " primary" | cut -d" " -f4 | cut -d"+" -f1).png
 exec_always --no-startup-id xrandr --output eDP-1 --rate 60 --mode 1920x1080 --fb 2560x1080 --panning 2560x1080 --output HDMI-1 --primary --mode 2560x1080 --rate 75 --same-as eDP-1
 
+bindsym $mod+d exec rofi -show combi
+
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
 bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
 bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
@@ -213,4 +215,4 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+# bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
