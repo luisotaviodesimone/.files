@@ -12,7 +12,8 @@ if output1 and output2:
     lines2 = output2.splitlines()
 
     name = lines1[0].split(':')[-1].replace('"', '').strip()
-    # dbm = lines1[5].split('=')[-1].split(' ')[0]
+    if len(name) > 10:
+        name = ""
     dbm = round(((float(lines1[5].split('=')[-1].split(' ')[0]) + 20)/-70)*100)
     state = lines2[0].split()[8].strip()
 
@@ -28,8 +29,8 @@ if output1 and output2:
 
     match state:
         case 'UP':
-            logo = '%{F#F0C674}󰖩 ' + ifc + '%{F-}'
-            print(f'{logo} {dbm_color}{dbm}%{color_reset}  {name}')
+            logo = '%{F#F0C674}󰖩 ' + '%{F-}'
+            print(f'{logo} {dbm_color}{dbm}%{color_reset} {name}')
         case _:
             logo = '%{F#707880}󰖪'
             print(f'{logo} {ifc} {state}')
