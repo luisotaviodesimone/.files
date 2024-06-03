@@ -29,6 +29,8 @@ apt_apps=(
     gnome-shell-extension-gpaste
     fzf
     brightnessctl
+    maim
+    libnotify-bin
     sshpass
     ripgrep
 )
