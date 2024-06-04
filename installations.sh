@@ -31,6 +31,7 @@ apt_apps=(
     brightnessctl
     maim
     libnotify-bin
+    xautolock
     sshpass
     ripgrep
 )
