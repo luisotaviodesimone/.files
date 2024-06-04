@@ -1,5 +1,5 @@
 configuration{
-    modi: "combi";
+    modi: "drun,window,keys,filebrowser,calc";
     icon-theme: "Oranchelo";
     show-icons: true;
     terminal: "alacritty";
@@ -7,9 +7,9 @@ configuration{
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun:    "";
-    display-combi: "";
-    sidebar-mode: true;
+    // display-drun:    "";
+    // display-combi: "";
+    sidebar-mode: false;
 }
 
 @theme "dracula"
