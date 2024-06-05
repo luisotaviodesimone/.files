@@ -21,7 +21,7 @@ exec_always "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
 bindsym $mod+d exec rofi -show
 
-bindsym Shift+$mod+v exec rofi -modi "clipboard:greenclip print" -show clipboaro
+bindsym Shift+$mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard
 
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
