@@ -15,26 +15,26 @@ exec_always --no-startup-id picom
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always feh --bg-scale ~/.config/i3/i3-wallpaper-$(xrandr --query | grep " primary" | cut -d" " -f4 | cut -d"+" -f1).png
-exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id xrandr --output eDP-1 --rate 60 --mode 1920x1080 --fb 2560x1080 --panning 2560x1080 --output HDMI-1 --primary --mode 2560x1080 --rate 75 --same-as eDP-1
-exec_always "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
 bindsym $mod+d exec rofi -show
 
+## Clipboard history
+exec_always --no-startup-id greenclip daemon
 bindsym Shift+$mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard
 
+## Brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
-bindsym Control+Mod1+l exec "i3lock -c 000000"
 
-bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
-bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
+## Screen lock control
+bindsym Control+$mod+l exec "i3lock -c 000000"
+exec_always "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
-## Clipboard Screenshots
-bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
+## Save and copy to clipboard screenshots
+bindsym Print exec path="$HOME/Pictures/Screenshots/screenshot_$(date +%F_%T).png" && maim "$path" && xclip -selection clipboard -t image/png "$path"
+bindsym $mod+Print exec path="$HOME/Pictures/Screenshots/screenshot_$(date +%F_%T).png" && maim --window $(xdotool getactivewindow) "$path" && xclip -selection clipboard -t image/png "$path"
+bindsym Shift+$mod+Print exec path="$HOME/Pictures/Screenshots/screenshot_$(date +%F_%T).png" && maim -s "$path" && xclip -selection clipboard -t image/png "$path"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
