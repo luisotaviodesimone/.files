@@ -15,10 +15,14 @@ exec_always --no-startup-id picom
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always feh --bg-scale ~/.config/i3/i3-wallpaper-$(xrandr --query | grep " primary" | cut -d" " -f4 | cut -d"+" -f1).png
+exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id xrandr --output eDP-1 --rate 60 --mode 1920x1080 --fb 2560x1080 --panning 2560x1080 --output HDMI-1 --primary --mode 2560x1080 --rate 75 --same-as eDP-1
 exec_always "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
 bindsym $mod+d exec rofi -show
+
+bindsym Shift+$mod+v exec rofi -modi "clipboard:greenclip print" -show clipboaro
+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
 bindsym Control+Mod1+l exec "i3lock -c 000000"
