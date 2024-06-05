@@ -11,6 +11,7 @@ alias vim="nvim"
 alias t="TERM=xterm-256color tmux"
 alias ss="starship"
 alias tf="terraform"
+alias explorer="explorer.exe"
 
 # Tools shortcuts
 alias apply="source $HOME/.zshrc"
