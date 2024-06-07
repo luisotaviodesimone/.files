@@ -17,7 +17,7 @@ alias explorer="explorer.exe"
 alias apply="source $HOME/.zshrc"
 alias copy="xclip -selection c"
 alias clc="fc -ln -1 | copy"
-alias instaK8s="k3d cluster create --servers 3 --agents 1 local-cluster && k3d kubeconfig get local-cluster | sed s/k3d-//g > ~/.kube/configs/local-cluster"
+alias instaK8s="k3d cluster create --servers 1 --agents 1 local-cluster && k3d kubeconfig get local-cluster | sed s/k3d-//g > ~/.kube/configs/local-cluster"
 alias kitty-theme="kitty +kitten themes --reload-in=all"
 
 # Kubectl shortcuts

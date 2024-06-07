@@ -6,3 +6,13 @@ export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export KUBE_EDITOR="/home/luisotaviodesimone/.local/bin/nvim"
 export SDKMAN_DIR="$HOME/.sdkman"
+export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/luisotaviodesimone/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
