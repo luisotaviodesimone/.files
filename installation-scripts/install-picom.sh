@@ -8,3 +8,6 @@ sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libe
 # build and install picom
 meson setup --buildtype=release build
 sudo ninja -C build install
+
+cd ..
+sudo rm -rf picom

@@ -11,11 +11,14 @@
 
 set $mod Mod4
 
+exec "setxkbmap -layout us,us"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
+
 exec_always --no-startup-id picom
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always feh --bg-scale ~/.config/i3/i3-wallpaper-$(xrandr --query | grep " primary" | cut -d" " -f4 | cut -d"+" -f1).png
-exec_always --no-startup-id xrandr --output eDP-1 --rate 60 --mode 1920x1080 --fb 2560x1080 --panning 2560x1080 --output HDMI-1 --primary --mode 2560x1080 --rate 75 --same-as eDP-1
+# exec_always --no-startup-id xrandr --output eDP-1 --rate 60 --mode 1920x1080 --fb 2560x1080 --panning 2560x1080 --output HDMI-1 --primary --mode 2560x1080 --rate 75 --same-as eDP-1
 
 bindsym $mod+d exec rofi -show
 
@@ -71,7 +74,7 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+# tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty

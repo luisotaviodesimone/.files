@@ -30,6 +30,8 @@ apt_apps=(
     fzf
     brightnessctl
     maim
+    polybar
+    feh
     libnotify-bin
     xautolock
     sshpass
@@ -70,6 +72,7 @@ modularized_installs=(
     ansible
     terraform
     k3d
+    picom
     code
     google-chrome-stable
 )
