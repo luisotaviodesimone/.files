@@ -4,17 +4,16 @@ sudo echo "Starting installation..."
 
 apt_apps=(
     zsh
-    golang
+    tmux
     httpie
-    resolvconf
-    fuse
-    wireguard
     net-tools
+    postgresql-client
     dnsutils
     tldr
     xclip
     fzf
     sshpass
+    ripgrep
 )
 
 for app in "${apt_apps[@]}"; do
@@ -33,12 +32,15 @@ modularized_installs=(
     gh
     starship
     plugins
+    go
     node
     lods
     helm
     kubectl
+    sdkman
     docker
     ansible
+    terraform
     k3d
 )
 
