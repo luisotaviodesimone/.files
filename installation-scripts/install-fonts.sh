@@ -17,3 +17,8 @@ mv /tmp/FiraCodeNerdFont* $HOME/.local/share/fonts
 rm /tmp/FiraCode.zip
 
 fc-cache -fv
+
+# Use jq and curl to download jetbrains mono latest release fonts
+# curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest \
+# | jq '.assets[] | select(.name=="JetBrainsMono.zip") | .browser_download_url' -r \
+# | wget -i -
