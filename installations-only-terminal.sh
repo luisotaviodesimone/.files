@@ -4,7 +4,6 @@ sudo echo "Starting installation..."
 
 apt_apps=(
     zsh
-    tmux
     httpie
     net-tools
     postgresql-client
@@ -29,6 +28,7 @@ export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
 modularized_installs=(
     nvim
+    tmux
     gh
     starship
     plugins

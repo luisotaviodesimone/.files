@@ -13,7 +13,6 @@ apt_installed_apps="$(sudo apt list --installed | awk -F '/' '{ print $1 }')"
 apt_apps=(
     zsh
     ranger
-    tmux
     mlocate
     httpie
     neofetch
@@ -63,6 +62,7 @@ modularized_installs=(
     go
     node
     virtualbox
+    tmux
     vagrant
     lods
     helm
