@@ -39,6 +39,13 @@ apt_apps=(
 
 sudo gpasswd -a luisotaviodesimone video
 
+# Verify if is wsl
+if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
+  sudo add-apt-repository ppa:wslutilities/wslu
+  sudo apt update
+  sudo apt install wslu
+fi
+
 for app in "${apt_apps[@]}"; do
     if [[ $(printf "%s\n" "$apt_installed_apps" | grep -x "$app") ]]; then
         echo -e "$RED $app is already installed$RESET"
