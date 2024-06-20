@@ -13,6 +13,7 @@ apt_apps=(
     fzf
     sshpass
     ripgrep
+    libxml2-utils
 )
 
 for app in "${apt_apps[@]}"; do

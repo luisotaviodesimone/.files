@@ -35,6 +35,7 @@ apt_apps=(
     xautolock
     sshpass
     ripgrep
+    libxml2-utils
 )
 
 sudo gpasswd -a luisotaviodesimone video
