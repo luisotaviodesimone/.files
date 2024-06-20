@@ -59,6 +59,7 @@ done
 
 modularized_configs=(
     config-files
+    ssh
 )
 
 for app in "${modularized_configs[@]}"; do

@@ -102,6 +102,7 @@ done
 modularized_configs=(
     ssh
     config-files
+    keyboard
 )
 
 for app in "${modularized_configs[@]}"; do
