@@ -25,6 +25,7 @@ apt_apps=(
     tldr
     xclip
     gpaste
+    rofi
     gnome-shell-extension-gpaste
     fzf
     brightnessctl

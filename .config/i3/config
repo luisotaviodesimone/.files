@@ -17,9 +17,10 @@ exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 exec_always --no-startup-id picom
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
-exec_always feh --bg-scale ~/.config/i3/i3-wallpaper-$(xrandr --query | grep " primary" | cut -d" " -f4 | cut -d"+" -f1).png
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/i3-wallpaper-$(xrandr --query | grep " connected" | cut -d" " -f3 | cut -d"+" -f1 | head -n 1).png
 # exec_always --no-startup-id xrandr --output eDP-1 --rate 60 --mode 1920x1080 --fb 2560x1080 --panning 2560x1080 --output HDMI-1 --primary --mode 2560x1080 --rate 75 --same-as eDP-1
 
+## Execute rofi as dmenu subtitute
 bindsym $mod+d exec rofi -show
 
 ## Clipboard history

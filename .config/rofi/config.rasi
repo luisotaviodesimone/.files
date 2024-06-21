@@ -1,5 +1,5 @@
 configuration{
-    modi: "drun,window,keys,filebrowser,calc";
+    modi: "drun,window,keys,filebrowser";
     icon-theme: "Oranchelo";
     show-icons: true;
     terminal: "alacritty";
