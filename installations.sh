@@ -77,6 +77,7 @@ modularized_installs=(
     helm
     kubectl
     sdkman
+    greenclip
     docker
     ansible
     terraform
