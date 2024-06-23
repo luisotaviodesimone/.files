@@ -13,3 +13,15 @@ mkdir -p $HOME/.kube/ $HOME/.kube/configs
 touch $HOME/.kube/config
 sudo chmod go-r ~/.kube/config
 
+# Install Kubernetes related tools
+
+# Get kubectl neat latest release
+curl -s https://api.github.com/repos/itaysk/kubectl-neat/releases/latest \
+| jq '.assets[] | select(.name=="kubectl-neat_linux_amd64.tar.gz") | .browser_download_url' -r \
+| wget -i -
+
+mkdir -p ./kubectl-neat_linux_amd64 && tar -xzf kubectl-neat_linux_amd64.tar.gz -C ./kubectl-neat_linux_amd64
+
+mv ./kubectl-neat_linux_amd64/kubectl-neat $HOME/.local/bin
+
+rm -r ./kubectl-neat_linux_amd64 ./kubectl-neat_linux_amd64.tar.gz
