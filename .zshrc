@@ -1,3 +1,5 @@
+fpath=(~/.docker/completions \\$fpath)
+
 # Allow autocompletion script loading
 autoload -Uz compinit && compinit -i
 
