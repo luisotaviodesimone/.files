@@ -1,7 +1,7 @@
 #/usr/bin/bash
 
 if ! isCommandInstalled "cargo"; then
-  echo "Install rust before installing Alacritty"
+    echo "Install rust before installing Alacritty"
 fi
 
 git clone https://github.com/alacritty/alacritty.git
