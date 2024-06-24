@@ -4,7 +4,7 @@ if ! isCommandInstalled "cargo"; then
     echo "Install rust before installing Alacritty"
 fi
 
-git clone https://github.com/alacritty/alacritty.git
+git clone https://github.com/alacritty/alacritty.git --branch=v0.13.2
 cd alacritty
 
 sudo apt install scdoc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
@@ -26,7 +26,6 @@ scdoc < extra/man/alacritty.5.scd | gzip -c | sudo tee /usr/local/share/man/man5
 scdoc < extra/man/alacritty-bindings.5.scd | gzip -c | sudo tee /usr/local/share/man/man5/alacritty-bindings.5.gz > /dev/null
 
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
-echo 'fpath+=${ZDOTDIR:-~}/.zsh_functions' >> ${ZDOTDIR:-~}/.zshrc
 
 cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
 

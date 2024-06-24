@@ -1,4 +1,5 @@
 fpath=(~/.docker/completions \\$fpath)
+fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Allow autocompletion script loading
 autoload -Uz compinit && compinit -i
