@@ -7,6 +7,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export KUBE_EDITOR="/home/luisotaviodesimone/.local/bin/nvim"
 export SDKMAN_DIR="$HOME/.sdkman"
 export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
+export PYENV_ROOT="$HOME/.pyenv"
 
 # >>> juliaup initialize >>>
 
@@ -16,3 +17,7 @@ path=('/home/luisotaviodesimone/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
