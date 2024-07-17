@@ -8,11 +8,17 @@ autoload -Uz compinit && compinit -i
 # https://unix.stackexchange.com/questions/12107/how-to-unfreeze-after-accidentally-pressing-ctrl-s-in-a-terminal
 stty -ixon
 
-setopt SHARE_HISTORY
+setopt sharehistory
+setopt appendhistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
-setopt HIST_EXPIRE_DUPS_FIRST
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
 
 # Enable case insensitive matches if there are no case sensitive matches
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
@@ -22,6 +28,8 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "$key[Up]" history-beginning-search-backward
 bindkey "$key[Down]" history-beginning-search-forward
+bindkey "^p" history-search-backward
+bindkey "^n" history-search-forward
 
 # Environment variables
 . ~/.files/env.sh
