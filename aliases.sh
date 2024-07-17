@@ -35,3 +35,8 @@ alias ls="ls --color=auto"
 alias l="ls -l"
 alias ll="ls -l"
 alias la="ls -la"
+
+copyk3s ()
+{
+  ssh $1 "echo '$2' | sudo -S cat /etc/rancher/k3s/k3s.yaml" | tee -a $3
+}
