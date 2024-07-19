@@ -11,8 +11,8 @@
 
 set $mod Mod4
 
-exec_always "setxkbmap -layout us -variant intl"
-exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
+exec_always --no-startup-id "setxkbmap -layout us -variant intl"
+exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 
 exec_always --no-startup-id picom
 exec_always --no-startup-id killall polybar
