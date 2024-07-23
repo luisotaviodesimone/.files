@@ -80,6 +80,7 @@ modularized_installs=(
     greenclip
     docker
     ansible
+    pyenv
     terraform
     k3d
     picom
