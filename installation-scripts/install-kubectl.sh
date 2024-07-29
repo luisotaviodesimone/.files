@@ -25,3 +25,15 @@ mkdir -p ./kubectl-neat_linux_amd64 && tar -xzf kubectl-neat_linux_amd64.tar.gz 
 mv ./kubectl-neat_linux_amd64/kubectl-neat $HOME/.local/bin
 
 rm -r ./kubectl-neat_linux_amd64 ./kubectl-neat_linux_amd64.tar.gz
+
+# Get kubeconform latest release
+curl -s https://api.github.com/repos/yannh/kubeconform/releases/latest \
+| jq '.assets[] | select(.name=="kubeconform-linux-amd64.tar.gz") | .browser_download_url' -r \
+| wget -i -
+
+tar -xzf kubeconform-linux-amd64.tar.gz
+
+mv ./kubeconform $HOME/.local/bin
+
+rm -r ./kubeconform-linux-amd64.tar.gz
+
