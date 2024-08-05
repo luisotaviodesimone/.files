@@ -23,3 +23,7 @@ else
 sudo groupadd docker
 sudo usermod -aG docker $USER
 fi
+
+mkdir -p ~/.docker/completions
+docker completion zsh > ~/.docker/completions/_docker
+curl https://raw.githubusercontent.com/zsh-users/zsh-completions/master/src/_golang > ~/.docker/completions/_golang
