@@ -3,8 +3,8 @@ sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl
 
 # Add kubernetes right repository
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 #Install kubernetes
 sudo apt update && sudo apt install kubectl -y
@@ -35,5 +35,5 @@ tar -xzf kubeconform-linux-amd64.tar.gz
 
 mv ./kubeconform $HOME/.local/bin
 
-rm -r ./kubeconform-linux-amd64.tar.gz
+rm -r ./kubeconform-linux-amd64.tar.gz LICENSE
 
