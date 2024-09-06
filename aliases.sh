@@ -38,7 +38,13 @@ alias l="ls -l"
 alias ll="ls -l"
 alias la="ls -la"
 
+# Bat alias
+alias cat="batcat -p -P"
+
 copyk3s ()
 {
-  ssh $1 "echo '$2' | sudo -S cat /etc/rancher/k3s/k3s.yaml" | tee -a $3
+  host=$1
+  password=$2
+  file_to_append_to=$3
+  ssh $host "echo '$password' | sudo -S cat /etc/rancher/k3s/k3s.yaml" | tee -a $file_to_append_to
 }

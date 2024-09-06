@@ -30,6 +30,7 @@ apt_apps=(
     fzf
     brightnessctl
     maim
+    bat
     polybar
     feh
     libnotify-bin
