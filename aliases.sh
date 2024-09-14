@@ -19,7 +19,7 @@ alias copy="xclip -selection c"
 alias clc="fc -ln -1 | copy"
 alias instaK8s="k3d cluster create --servers 3 --agents 3 local-cluster && k3d kubeconfig get local-cluster | sed s/k3d-//g > ~/.kube/configs/local-cluster"
 alias kitty-theme="kitty +kitten themes --reload-in=all"
-alias gb-clean="[[ -d .git ]] && git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done || echo 'Não é um repositório'"
+# alias gb-clean="[[ -d .git ]] && git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done || echo 'Não é um repositório'"
 
 # Kubectl shortcuts
 # alias kok="kubectl get pods --all-namespaces -o wide | awk -F " *|/" '($3!=$4 || $5!="Running") && $5!="Completed" {print $0}'"
