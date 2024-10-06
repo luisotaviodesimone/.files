@@ -29,6 +29,7 @@ Set-Variable -Name "VIMCONFIG" -Value $HOME\AppData\Local\nvim\init.vim
 Set-Variable -Name "VIMDIRECTORY" -Value $HOME\AppData\Local\nvim
 Set-Variable -Name "TERMINAL_HISTORY" -Value (Get-PSReadlineOption).HistorySavePath
 Set-Variable -Name "HOSTS_FILE" -Value "C:\Windows\System32\Drivers\etc\hosts"
+
 # Check this later
 Set-Variable -Name "GIT_SSH" -Value "C:\Windows\System32\OpenSSH\ssh.exe"
 
