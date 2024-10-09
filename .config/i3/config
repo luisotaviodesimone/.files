@@ -191,6 +191,10 @@ workspace $ws1 gaps outer 24
 
 smart_gaps inverse_outer
 
+bindsym $mod+t border normal 0
+bindsym $mod+u border none
+bindsym $mod+y border pixel 8
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
