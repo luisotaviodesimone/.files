@@ -34,11 +34,11 @@ bindkey "^n" history-search-forward
 # Environment variables
 . ~/.files/env.sh
 
-# User aliases
-. ~/.files/aliases.sh
-
 # Completion scripts
 . ~/.files/completions.sh
+
+# User aliases
+. ~/.files/aliases.sh
 
 # Plugings sourcing
 . ~/.files/plugins.sh
