@@ -21,3 +21,6 @@ export PATH
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Set environment vars in file
+set -a && source $DOT_FILES_DIR/.env && set +a

@@ -2,4 +2,4 @@ packer_compiled.lua
 lazy-lock.json
 plugins/*
 .config/tmux/plugins
-
+.env
