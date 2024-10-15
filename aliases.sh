@@ -47,5 +47,9 @@ copyk3s ()
   host=$1
   password=$2
   file_to_append_to=$3
-  ssh $host "echo '$password' | sudo -S cat /etc/rancher/k3s/k3s.yaml" | tee -a $file_to_append_to
+  cluster_name=$4
+  ssh $host "echo '$password' | sudo -S cat /etc/rancher/k3s/k3s.yaml" | tee $file_to_append_to
+  sed -i "s|default|$cluster_name|g" $file_to_append_to
+  node_ip=$(echo -n $host | grep -oP "(?<=@).*")
+  sed -i "s|127.0.0.1|$node_ip|g" $file_to_append_to
 }
