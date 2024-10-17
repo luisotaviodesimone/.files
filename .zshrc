@@ -1,4 +1,5 @@
 fpath=(~/.docker/completions \\$fpath)
+fpath=(~/.local/completions \\$fpath)
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Allow autocompletion script loading
@@ -36,6 +37,9 @@ bindkey "^n" history-search-forward
 
 # Completion scripts
 . ~/.files/completions.sh
+
+# Load starship command prompt
+eval "$(starship init zsh)"
 
 # User aliases
 . ~/.files/aliases.sh

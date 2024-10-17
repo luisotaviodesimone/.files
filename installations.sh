@@ -86,6 +86,7 @@ modularized_installs=(
     k3d
     picom
     code
+    autocompletes
     google-chrome-stable
 )
 
