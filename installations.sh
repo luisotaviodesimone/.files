@@ -38,6 +38,7 @@ apt_apps=(
     sshpass
     ripgrep
     libxml2-utils
+    jq
 )
 
 sudo gpasswd -a luisotaviodesimone video
