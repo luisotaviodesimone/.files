@@ -43,6 +43,7 @@ modularized_installs=(
     ansible
     terraform
     k3d
+    autocompletes
 )
 
 for app in "${modularized_installs[@]}"; do
