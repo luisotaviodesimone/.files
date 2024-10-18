@@ -88,6 +88,7 @@ modularized_installs=(
     picom
     code
     autocompletes
+    alacritty
     google-chrome-stable
 )
 
