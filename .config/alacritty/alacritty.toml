@@ -1,13 +1,11 @@
-import = [
-  "/home/luisotaviodesimone/.files/.config/alacritty/Dracula.toml"
-]
+import = ["/home/luisotaviodesimone/.files/.config/alacritty/Dracula.toml"]
 
 [keyboard]
 bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },
-  { key = "Left",  mods = "Alt", chars = "\u001BB" },
-  { key = "k",  mods = "Control|Shift", action = "ScrollLineUp" },
-  { key = "j",  mods = "Control|Shift", action = "ScrollLineDown" },
+  { key = "Left", mods = "Alt", chars = "\u001BB" },
+  { key = "k", mods = "Control|Shift", action = "ScrollLineUp" },
+  { key = "j", mods = "Control|Shift", action = "ScrollLineDown" },
 ]
 
 [font]
@@ -18,3 +16,4 @@ bold_italic = { family = "JetBrainsMonoNerdFont", style = "Bold Italic" }
 
 [window]
 opacity = 1.00
+padding = { x = 4, y = 4 }
