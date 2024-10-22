@@ -111,6 +111,7 @@ modularized_configs=(
     ssh
     config-files
     keyboard
+    git
 )
 
 for app in "${modularized_configs[@]}"; do
