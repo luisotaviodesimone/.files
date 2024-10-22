@@ -39,6 +39,8 @@ apt_apps=(
     ripgrep
     libxml2-utils
     jq
+    fuse
+    libfuse2
 )
 
 sudo gpasswd -a luisotaviodesimone video

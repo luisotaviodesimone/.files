@@ -14,6 +14,8 @@ apt_apps=(
     sshpass
     ripgrep
     libxml2-utils
+    fuse
+    libfuse2
 )
 
 for app in "${apt_apps[@]}"; do
