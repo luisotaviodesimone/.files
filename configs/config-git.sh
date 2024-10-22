@@ -10,6 +10,7 @@ git config --global mergetool.keepBackup false
 git config --global diff.colorMoved true
 git config --global difftool.neovim.cmd 'nvim -d "$LOCAL" "$REMOTE"'
 git config --global diff.tool neovim
+git config --global diff.prompt false
 
 # Always enable coloring
 git config --global color.ui auto
