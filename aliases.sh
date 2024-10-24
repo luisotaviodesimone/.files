@@ -6,8 +6,12 @@ alias alctyconfig="nvim $HOME/.config/alacritty/alacritty.toml"
 alias tmuxconfig="nvim $HOME/.config/tmux/tmux.conf"
 
 # CLI shortcuts
-alias kubectl="kubecolor"
-compdef kubecolor="kubectl"
+
+if (which kubectl > /dev/null); then
+  alias kubectl="kubecolor"
+  compdef kubecolor="kubectl"
+fi
+
 alias k="kubectl"
 alias vim="nvim"
 alias t="TERM=xterm-256color tmux"

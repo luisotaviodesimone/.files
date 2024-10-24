@@ -39,7 +39,9 @@ bindkey "^n" history-search-forward
 . ~/.files/completions.sh
 
 # Load starship command prompt
-eval "$(starship init zsh)"
+if (which starship > /dev/null); then
+  eval "$(starship init zsh)"
+fi
 
 # User aliases
 . ~/.files/aliases.sh

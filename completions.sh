@@ -2,7 +2,9 @@ source $DOT_FILES_DIR/utils.sh
 autoload -U +X bashcompinit && bashcompinit
 
 # terraform
-complete -o nospace -C /usr/bin/terraform terraform
+if isCommandInstalled "terraform"; then
+    complete -o nospace -C /usr/bin/terraform terraform
+fi
 
 if isCommandInstalled "vagrant"; then
     complete -o nospace -C /usr/bin/vagrant vagrant
