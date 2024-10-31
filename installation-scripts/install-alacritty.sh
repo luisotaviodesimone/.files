@@ -4,7 +4,7 @@ if ! isCommandInstalled "cargo"; then
     echo "Install rust before installing Alacritty"
 fi
 
-git clone https://github.com/alacritty/alacritty.git --branch=v0.13.2
+git clone https://github.com/alacritty/alacritty.git --branch=v0.14
 cd alacritty
 
 sudo apt install scdoc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
