@@ -43,7 +43,8 @@ alias l="ls -l"
 alias ll="ls -l"
 alias la="ls -la"
 
-# Bat alias
+# Bat alias with fallback in case batcat is called only bat
+
 command -v batcat > /dev/null && CMD=batcat || CMD=bat && alias cat="$CMD -p -P"
 unset CMD
 
