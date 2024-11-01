@@ -44,7 +44,8 @@ alias ll="ls -l"
 alias la="ls -la"
 
 # Bat alias
-alias cat="batcat -p -P"
+command -v batcat > /dev/null && CMD=batcat || CMD=bat && alias cat="$CMD -p -P"
+unset CMD
 
 copyk3s ()
 {
