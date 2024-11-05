@@ -193,7 +193,7 @@ smart_gaps inverse_outer
 
 bindsym $mod+t border normal 0
 bindsym $mod+u border none
-bindsym $mod+y border pixel 8
+bindsym $mod+y border pixel 4
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

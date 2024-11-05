@@ -4,6 +4,7 @@ alias kittyconfig="nvim $HOME/.config/kitty/kitty.conf"
 alias ssconfig="nvim $HOME/.config/starship/starship.toml"
 alias alctyconfig="nvim $HOME/.config/alacritty/alacritty.toml"
 alias tmuxconfig="nvim $HOME/.config/tmux/tmux.conf"
+alias i3config="nvim $HOME/.config/i3/config"
 
 # CLI shortcuts
 
