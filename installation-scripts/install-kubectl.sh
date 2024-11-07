@@ -27,7 +27,8 @@ curl -s https://api.github.com/repos/itaysk/kubectl-neat/releases/latest \
 
 mkdir -p ./kubectl-neat_linux_amd64 && tar -xzf kubectl-neat_linux_amd64.tar.gz -C ./kubectl-neat_linux_amd64
 
-mv ./kubectl-neat_linux_amd64/kubectl-neat $HOME/.local/bin
+mkdir -p $HOME/.local/bin
+mv ./kubectl-neat_linux_amd64/kubectl-neat $HOME/.local/bin/
 
 rm -r ./kubectl-neat_linux_amd64 ./kubectl-neat_linux_amd64.tar.gz
 
