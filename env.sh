@@ -9,6 +9,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
 export PYENV_ROOT="$HOME/.pyenv"
 export TERM="xterm-256color"
+export LC_ALL="en_US.UTF-8"
 
 # >>> juliaup initialize >>>
 
