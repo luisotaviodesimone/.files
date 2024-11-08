@@ -43,53 +43,54 @@ apt_apps=(
 )
 
 pacman_apps=(
-    wget
-    zsh
+    alacritty
+    bat
+    bind
+    brightnessctl
+    discord
+    docker
+    feh
     firefox
     fuse3
-    ntfs-3g
-    alacritty
-    ttf-jetbrains-mono-nerd
-    ttf-ubuntu-font-family
-    ttf-dejavu
-    ttf-freefont
-    ttf-liberation
-    ttf-droid
-    ttf-roboto
-    ttf-firacode-nerd
-    tmux
-    ripgrep
+    github-cli
+    helm
+    i3
     jq
     kubectl
-    wireguard-tools
-    systemd-resolvconf
-    bat
-    sshpass
-    helm
-    zip
-    picom
-    nmap
-    bind
-    net-tools
-    rofi
-    brightnessctl
-    maim
-    polybar
-    feh
     libnotify
     libqalculate
+    maim
     neofetch
-    python-setuptools
-    xclip
-    github-cli
-    discord
-    i3
-    xorg-server
-    xorg-apps
-    xorg-xinit
+    net-tools
+    nmap
     noto-fonts
+    ntfs-3g
+    picom
+    polybar
+    python-setuptools
+    ripgrep
+    rofi
+    sshpass
+    systemd-resolvconf
     terminus-font
+    tmux
+    ttf-dejavu
+    ttf-droid
+    ttf-firacode-nerd
+    ttf-freefont
+    ttf-jetbrains-mono-nerd
+    ttf-liberation
+    ttf-roboto
+    ttf-ubuntu-font-family
+    wget
+    wireguard-tools
     wireless_tools
+    xclip
+    xorg-apps
+    xorg-server
+    xorg-xinit
+    zip
+    zsh
 )
 
 sudo gpasswd -a luisotaviodesimone video
@@ -136,6 +137,7 @@ os_agnostic_installs=(
     sdkman
     k3d
     autocompletes
+    greenclip
 )
 
 modularized_installs=(
@@ -150,7 +152,6 @@ modularized_installs=(
     vagrant
     helm
     kubectl
-    greenclip
     docker
     ansible
     pyenv
