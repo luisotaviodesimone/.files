@@ -25,7 +25,8 @@ exec_always --no-startup-id feh --bg-fill ~/.config/i3/i3-wallpaper-$(xrandr --q
 bindsym $mod+d exec rofi -show
 
 ## Clipboard history
-exec_always --no-startup-id greenclip daemon
+exec_always --no-startup-id killall greenclip
+exec_always --no-startup-id sleep .1 && greenclip daemon
 bindsym Shift+$mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard
 
 ## Brightness control
