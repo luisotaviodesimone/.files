@@ -8,7 +8,7 @@ alias i3config="nvim $HOME/.config/i3/config"
 
 # CLI shortcuts
 
-if (which kubectl > /dev/null); then
+if (which kubectl > /dev/null && [[ $SHELL == "/bin/zsh" ]]); then
   alias kubectl="kubecolor"
   compdef kubecolor="kubectl"
 fi

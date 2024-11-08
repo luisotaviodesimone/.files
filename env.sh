@@ -20,7 +20,7 @@ export PATH
 # <<< juliaup initialize <<<
 
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-if (which pyenv > /dev/null); then
+if command -v "pyenv" >/dev/null 2>&1 || alias | grep -q "pyenv"; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi

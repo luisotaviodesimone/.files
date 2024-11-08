@@ -3,12 +3,11 @@
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
 source $DOT_FILES_DIR/utils.sh
-source $DOT_FILES_DIR/aliases.sh
+# Disable the alias script for now
+# source $DOT_FILES_DIR/aliases.sh
 source $DOT_FILES_DIR/env.sh
 
 forceModularReinstall=$1
-
-apt_installed_apps="$(sudo apt list --installed | awk -F '/' '{ print $1 }')"
 
 apt_apps=(
     zsh
@@ -43,33 +42,90 @@ apt_apps=(
     libfuse2
 )
 
+pacman_apps=(
+    wget
+    zsh
+    firefox
+    fuse3
+    ntfs-3g
+    alacritty
+    ttf-jetbrains-mono-nerd
+    tmux
+    ripgrep
+    jq
+    kubectl
+    wireguard-tools
+    systemd-resolvconf
+    bat
+    sshpass
+    helm
+    zip
+    picom
+    nmap
+    bind
+    net-tools
+    rofi
+    brightnessctl
+    maim
+    polybar
+    feh
+    libnotify
+    libqalculate
+    neofetch
+    python-setuptools
+    xclip
+    github-cli
+)
+
 sudo gpasswd -a luisotaviodesimone video
 
 # Verify if is wsl
 if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
-  sudo add-apt-repository ppa:wslutilities/wslu
-  sudo apt update
-  sudo apt install wslu
+    sudo add-apt-repository ppa:wslutilities/wslu
+    sudo apt update
+    sudo apt install wslu
 fi
 
-for app in "${apt_apps[@]}"; do
-    if [[ $(printf "%s\n" "$apt_installed_apps" | grep -x "$app") ]]; then
-        echo -e "$RED $app is already installed$RESET"
-        continue
-    fi
-    echo -e "$YELLOW Installing $app...$RESET"
-    sudo apt install "$app" -y
-done
+. /etc/os-release
+
+if [[ $ID == arch ]]; then
+
+    for app in "${pacman_apps[@]}"; do
+        echo -e "$YELLOW Installing $app...$RESET"
+        sudo pacman -S --noconfirm "$app"
+    done
+
+elif [[ $ID == debian || $ID == pop || $ID == ubuntu || $ID_LIKE == debian || $ID_LIKE == ubuntu ]]; then
+    apt_installed_apps="$(sudo apt list --installed | awk -F '/' '{ print $1 }')"
+
+    for app in "${apt_apps[@]}"; do
+        if [[ $(printf "%s\n" "$apt_installed_apps" | grep -x "$app") ]]; then
+            echo -e "$RED $app is already installed$RESET"
+            continue
+        fi
+        echo -e "$YELLOW Installing $app...$RESET"
+        sudo apt install "$app" -y
+    done
+
+fi
+
 
 # Activate gnome-gpaste-extension
 gnome-extensions enable GPaste@gnome-shell-extensions.gnome.org
 
 ### Add modularized installation scripts
+os_agnostic_installs=(
+    starship
+    plugins
+    lods
+    sdkman
+    k3d
+    autocompletes
+)
+
 modularized_installs=(
     nvim
     gh
-    starship
-    plugins
     fonts
     kitty
     go
@@ -77,24 +133,37 @@ modularized_installs=(
     virtualbox
     tmux
     vagrant
-    lods
     helm
     kubectl
-    sdkman
     greenclip
     docker
     ansible
     pyenv
     terraform
-    k3d
     picom
     code
-    autocompletes
     alacritty
     google-chrome-stable
 )
 
-for app in "${modularized_installs[@]}"; do
+
+if [[ $ID == debian || $ID == pop || $ID == ubuntu || $ID_LIKE == debian || $ID_LIKE == ubuntu ]]; then
+
+    for app in "${modularized_installs[@]}"; do
+
+        if [[ "$forceModularReinstall" != "--reinstall" ]]; then
+            if isCommandInstalled "$app"; then
+                echo -e "$RED $app is already installed$RESET"
+                continue
+            fi
+        fi
+
+        echo -e "$YELLOW Installing $app...$RESET"
+        . $DOT_FILES_DIR/installation-scripts/install-$app.sh
+    done
+fi
+
+for app in "${os_agnostic_installs[@]}"; do
 
     if [[ "$forceModularReinstall" != "--reinstall" ]]; then
         if isCommandInstalled "$app"; then
@@ -128,14 +197,14 @@ while true; do
     read answer
 
     case $answer in
-    [Yy]*)
-        x-terminal-emulator --hold --detach zsh -c ". $DOT_FILES_DIR/installation-scripts/install-flatpak-apps.sh"
-        break
-        ;;
-    [Nn]*)
-        echo -e "$GREEN Configuração terminada! $RESET"
-        break
-        ;;
-    *) echo -e "$RED Please answer yes or no. $RESET" ;;
+        [Yy]*)
+            x-terminal-emulator --hold --detach zsh -c ". $DOT_FILES_DIR/installation-scripts/install-flatpak-apps.sh"
+            break
+            ;;
+        [Nn]*)
+            echo -e "$GREEN Configuração terminada! $RESET"
+            break
+            ;;
+        *) echo -e "$RED Please answer yes or no. $RESET" ;;
     esac
 done
