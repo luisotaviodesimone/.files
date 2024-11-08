@@ -191,6 +191,8 @@ workspace $ws1 gaps outer 24
 
 smart_gaps inverse_outer
 
+default_border pixel 4
+
 bindsym $mod+t border normal 0
 bindsym $mod+u border none
 bindsym $mod+y border pixel 4

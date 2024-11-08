@@ -50,6 +50,13 @@ pacman_apps=(
     ntfs-3g
     alacritty
     ttf-jetbrains-mono-nerd
+    ttf-ubuntu-font-family
+    ttf-dejavu
+    ttf-freefont
+    ttf-liberation
+    ttf-droid
+    ttf-roboto
+    ttf-firacode-nerd
     tmux
     ripgrep
     jq
@@ -75,6 +82,14 @@ pacman_apps=(
     python-setuptools
     xclip
     github-cli
+    discord
+    i3
+    xorg-server
+    xorg-apps
+    xorg-xinit
+    noto-fonts
+    terminus-font
+    wireless_tools
 )
 
 sudo gpasswd -a luisotaviodesimone video
