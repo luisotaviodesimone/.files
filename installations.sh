@@ -59,9 +59,11 @@ pacman_apps=(
     kubectl
     libnotify
     libqalculate
+    lib32-systemd
     maim
     neofetch
     net-tools
+    neovim
     nmap
     noto-fonts
     ntfs-3g
