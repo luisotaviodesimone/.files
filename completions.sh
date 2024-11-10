@@ -10,6 +10,10 @@ if isCommandInstalled "vagrant"; then
     complete -o nospace -C /usr/bin/vagrant vagrant
 fi
 
+if isCommandInstalled "vault"; then
+    complete -o nospace -C /usr/bin/vault vault
+fi
+
 # NVM Cli
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
