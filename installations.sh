@@ -47,6 +47,7 @@ pacman_apps=(
     bat
     bind
     brightnessctl
+    btop
     discord
     docker
     feh
