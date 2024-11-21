@@ -71,6 +71,7 @@ pacman_apps=(
     picom
     polybar
     python-setuptools
+    python-pipx
     ripgrep
     rofi
     sshpass
