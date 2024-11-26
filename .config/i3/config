@@ -36,6 +36,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
 ## Screen lock control
 bindsym Control+$mod+l exec "i3lock -c 000000"
 exec_always "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+exec_always "xautolock -time 12 -locker \"systemctl suspend\" -detectsleep"
 
 ## Save and copy to clipboard screenshots
 bindsym Print exec path="$HOME/Pictures/Screenshots/screenshot_$(date +%F_%T).png" && maim "$path" && xclip -selection clipboard -t image/png "$path"

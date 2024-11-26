@@ -89,6 +89,7 @@ pacman_apps=(
     wget
     wireguard-tools
     wireless_tools
+    xautolock
     xclip
     xorg-apps
     xorg-server
