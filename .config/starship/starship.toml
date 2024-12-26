@@ -15,6 +15,9 @@ disabled = false
 format = "[$symbol$context(:$namespace)]($style)"
 disabled = false
 
+[aws]
+disabled = true
+
 [username]
 show_always = true
 
