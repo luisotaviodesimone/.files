@@ -2,7 +2,7 @@
 
 # Check if zsh is installed and is set to default shell
 
-if [[ -f /bin/zsh ]]; then
+if (which zsh > /dev/null); then
     if [[ $SHELL == *"zsh"* ]]; then
         echo -e "$RED 'zsh' is already the default shell $RESET"
     else
