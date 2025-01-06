@@ -65,6 +65,7 @@ modularized_configs=(
     config-files
     ssh
     git
+    zsh
 )
 
 for app in "${modularized_configs[@]}"; do

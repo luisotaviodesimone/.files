@@ -204,6 +204,7 @@ modularized_configs=(
     config-files
     keyboard
     git
+    zsh
 )
 
 for app in "${modularized_configs[@]}"; do
