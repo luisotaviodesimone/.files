@@ -8,9 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
       ./luisotaviodesimone.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   # Configure user

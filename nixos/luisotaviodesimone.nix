@@ -41,6 +41,12 @@ in
         fzf
         dig
       ];
+      # Your hashed passord using the command `mkpasswd -m sha-512`
+      hashedPassword = "";
+      openssh.authorizedKeys.keys = [
+        # Your public ssh key
+        ""
+      ];
     };
   };
 
