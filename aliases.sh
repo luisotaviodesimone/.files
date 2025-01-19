@@ -40,7 +40,7 @@ alias gst="git status"
 # Directory Aliases
 alias ..="cd .."
 alias ls="ls --color=auto"
-alias l="ls -l"
+alias l="ls -1"
 alias ll="ls -l"
 alias la="ls -la"
 

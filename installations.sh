@@ -48,6 +48,9 @@ pacman_apps=(
     bind
     brightnessctl
     btop
+    bluez
+    bluez-utils
+    bluetui
     discord
     docker
     feh
