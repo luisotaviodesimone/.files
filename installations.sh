@@ -53,6 +53,7 @@ pacman_apps=(
     bluetui
     discord
     docker
+    dunst
     feh
     firefox
     fuse3
