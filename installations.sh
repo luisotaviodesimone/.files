@@ -51,6 +51,7 @@ pacman_apps=(
     bluez
     bluez-utils
     bluetui
+    dbeaver
     discord
     docker
     dunst
