@@ -10,6 +10,8 @@ export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/
 export PYENV_ROOT="$HOME/.pyenv"
 export TERM="xterm-256color"
 export PIPENV_VENV_IN_PROJECT=1
+# this is necessary in order to use lombok in java projects
+export JDTLS_JVM_ARGS="-javaagent:/home/luisotaviodesimone/.local/share/nvim/mason/share/jdtls/lombok.jar"
 
 # >>> juliaup initialize >>>
 
