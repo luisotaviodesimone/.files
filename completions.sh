@@ -1,7 +1,6 @@
 source $DOT_FILES_DIR/utils.sh
 autoload -U +X bashcompinit && bashcompinit
 
-# terraform
 if isCommandInstalled "terraform"; then
     complete -o nospace -C /usr/bin/terraform terraform
 fi
@@ -12,6 +11,10 @@ fi
 
 if isCommandInstalled "vault"; then
     complete -o nospace -C /usr/bin/vault vault
+fi
+
+if isCommandInstalled "tofu"; then
+    complete -o nospace -C /usr/bin/tofu tofu
 fi
 
 # NVM Cli
