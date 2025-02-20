@@ -21,6 +21,8 @@ fi
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# Rust's Cargo
+. "$HOME/.cargo/env"
 
 # SDK Man CLI
 if ! isCommandInstalled "sdk"; then

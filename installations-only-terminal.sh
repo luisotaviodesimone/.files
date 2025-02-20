@@ -16,6 +16,11 @@ apt_apps=(
     libxml2-utils
     fuse
     libfuse2
+    jq
+    build-essential
+    unzip
+    python3.10-venv
+    bat
 )
 
 for app in "${apt_apps[@]}"; do
@@ -46,6 +51,7 @@ modularized_installs=(
     terraform
     k3d
     autocompletes
+    rust
 )
 
 for app in "${modularized_installs[@]}"; do
