@@ -34,6 +34,9 @@ alias k-get-all="kubectl api-resources --verbs=list --namespaced -o name | xargs
 alias kc="kubectl config use-context"
 alias kn="kubectl config set-context --current --namespace"
 
+# Docker shortcuts
+alias dcu="docker context use"
+
 # Git Aliases
 alias gst="git status"
 

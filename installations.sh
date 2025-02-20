@@ -170,6 +170,7 @@ modularized_installs=(
     code
     alacritty
     google-chrome-stable
+    mssql-sqlcmd
 )
 
 
