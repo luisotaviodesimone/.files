@@ -3,24 +3,32 @@
 sudo echo "Starting installation..."
 
 apt_apps=(
-    zsh
+    bat
+    build-essential
+    dnsutils
+    fuse
+    fzf
     httpie
+    jq
+    libbz2-dev
+    libffi-dev
+    libfuse2
+    libncurses5-dev
+    libreadline-dev
+    libsqlite3-dev
+    libssl-dev
+    libxml2-utils
     net-tools
     postgresql-client
-    dnsutils
-    tldr
-    xclip
-    fzf
-    sshpass
-    ripgrep
-    libxml2-utils
-    fuse
-    libfuse2
-    jq
-    build-essential
-    unzip
     python3.10-venv
-    bat
+    ripgrep
+    sshpass
+    tldr
+    unzip
+    xclip
+    zlib1g
+    zlib1g-dev
+    zsh
 )
 
 for app in "${apt_apps[@]}"; do

@@ -10,36 +10,48 @@ source $DOT_FILES_DIR/env.sh
 forceModularReinstall=$1
 
 apt_apps=(
-    zsh
-    ranger
-    mlocate
-    httpie
-    neofetch
-    resolvconf
-    wireguard
-    net-tools
-    postgresql-client
-    dnsutils
-    btop
-    tldr
-    xclip
-    gpaste
-    rofi
-    gnome-shell-extension-gpaste
-    fzf
-    brightnessctl
-    maim
     bat
-    polybar
+    brightnessctl
+    btop
+    build-essential
+    dnsutils
     feh
-    libnotify-bin
-    xautolock
-    sshpass
-    ripgrep
-    libxml2-utils
-    jq
     fuse
+    fzf
+    gcc
+    gnome-shell-extension-gpaste
+    gpaste
+    httpie
+    jq
+    libbz2-dev
+    libffi-dev
     libfuse2
+    libncurses5-dev
+    libnotify-bin
+    libreadline-dev
+    libsqlite3-dev
+    libssl-dev
+    libxml2-utils
+    maim
+    make
+    mlocate
+    neofetch
+    net-tools
+    polybar
+    postgresql-client
+    python3.10-venv
+    ranger
+    resolvconf
+    ripgrep
+    rofi
+    sshpass
+    tldr
+    wireguard
+    xautolock
+    xclip
+    zlib1g
+    zlib1g-dev
+    zsh
 )
 
 pacman_apps=(
