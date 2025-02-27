@@ -19,6 +19,7 @@ apt_apps=(
     libssl-dev
     libxml2-utils
     net-tools
+    nfs-common
     postgresql-client
     python3.10-venv
     ripgrep

@@ -37,6 +37,7 @@ apt_apps=(
     mlocate
     neofetch
     net-tools
+    nfs-common
     polybar
     postgresql-client
     python3.10-venv
