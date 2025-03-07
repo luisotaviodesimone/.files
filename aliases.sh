@@ -9,8 +9,8 @@ alias i3config="nvim $HOME/.config/i3/config"
 # CLI shortcuts
 
 if (which kubectl > /dev/null && [[ $SHELL == "/bin/zsh" ]] || [[ $SHELL == "/usr/bin/zsh" ]]); then
-  alias kubectl="kubecolor"
-  compdef kubecolor="kubectl"
+    alias kubectl="kubecolor"
+    compdef kubecolor="kubectl"
 fi
 
 alias k="kubectl"
@@ -21,7 +21,7 @@ alias tf="terraform"
 alias explorer="explorer.exe"
 
 # Tools shortcuts
-alias apply="source $HOME/.zshrc"
+alias apply="exec $SHELL"
 alias copy="xclip -selection c"
 alias clc="fc -ln -1 | copy"
 alias instaK8s="k3d cluster create --servers 3 --agents 3 local-cluster && k3d kubeconfig get local-cluster | sed s/k3d-//g > ~/.kube/configs/local-cluster"
@@ -54,12 +54,17 @@ unset CMD
 
 copyk3s ()
 {
-  host=$1
-  password=$2
-  file_to_append_to=$3
-  cluster_name=$4
-  ssh $host "echo '$password' | sudo -S cat /etc/rancher/k3s/k3s.yaml" | tee $file_to_append_to
-  sed -i "s|default|$cluster_name|g" $file_to_append_to
-  node_ip=$(echo -n $host | grep -oP "(?<=@).*")
-  sed -i "s|127.0.0.1|$node_ip|g" $file_to_append_to
+    host=$1
+    password=$2
+    file_to_append_to=$3
+    cluster_name=$4
+    ssh $host "echo '$password' | sudo -S cat /etc/rancher/k3s/k3s.yaml" | tee $file_to_append_to
+    sed -i "s|default|$cluster_name|g" $file_to_append_to
+    node_ip=$(echo -n $host | grep -oP "(?<=@).*")
+    sed -i "s|127.0.0.1|$node_ip|g" $file_to_append_to
+}
+
+slugify ()
+{
+    echo "$1" | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]'
 }
