@@ -13,6 +13,7 @@ if (which kubectl > /dev/null && [[ $SHELL == "/bin/zsh" ]] || [[ $SHELL == "/us
     compdef kubecolor="kubectl"
 fi
 
+# Tools shortcuts
 alias k="kubectl"
 alias vim="nvim"
 alias t="TERM=xterm-256color tmux"
@@ -20,12 +21,13 @@ alias ss="starship"
 alias tf="terraform"
 alias explorer="explorer.exe"
 
-# Tools shortcuts
 alias apply="exec $SHELL"
 alias copy="xclip -selection c"
 alias clc="fc -ln -1 | copy"
 alias instaK8s="k3d cluster create --servers 3 --agents 3 local-cluster && k3d kubeconfig get local-cluster | sed s/k3d-//g > ~/.kube/configs/local-cluster"
 alias kitty-theme="kitty +kitten themes --reload-in=all"
+alias a=". ./.venv/bin/activate"
+alias d="deactivate"
 # alias gb-clean="[[ -d .git ]] && git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done || echo 'Não é um repositório'"
 
 # Kubectl shortcuts
