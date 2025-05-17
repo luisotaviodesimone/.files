@@ -66,6 +66,13 @@ copyk3s ()
     sed -i "s|127.0.0.1|$node_ip|g" $file_to_append_to
 }
 
+topodsbynode ()
+{
+    NODE_NAME="$1"
+    echo "Getting metric from pods running on node $NODE_NAME..."
+    kubectl get pods -A -o wide --no-headers | grep "$NODE_NAME" | awk '{print $1, $2}' | xargs -I{} $SHELL -c 'ns=$(echo {} | cut -d" " -f1); pod=$(echo {} | cut -d" " -f2); kubectl top pod --no-headers "$pod" -n "$ns"' | column -t -N NAME,CPU,MEMORY | awk '{print $3, $2, $1}' | sort -h | column -t
+}
+
 slugify ()
 {
     echo "$1" | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]'
