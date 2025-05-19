@@ -25,7 +25,7 @@ export PATH
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v "pyenv" >/dev/null 2>&1 || alias | grep -q "pyenv"; then
   eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+  # eval "$(pyenv virtualenv-init -)" # not ideal
 fi
 
 # Set environment vars in file
