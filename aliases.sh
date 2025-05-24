@@ -47,7 +47,8 @@ alias ..="cd .."
 alias ls="ls --color=auto"
 alias l="ls -1"
 alias ll="ls -l"
-alias la="ls -la"
+alias la="ls -1A"
+alias lla="ls -la"
 
 # Bat alias with fallback in case batcat is called only bat
 
