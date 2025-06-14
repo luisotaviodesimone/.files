@@ -15,6 +15,9 @@ disabled = false
 format = "[$symbol$context(:$namespace)]($style)"
 disabled = false
 
+[docker_context]
+only_with_files = false
+
 [aws]
 disabled = true
 
