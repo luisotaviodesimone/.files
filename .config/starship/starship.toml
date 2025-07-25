@@ -13,7 +13,7 @@ disabled = false
 
 [kubernetes]
 format = "[$symbol$context(:$namespace)]($style)"
-disabled = true
+disabled = false
 
 [docker_context]
 only_with_files = false
