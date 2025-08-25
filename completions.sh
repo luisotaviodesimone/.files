@@ -17,6 +17,10 @@ if isCommandInstalled "tofu"; then
     complete -o nospace -C /usr/bin/tofu tofu
 fi
 
+if isCommandInstalled "mc"; then
+    complete -o nospace -C /home/luisotaviodesimone/.local/bin/mc mc
+fi
+
 # NVM Cli
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
