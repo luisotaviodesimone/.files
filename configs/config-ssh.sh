@@ -8,6 +8,8 @@ cat >> $HOME/.ssh/config <<- EOM
 
 Host *
   Setenv TERM="xterm"
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
 EOM
 else
 echo -e "$RED Já existem configurações para o 'Host *' $RESET"

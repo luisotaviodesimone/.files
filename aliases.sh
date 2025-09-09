@@ -30,6 +30,7 @@ alias a=". ./.venv/bin/activate"
 alias d="deactivate"
 # alias gb-clean="[[ -d .git ]] && git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done || echo 'Não é um repositório'"
 alias wgu="wg-quick up vpn"
+alias wgd="wg-quick down vpn"
 
 # Kubectl shortcuts
 # alias kok="kubectl get pods --all-namespaces -o wide | awk -F " *|/" '($3!=$4 || $5!="Running") && $5!="Completed" {print $0}'"
