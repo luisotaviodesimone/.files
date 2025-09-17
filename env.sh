@@ -31,3 +31,5 @@ fi
 
 # Set environment vars in file
 set -a && source $DOT_FILES_DIR/.env && set +a
+
+eval "$($HOME/.local/bin/mise activate zsh)"
