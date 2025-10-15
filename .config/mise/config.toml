@@ -1,3 +1,4 @@
 [tools]
 "ubi:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }
 bun = "latest"
+usage = "latest"
