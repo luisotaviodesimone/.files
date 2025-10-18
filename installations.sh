@@ -80,7 +80,8 @@ pacman_apps=(
     libqalculate
     lib32-systemd
     maim
-    neofetch
+    fastfetch
+    ncdu
     net-tools
     neovim
     nmap
