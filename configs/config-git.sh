@@ -19,3 +19,6 @@ git config --global init.defaultBranch master
 
 # Turn off some annoying hints
 git config --global advice.statusHints off
+
+# Turn off warning when discarding changes via lazygit
+git config --global gui.skipDiscardChangeWarning true
