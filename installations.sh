@@ -71,7 +71,6 @@ pacman_apps=(
     feh
     firefox
     fuse3
-    github-cli
     helm
     i3
     jq
@@ -166,7 +165,6 @@ os_agnostic_installs=(
 
 modularized_installs=(
     nvim
-    gh
     fonts
     kitty
     go
