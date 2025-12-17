@@ -161,6 +161,7 @@ os_agnostic_installs=(
     k3d
     autocompletes
     greenclip
+    mise
 )
 
 modularized_installs=(

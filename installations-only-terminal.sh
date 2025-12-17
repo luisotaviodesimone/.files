@@ -61,6 +61,7 @@ modularized_installs=(
     k3d
     autocompletes
     rust
+    mise
 )
 
 for app in "${modularized_installs[@]}"; do
