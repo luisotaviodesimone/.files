@@ -10,6 +10,7 @@ autoload -Uz compinit && compinit -i
 # Disable flow control
 stty -ixon
 
+setopt autocd
 setopt sharehistory
 setopt appendhistory
 setopt hist_ignore_space

@@ -7,6 +7,7 @@ redis = "latest"
 yarn = "1.22.22"
 nodejs = "24.11.1"
 "github-cli" = "latest"
+aws-cli = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
