@@ -6,6 +6,7 @@ apt_apps=(
     bat
     build-essential
     dnsutils
+    eza
     fuse
     fzf
     httpie

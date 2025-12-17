@@ -15,6 +15,7 @@ apt_apps=(
     btop
     build-essential
     dnsutils
+    eza
     feh
     fuse
     fzf
