@@ -96,8 +96,6 @@ for app in "${modularized_installs[@]}"; do
     . $DOT_FILES_DIR/installation-scripts/install-$app.sh
 done
 
-mise install
-
 modularized_configs=(
     config-files
     ssh
@@ -109,3 +107,5 @@ for app in "${modularized_configs[@]}"; do
     echo -e "$YELLOW Configuring $app...$RESET"
     . $DOT_FILES_DIR/configs/config-$app.sh
 done
+
+mise install
