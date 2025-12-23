@@ -45,14 +45,23 @@ apt_apps=(
     zsh
 )
 
+apps_to_install=()
+
 for app in "${apt_apps[@]}"; do
-    if [[ $(printf "%s\n" "$apt_installed_apps" | grep -x "$app") ]]; then
+    if echo "$apt_installed_apps" | grep -qx "$app"; then
         echo -e "$RED $app is already installed$RESET"
-        continue
+    else
+        apps_to_install+=("$app")
     fi
-    echo -e "$YELLOW Installing $app...$RESET"
-    sudo apt install "$app" -y
 done
+
+if [ ${#apps_to_install[@]} -gt 0 ]; then
+    echo -e "$YELLOW Installing missing apps: ${apps_to_install[*]}$RESET"
+    sudo apt update
+    sudo apt install "${apps_to_install[@]}" -y
+else
+    echo -e "$GREEN All packages are already up to date.$RESET"
+fi
 
 if [ ! -d "$HOME/.files" ] && [ -n "$GITHUB_PAT" ]; then
     echo -e "$YELLOW Cloning '.files' dir $RESET"
