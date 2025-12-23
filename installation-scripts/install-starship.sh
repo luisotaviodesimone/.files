@@ -13,7 +13,7 @@ if (which zsh > /dev/null); then
     if (which starship > /dev/null); then
         echo -e "$RED 'starship' is already installed"
     else
-        curl -sS https://starship.rs/install.sh | sh -s -- -y
+        curl -sS https://starship.rs/install.sh | sudo sh -s -- -y
     fi
 else
     echo -e "$RED 'zsh' is not installed $RESET"
