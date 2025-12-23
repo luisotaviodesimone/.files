@@ -39,6 +39,7 @@ apt_apps=(
     tldr
     unzip
     xclip
+    wireguard
     zlib1g
     zlib1g-dev
     zsh
