@@ -76,7 +76,6 @@ modularized_installs=(
     kubectl
     sdkman
     docker
-    ansible
     terraform
     k3d
     autocompletes
@@ -96,6 +95,8 @@ for app in "${modularized_installs[@]}"; do
     echo -e "$YELLOW Installing $app...$RESET"
     . $DOT_FILES_DIR/installation-scripts/install-$app.sh
 done
+
+mise install
 
 modularized_configs=(
     config-files
