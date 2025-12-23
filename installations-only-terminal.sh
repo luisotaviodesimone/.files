@@ -2,6 +2,17 @@
 
 sudo echo "Starting installation..."
 
+echo -ne "\n$BLUE \bWould you like to use a Personal Access Token (PAT)? (y/N)$RESET"
+
+read -r usePATResponse
+
+unset GITHUB_PAT
+if [[ "$usePATResponse" == "y" || "$usePATResponse" == "Y" ]]; then
+    echo -n -e "\n$BLUE \bPlease enter your GitHub Personal Access Token:$RESET"
+    read -r GITHUB_PAT
+    export GITHUB_PAT
+fi
+
 apt_apps=(
     bat
     build-essential
@@ -22,7 +33,7 @@ apt_apps=(
     net-tools
     nfs-common
     postgresql-client
-    python3.10-venv
+    python3.12-venv
     ripgrep
     sshpass
     tldr
@@ -41,6 +52,14 @@ for app in "${apt_apps[@]}"; do
     echo -e "$YELLOW Installing $app...$RESET"
     sudo apt install "$app" -y
 done
+
+if [ ! -d "$HOME/.files" ] && [ -n "$GITHUB_PAT" ]; then
+    echo -e "$YELLOW Cloning '.files' dir $RESET"
+    git clone "https://$GITHUB_PAT@github.com/luisotaviodesimone/.files.git" "$HOME/.files" --recurse-submodules
+    unset GITHUB_PAT
+fi
+
+cd "$HOME/.files" || exit
 
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
