@@ -118,4 +118,5 @@ for app in "${modularized_configs[@]}"; do
     . $DOT_FILES_DIR/configs/config-$app.sh
 done
 
+mise trust
 mise install
