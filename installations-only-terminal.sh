@@ -82,7 +82,7 @@ modularized_installs=(
     starship
     plugins
     go
-    node
+    nvm
     lods
     kubectl
     sdkman
