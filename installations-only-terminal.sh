@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 sudo echo "Starting installation..."
+forceModularReinstall=$1
 
 echo -ne "Would you like to use a Personal Access Token (PAT)? (y/N) "
 read -r usePATResponse
@@ -19,7 +20,7 @@ if [ ! -d "$HOME/.files" ] && [ -n "$GITHUB_PAT" ]; then
 fi
 
 cd "$HOME/.files" || exit
-source ./env.sh
+source ./utils.sh
 
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
@@ -56,6 +57,7 @@ apt_apps=(
 )
 
 apps_to_install=()
+apt_installed_apps=$(dpkg-query -W -f='${Package}\n' 2>/dev/null)
 
 for app in "${apt_apps[@]}"; do
     if echo "$apt_installed_apps" | grep -qx "$app"; then
@@ -82,7 +84,6 @@ modularized_installs=(
     go
     node
     lods
-    helm
     kubectl
     sdkman
     docker
@@ -114,11 +115,21 @@ modularized_configs=(
 )
 
 for app in "${modularized_configs[@]}"; do
-    echo -e "$YELLOW Configuring $app...$RESET"
+    echo -e "$BLUE \bConfiguring $app...$RESET"
     . $DOT_FILES_DIR/configs/config-$app.sh
 done
 
-source .zshrc
-
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(mise activate bash)"
 mise trust
-mise install
+mise install -y
+
+echo -e "$BLUE \bFinalizing Mise installation...$RESET"
+export PATH="$HOME/.local/share/mise/bin:$HOME/.local/bin:$PATH"
+
+if isCommandInstalled "mise"; then
+    mise trust
+    mise install -y
+else
+    echo "$YELLOW \bMise binary not found. Check install-mise.sh$RESET"
+fi

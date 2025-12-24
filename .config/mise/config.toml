@@ -1,8 +1,8 @@
 [tools]
-"ubi:gitlab-org/cli" = { version = "latest", exe = "glab", provider = "gitlab" }
 ansible = "latest"
 ansible-core = "latest"
 bun = "latest"
+glab = "latest"
 helm = "latest"
 opencode = "latest"
 pipx = "latest"
