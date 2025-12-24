@@ -2,16 +2,26 @@
 
 sudo echo "Starting installation..."
 
-echo -ne "\n$BLUE \bWould you like to use a Personal Access Token (PAT)? (y/N)$RESET"
-
+echo -ne "Would you like to use a Personal Access Token (PAT)? (y/N) "
 read -r usePATResponse
 
 unset GITHUB_PAT
 if [[ "$usePATResponse" == "y" || "$usePATResponse" == "Y" ]]; then
-    echo -n -e "\n$BLUE \bPlease enter your GitHub Personal Access Token:$RESET"
+    echo -ne "Please enter your GitHub Personal Access Token: "
     read -r GITHUB_PAT
     export GITHUB_PAT
 fi
+
+if [ ! -d "$HOME/.files" ] && [ -n "$GITHUB_PAT" ]; then
+    echo -e "Cloning '.files' dir"
+    git clone "https://$GITHUB_PAT@github.com/luisotaviodesimone/.files.git" "$HOME/.files" --recurse-submodules
+    unset GITHUB_PAT
+fi
+
+cd "$HOME/.files" || exit
+source ./env.sh
+
+export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 
 apt_apps=(
     bat
@@ -63,16 +73,6 @@ else
     echo -e "$GREEN All packages are already up to date.$RESET"
 fi
 
-if [ ! -d "$HOME/.files" ] && [ -n "$GITHUB_PAT" ]; then
-    echo -e "$YELLOW Cloning '.files' dir $RESET"
-    git clone "https://$GITHUB_PAT@github.com/luisotaviodesimone/.files.git" "$HOME/.files" --recurse-submodules
-    unset GITHUB_PAT
-fi
-
-cd "$HOME/.files" || exit
-
-export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
-
 modularized_installs=(
     nvim
     tmux
@@ -117,6 +117,8 @@ for app in "${modularized_configs[@]}"; do
     echo -e "$YELLOW Configuring $app...$RESET"
     . $DOT_FILES_DIR/configs/config-$app.sh
 done
+
+source .zshrc
 
 mise trust
 mise install
