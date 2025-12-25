@@ -42,6 +42,3 @@ tar -xzf kubeconform-linux-amd64.tar.gz
 mv ./kubeconform $HOME/.local/bin
 
 rm -r ./kubeconform-linux-amd64.tar.gz LICENSE
-
-# Install kubecolor
-go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
