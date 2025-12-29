@@ -15,7 +15,7 @@ else
     (
         cd "$myGoCliPath" || exit
         go build -o "$binaryPath" ./cmd/main.go
-        cp -n sensible-info.example.json sensible-info.json
+        cp --update=none sensible-info.example.json sensible-info.json
     )
 
     sed -i "s/personal-github-name-here/$USER/" "$myGoCliPath/sensible-info.json"
