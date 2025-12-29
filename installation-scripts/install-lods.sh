@@ -1,14 +1,23 @@
 #!/usr/bin/bash
 
-myGoCliPath=$HOME/Documents/GitHub/my-go-cli
+myGoCliPath="$HOME/Documents/GitHub/my-go-cli"
+binaryPath="$HOME/.local/bin/lods"
 
-git clone https://github.com/luisotaviodesimone/my-go-cli.git $myGoCliPath
+if [ -f "$binaryPath" ]; then
+    echo "lods is already installed at $binaryPath"
+else
+    echo -e "${BLUE}Installing lods to $binaryPath${RESET}..."
 
-BLUE='\033[0;34m'
-CLEAR='\033[0m'
-echo -e "${BLUE}[INFO] Installing lods (luisotaviodesimone's Go CLI) to $HOME/.local/bin/lods${CLEAR}..."
+    git clone https://github.com/luisotaviodesimone/my-go-cli.git "$myGoCliPath"
 
-sh -c "$(cd $myGoCliPath && mkdir -p $HOME/.local/bin/ && go build -o $HOME/.local/bin/lods ./cmd/main.go && cp $myGoCliPath/sensible-info.example.json sensible-info.json)" & wait
+    mkdir -p "$HOME/.local/bin/"
 
-sed -i s/personal-github-name-here/$USER/ $myGoCliPath/sensible-info.json
-sed -i s/personal-github-email-here@email.com/$USER@gmail.com/ $myGoCliPath/sensible-info.json
+    (
+        cd "$myGoCliPath" || exit
+        go build -o "$binaryPath" ./cmd/main.go
+        cp -n sensible-info.example.json sensible-info.json
+    )
+
+    sed -i "s/personal-github-name-here/$USER/" "$myGoCliPath/sensible-info.json"
+    sed -i "s/personal-github-email-here@email.com/$USER@gmail.com/" "$myGoCliPath/sensible-info.json"
+fi
