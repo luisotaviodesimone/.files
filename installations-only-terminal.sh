@@ -35,8 +35,8 @@ apt_apps=(
     jq
     libbz2-dev
     libffi-dev
-    libfuse2
-    libncurses5-dev
+    libfuse2t64
+    libncurses-dev
     libreadline-dev
     libsqlite3-dev
     libssl-dev
@@ -44,6 +44,7 @@ apt_apps=(
     net-tools
     nfs-common
     postgresql-client
+    pkg-config
     python3.12-venv
     ripgrep
     sshpass
@@ -51,6 +52,7 @@ apt_apps=(
     unzip
     xclip
     wireguard
+    zip
     zlib1g
     zlib1g-dev
     zsh
@@ -58,6 +60,12 @@ apt_apps=(
 
 apps_to_install=()
 apt_installed_apps=$(dpkg-query -W -f='${Package}\n' 2>/dev/null)
+
+if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]] && echo "$apt_installed_apps" | grep -qx "$app"; then
+    sudo add-apt-repository ppa:wslutilities/wslu
+    sudo apt update
+    sudo apt install wslu -y
+fi
 
 for app in "${apt_apps[@]}"; do
     if echo "$apt_installed_apps" | grep -qx "$app"; then
@@ -72,7 +80,7 @@ if [ ${#apps_to_install[@]} -gt 0 ]; then
     sudo apt update
     sudo apt install "${apps_to_install[@]}" -y
 else
-    echo -e "$GREEN All packages are already up to date.$RESET"
+    echo -e "$GREEN All 'apt' packages are already up to date.$RESET"
 fi
 
 modularized_installs=(
@@ -82,7 +90,6 @@ modularized_installs=(
     starship
     plugins
     go
-    nvm
     lods
     kubectl
     sdkman
