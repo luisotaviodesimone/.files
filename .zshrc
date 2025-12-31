@@ -5,6 +5,20 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # Allow autocompletion script loading
 autoload -Uz compinit && compinit -i
 
+# Allow editing commands in buffer
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^k^e' edit-command-line
+
+autoload zmv
+
+copy-command() {
+  echo -n $BUFFER | xclip -selection c
+  zle -M "Copied to clipboard"
+}
+zle -N copy-command
+bindkey '^kc' copy-command
+
 # Fix weird alacritty things for now
 # https://unix.stackexchange.com/questions/12107/how-to-unfreeze-after-accidentally-pressing-ctrl-s-in-a-terminal
 # Disable flow control
