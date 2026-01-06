@@ -12,12 +12,15 @@ bindkey '^k^e' edit-command-line
 
 autoload zmv
 
+# Widgets
 copy-command() {
   echo -n $BUFFER | xclip -selection c
   zle -M "Copied to clipboard"
 }
 zle -N copy-command
 bindkey '^kc' copy-command
+
+set -o emacs
 
 # Fix weird alacritty things for now
 # https://unix.stackexchange.com/questions/12107/how-to-unfreeze-after-accidentally-pressing-ctrl-s-in-a-terminal
