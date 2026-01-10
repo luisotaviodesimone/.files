@@ -1,1 +1,47 @@
-/mnt/c/Users/luiso/AppData/Roaming/Zed/settings.json
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "model_parameters": []
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "icon_theme": "Material Icon Theme",
+  "format_on_save": "off",
+  "vim_mode": false,
+  "wsl_connections": [
+    {
+      "distro_name": "Ubuntu-24.04",
+      "user": null,
+      "projects": [],
+    },
+  ],
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark Pro"
+  },
+  "languages": {
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+    },
+  },
+}

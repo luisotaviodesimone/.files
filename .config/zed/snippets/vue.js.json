@@ -1,0 +1,11 @@
+{
+  "vueInit": {
+    "prefix": "vueInit",
+    "body": [
+      "<template>$2</template>",
+      "<script setup lang=\"ts\"></script>",
+      "<style scoped lang=\"scss\" src=\"./${1}.scss\"></style>",
+    ],
+    "description": "Vue SFC using external SCSS with component name",
+  },
+}
