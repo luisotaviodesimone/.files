@@ -68,31 +68,32 @@ pacman_apps=(
     dbeaver
     discord
     docker
-    dunst
-    feh
+    eza
+    # dunst
+    # feh
     firefox
-    fuse3
+    # fuse3
     helm
-    i3
+    # i3
     jq
     kubectl
-    libnotify
+    # libnotify
     libqalculate
-    lib32-systemd
-    maim
+    # lib32-systemd
+    # maim
     fastfetch
     ncdu
     net-tools
     neovim
     nmap
     noto-fonts
-    ntfs-3g
-    picom
-    polybar
+    # ntfs-3g
+    # picom
+    # polybar
     python-setuptools
     python-pipx
     ripgrep
-    rofi
+    # rofi
     sshpass
     systemd-resolvconf
     terminus-font
@@ -108,11 +109,11 @@ pacman_apps=(
     wget
     wireguard-tools
     wireless_tools
-    xautolock
+    # xautolock
     xclip
-    xorg-apps
-    xorg-server
-    xorg-xinit
+    # xorg-apps
+    # xorg-server
+    # xorg-xinit
     zip
     zsh
 )
@@ -128,12 +129,24 @@ fi
 
 . /etc/os-release
 
-if [[ $ID == arch ]]; then
+if [[ $ID == arch || $ID == cachyos ]]; then
+    apps_to_install=()
+    pacman_installed_apps=$(sudo pacman -Qq)
 
     for app in "${pacman_apps[@]}"; do
-        echo -e "$YELLOW Installing $app...$RESET"
-        sudo pacman -S --noconfirm "$app"
+        if echo "$pacman_installed_apps" | grep -qx "$app"; then
+            echo -e "$RED $app is already installed$RESET"
+        else
+            apps_to_install+=("$app")
+        fi
     done
+
+    if [ ${#apps_to_install[@]} -gt 0 ]; then
+        echo -e "$YELLOW Installing missing apps: ${apps_to_install[*]}$RESET"
+        sudo pacman -Sy --noconfirm "${apps_to_install[@]}"
+    else
+        echo -e "$GREEN All 'apt' packages are already up to date.$RESET"
+    fi
 
 elif [[ $ID == debian || $ID == pop || $ID == ubuntu || $ID_LIKE == debian || $ID_LIKE == ubuntu ]]; then
     apt_installed_apps="$(sudo apt list --installed | awk -F '/' '{ print $1 }')"
@@ -163,6 +176,7 @@ os_agnostic_installs=(
     autocompletes
     greenclip
     mise
+    tmux
 )
 
 modularized_installs=(
@@ -172,7 +186,6 @@ modularized_installs=(
     go
     node
     virtualbox
-    tmux
     vagrant
     helm
     kubectl
