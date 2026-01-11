@@ -10,6 +10,7 @@ configuration{
     // display-drun:    "";
     // display-combi: "";
     sidebar-mode: false;
+    display-drun: "";
 }
 
 @theme "dracula"

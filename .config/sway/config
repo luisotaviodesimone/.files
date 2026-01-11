@@ -7,20 +7,25 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
+
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
-set $term foot
+set $term alacritty
+
 # Your preferred application launcher
 set $menu wmenu-run
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in \/usr\/share\/backgrounds\/sway\/)
 output * background "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" fill
+
+input "type:keyboard" {
+    xkb_layout us
+    xkb_variant intl
+    xkb_options grp:alt_shift_toggle
+}
 
 input "type:touchpad" {
     dwt enabled
@@ -29,57 +34,28 @@ input "type:touchpad" {
     natural_scroll enabled
 }
 
-#
-# Example configuration:
-#
-# output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+bindsym $mod+t border normal 0
+bindsym $mod+u border none
+bindsym $mod+y border pixel 4
 
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-# timeout 300 'swaylock -f -c 000000' \
-# timeout 600 'swaymsg \"output * power off\"' resume 'swaymsg \"output * power on\"' \
-# before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+timeout 300 'swaylock -f -c 000000' \
+timeout 600 'swaymsg \"output * power off\"' resume 'swaymsg \"output * power on\"' \
+before-sleep 'swaylock -f -c 000000'
 
-### Input configuration
-#
-# Example configuration:
-#
-# input type:touchpad {
-# dwt enabled
-# tap enabled
-# natural_scroll enabled
-# middle_emulation enabled
-# }
-#
-# input type:keyboard {
-# xkb_layout \"eu\"
-# }
-#
-# You can also configure each device individually.
-# Read `man 5 sway-input` for more information about this section.
-
-### Key bindings
-#
-# Basics:
-#
- # Start a terminal
  bindsym $mod+Return exec $term
 
- # Kill focused window
  bindsym $mod+Shift+q kill
 
- # Start your launcher
- bindsym $mod+d exec $menu
+# bindsym $mod+d exec $menu
 
+bindsym $mod+d exec rofi -show
+
+## Clipboard history
+exec_always --no-startup-id killall wl-paste
+exec_always --no-startup-id sleep .1 && wl-paste --watch cliphist store
+bindsym Shift+$mod+v exec \
+  cliphist list | rofi -dmenu -p "" | cliphist decode | wl-copy
  # Drag floating windows by holding down $mod and left mouse button.
  # Resize them with right mouse button + $mod.
  # Despite the name, also works for non-floating windows.
@@ -118,32 +94,47 @@ input "type:touchpad" {
  bindsym $mod+Shift+Right move right
 #
 # Workspaces:
-#
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
  # Switch to workspace
- bindsym $mod+1 workspace number 1
- bindsym $mod+2 workspace number 2
- bindsym $mod+3 workspace number 3
- bindsym $mod+4 workspace number 4
- bindsym $mod+5 workspace number 5
- bindsym $mod+6 workspace number 6
- bindsym $mod+7 workspace number 7
- bindsym $mod+8 workspace number 8
- bindsym $mod+9 workspace number 9
- bindsym $mod+0 workspace number 10
+ bindsym $mod+1 workspace number $ws1
+ bindsym $mod+2 workspace number $ws2
+ bindsym $mod+3 workspace number $ws3
+ bindsym $mod+4 workspace number $ws4
+ bindsym $mod+5 workspace number $ws5
+ bindsym $mod+6 workspace number $ws6
+ bindsym $mod+7 workspace number $ws7
+ bindsym $mod+8 workspace number $ws8
+ bindsym $mod+9 workspace number $ws9
+ bindsym $mod+0 workspace number $ws10
  # Move focused container to workspace
- bindsym $mod+Shift+1 move container to workspace number 1
- bindsym $mod+Shift+2 move container to workspace number 2
- bindsym $mod+Shift+3 move container to workspace number 3
- bindsym $mod+Shift+4 move container to workspace number 4
- bindsym $mod+Shift+5 move container to workspace number 5
- bindsym $mod+Shift+6 move container to workspace number 6
- bindsym $mod+Shift+7 move container to workspace number 7
- bindsym $mod+Shift+8 move container to workspace number 8
- bindsym $mod+Shift+9 move container to workspace number 9
- bindsym $mod+Shift+0 move container to workspace number 10
- # Note: workspaces can have any name you want, not just numbers.
- # We just use 1-10 as the default.
-#
+ bindsym $mod+Shift+1 move container to workspace number $ws1
+ bindsym $mod+Shift+2 move container to workspace number $ws2
+ bindsym $mod+Shift+3 move container to workspace number $ws3
+ bindsym $mod+Shift+4 move container to workspace number $ws4
+ bindsym $mod+Shift+5 move container to workspace number $ws5
+ bindsym $mod+Shift+6 move container to workspace number $ws6
+ bindsym $mod+Shift+7 move container to workspace number $ws7
+ bindsym $mod+Shift+8 move container to workspace number $ws8
+ bindsym $mod+Shift+9 move container to workspace number $ws9
+ bindsym $mod+Shift+0 move container to workspace number $ws10
+
+workspace $ws1 gaps inner 0
+workspace $ws1 gaps outer 24
+
+smart_gaps inverse_outer
+
+default_border pixel 4
+
 # Layout stuff:
 #
  # You can \"split\" the current object of your focus with
@@ -175,19 +166,16 @@ input "type:touchpad" {
  # You can send windows there and get them back later.
 
  # Move the currently focused window to the scratchpad
- bindsym $mod+Shift+minus move scratchpad
+ # bindsym $mod+Shift+minus move scratchpad
 
  # Show the next scratchpad window or hide the focused scratchpad window.
  # If there are multiple scratchpad windows, this command cycles through them.
- bindsym $mod+minus scratchpad show
+ # bindsym $mod+minus scratchpad show
+
 #
 # Resizing containers:
 #
 mode "resize" {
- # left will shrink the containers width
- # right will grow the containers width
- # up will shrink the containers height
- # down will grow the containers height
  bindsym $left resize shrink width 10px
  bindsym $down resize grow height 10px
  bindsym $up resize shrink height 10px
@@ -200,10 +188,10 @@ mode "resize" {
  bindsym Right resize grow width 10px
 
  # Return to default mode
- bindsym Return mode \"default\"
- bindsym Escape mode \"default\"
+ bindsym Return mode "default"
+ bindsym Escape mode "default"
 }
-bindsym $mod+r mode \"resize\"
+bindsym $mod+r mode "resize"
 #
 # Utilities:
 #
@@ -218,23 +206,8 @@ bindsym $mod+r mode \"resize\"
  # Special key to take a screenshot with grim
  bindsym Print exec grim
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 bar {
    swaybar_command waybar
-#  position top
-
-#  # When the status_command prints a new line to stdout, swaybar updates.
-#  # The default just shows the current date and time.
-#  status_command while ~/.config/sway/status.sh; do sleep 1; done
-
-#  colors {
-#  statusline #ffffff
-#  background #323232
-#  inactive_workspace #32323200 #32323200 #5c5c5c
-#  }
 }
 
-include \/etc\/sway\/config.d\/*
+include /etc/sway/config.d/*

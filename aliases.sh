@@ -23,7 +23,6 @@ alias tf="terraform"
 alias explorer="explorer.exe"
 
 alias apply="exec $SHELL"
-alias copy="xclip -selection c"
 alias clc="fc -ln -1 | copy"
 alias instaK8s="k3d cluster create --servers 1 --agents 2 local-cluster && k3d kubeconfig get local-cluster | sed s/k3d-//g > ~/.kube/configs/local-cluster"
 alias kitty-theme="kitty +kitten themes --reload-in=all"
@@ -52,6 +51,16 @@ alias l="ls -1"
 alias ll="ls -l"
 alias la="ls -1a"
 alias lla="ls -la"
+
+# Conditional Aliases
+case "$ID" in
+  arch|manjaro|endeavouros|cachyos)
+    alias copyalias copy="wl-copy"
+    ;;
+  debian|ubuntu|linuxmint|popos)
+    alias copyalias copy="xclip -selection c"
+    ;;
+esac
 
 # Bat alias with fallback in case batcat is called only bat
 

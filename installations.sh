@@ -65,6 +65,7 @@ pacman_apps=(
     bluez
     bluez-utils
     bluetui
+    cliphist
     dbeaver
     discord
     docker
@@ -95,6 +96,8 @@ pacman_apps=(
     ripgrep
     # rofi
     sshpass
+    swaylock
+    swaybg
     systemd-resolvconf
     terminus-font
     tmux
@@ -109,8 +112,9 @@ pacman_apps=(
     wget
     wireguard-tools
     wireless_tools
+    wl-clipboard
     # xautolock
-    xclip
+    # xclip
     # xorg-apps
     # xorg-server
     # xorg-xinit
