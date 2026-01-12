@@ -7,6 +7,21 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_features": {
+    "calt": true,
+  },
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini",
+    },
+    "model_parameters": [],
+  },
+  "features": {
+    "edit_prediction_provider": "copilot",
+  },
   "icon_theme": "Material Icon Theme",
   "ui_font_size": 16,
   "buffer_font_size": 15,
@@ -14,5 +29,41 @@
     "mode": "system",
     "light": "One Light",
     "dark": "One Dark Pro",
+  },
+  "languages": {
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+    },
+  },
+  "theme_overrides": {
+    "One Dark Pro": {
+      "syntax": {
+        "constant.comment.todo": {
+          "color": "#000000",
+          "background_color": "#14adca",
+          "font_weight": 700,
+        },
+        "constant.comment.todo.text": {
+          "color": "#14adca",
+        },
+        "constant.comment.todo.prefix": {
+          "color": "#14adca",
+        },
+        "string.comment.info": {
+          "color": "#50a14fff",
+        },
+        "keyword.comment.warn": {
+          "color": "#c18401ff",
+        },
+        "property.comment.error": {
+          "color": "#ca1243ff",
+        },
+      },
+    },
   },
 }

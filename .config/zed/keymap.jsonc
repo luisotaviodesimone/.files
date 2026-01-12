@@ -15,7 +15,7 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      // "j k": "vim::NormalBefore"
+      "j k": "vim::NormalBefore"
     },
   },
   {
@@ -27,13 +27,25 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-enter": "editor::NewlineBelow",
+      "ctrl-shift-enter": "editor::NewlineAbove",
     },
+  },
+  {
+    "context": "!ContextEditor > (Editor && mode == full)",
+    "bindings": {
+      "ctrl-alt-enter": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "!ContextEditor > (Editor && mode == full)",
+    "bindings": {
+      "ctrl-enter": "editor::NewlineBelow"
+    }
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-shift-enter": "editor::NewlineAbove",
-    },
-  },
+      "ctrl-shift-c": "editor::CopyPermalinkToLine"
+    }
+  }
 ]
