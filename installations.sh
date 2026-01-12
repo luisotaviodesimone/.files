@@ -118,6 +118,7 @@ pacman_apps=(
     # xorg-apps
     # xorg-server
     # xorg-xinit
+    zed
     zip
     zsh
 )
@@ -177,6 +178,7 @@ os_agnostic_installs=(
     lods
     sdkman
     k3d
+    kubectl
     autocompletes
     greenclip
     mise
