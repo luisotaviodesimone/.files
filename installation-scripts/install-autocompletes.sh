@@ -8,3 +8,5 @@ docker completion zsh > ~/.local/completions/_docker
 glab completion -s zsh > ~/.local/completions/_glab
 uvx --generate-shell-completion zsh > ~/.local/completions/_uvx
 uv generate-shell-completion zsh > ~/.local/completions/_uv
+mise completion zsh > ~/.local/completions/_mise
+opencode completion > ~/.local/completions/_opencode
