@@ -21,6 +21,7 @@ alias t="TERM=xterm-256color tmux"
 alias ss="starship"
 alias tf="terraform"
 alias explorer="explorer.exe"
+alias zed="/mnt/c/Users/luiso/scoop/apps/zed/current/Zed.exe"
 
 alias apply="exec $SHELL"
 alias clc="fc -ln -1 | copy"

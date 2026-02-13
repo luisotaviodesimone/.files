@@ -31,7 +31,6 @@ if command -v "pyenv" >/dev/null 2>&1 || alias | grep -q "pyenv"; then
 fi
 
 # Set environment vars in file
-set -a && source $DOT_FILES_DIR/.env && set +a
 source /etc/os-release
 
 eval "$($HOME/.local/bin/mise activate zsh)"
