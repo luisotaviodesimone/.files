@@ -3,4 +3,5 @@ lazy-lock.json
 plugins/*
 .config/tmux/plugins
 .env
+.env.local
 **/mise/conf.d/env.toml
