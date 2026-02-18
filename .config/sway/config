@@ -56,7 +56,19 @@ exec_always --no-startup-id killall wl-paste
 exec_always --no-startup-id sleep .1 && wl-paste --watch cliphist store
 bindsym Shift+$mod+v exec \
   cliphist list | rofi -dmenu -p "" | cliphist decode | wl-copy
- # Drag floating windows by holding down $mod and left mouse button.
+
+## Print Screen
+# capture all screens to clipboard
+bindsym Shift+Print exec grim - | wl-copy
+
+# capture the specified screen area to clipboard
+bindsym Shift+$mod+Print exec grim -g "$(slurp)" - | wl-copy
+
+# capture the focused monitor to clipboard
+# bindsym Shift+Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+
+# Drag floating windows by holding down $mod and left mouse button.
+
  # Resize them with right mouse button + $mod.
  # Despite the name, also works for non-floating windows.
  # Change normal to inverse to use left mouse button for resizing and right
