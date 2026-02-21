@@ -6,6 +6,7 @@ k3d completion zsh > ~/.local/completions/_k3d
 lods completion zsh > ~/.local/completions/_lods
 docker completion zsh > ~/.local/completions/_docker
 glab completion -s zsh > ~/.local/completions/_glab
+gh completion -s zsh > ~/.local/completions/_gh
 uvx --generate-shell-completion zsh > ~/.local/completions/_uvx
 uv generate-shell-completion zsh > ~/.local/completions/_uv
 mise completion zsh > ~/.local/completions/_mise
