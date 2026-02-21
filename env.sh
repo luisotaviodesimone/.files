@@ -34,3 +34,4 @@ fi
 source /etc/os-release
 
 eval "$($HOME/.local/bin/mise activate zsh)"
+source <(fzf --zsh)

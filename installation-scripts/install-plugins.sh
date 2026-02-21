@@ -4,6 +4,7 @@ PLUGINS_DIR="$DOT_FILES_DIR/plugins"
 mkdir -p "$PLUGINS_DIR"
 
 repos=(
+    "https://github.com/Aloxaf/fzf-tab fzf-tab"
     "https://github.com/zsh-users/zsh-syntax-highlighting.git zsh-syntax-highlighting"
     "https://github.com/zsh-users/zsh-autosuggestions.git zsh-autosuggestions"
     "https://github.com/zdharma-continuum/fast-syntax-highlighting.git fast-syntax-highlighting"
