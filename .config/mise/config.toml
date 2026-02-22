@@ -2,6 +2,7 @@
 ansible = "latest"
 ansible-core = "latest"
 bun = "latest"
+fzf = "latest"
 glab = "latest"
 helm = "latest"
 kubecolor = "latest"

@@ -18,7 +18,6 @@ apt_apps=(
     eza
     feh
     fuse
-    fzf
     gcc
     gnome-shell-extension-gpaste
     gpaste

@@ -55,12 +55,12 @@ alias lla="ls -la"
 
 # Conditional Aliases
 case "$ID" in
-  arch|manjaro|endeavouros|cachyos)
-    alias copyalias copy="wl-copy"
-    ;;
-  debian|ubuntu|linuxmint|popos)
-    alias copyalias copy="xclip -selection c"
-    ;;
+    arch|manjaro|endeavouros|cachyos)
+        alias copyalias copy="wl-copy"
+        ;;
+    debian|ubuntu|linuxmint|popos)
+        alias copyalias copy="xclip -selection c"
+        ;;
 esac
 
 # Bat alias with fallback in case batcat is called only bat
@@ -82,6 +82,10 @@ copyk3s ()
 
 topodsbynode ()
 {
+    if [ -z "$1" ]; then
+        echo "Usage: topodsbynode <node-name>"
+        return 1
+    fi
     NODE_NAME="$1"
     echo "Getting metric from pods running on node $NODE_NAME..."
     kubectl get pods -A -o wide --no-headers | grep "$NODE_NAME" | awk '{print $1, $2}' | xargs -I{} $SHELL -c 'ns=$(echo {} | cut -d" " -f1); pod=$(echo {} | cut -d" " -f2); kubectl top pod --no-headers "$pod" -n "$ns"' | column -t -N NAME,CPU,MEMORY | awk '{print $3, $2, $1}' | sort -h | column -t
