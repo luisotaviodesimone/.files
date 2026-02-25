@@ -188,7 +188,6 @@ modularized_installs=(
     nvim
     fonts
     kitty
-    go
     node
     virtualbox
     vagrant
