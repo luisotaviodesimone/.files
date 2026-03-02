@@ -14,9 +14,11 @@ redis = "latest"
 usage = "latest"
 uv = "latest"
 yarn = "1.22.22"
-nodejs = "24.11.1"
+node = "24.14.0"
 "github-cli" = "latest"
 aws-cli = "latest"
+opentofu = "latest"
+k9s = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
