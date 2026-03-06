@@ -7,81 +7,94 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ui_font_family": "JetBrainsMono Nerd Font Mono",
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
-  "buffer_font_features": {
-    "calt": true,
-  },
-  "agent": {
-    "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
+    "soft_wrap": "editor_width",
+    "buffer_line_height": "comfortable",
+    "edit_predictions": {
+        "provider": "copilot"
     },
-    "always_allow_tool_actions": true,
-    "default_profile": "write",
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5",
+    "ui_font_family": "JetBrainsMono Nerd Font Mono",
+    "show_whitespaces": "trailing",
+    "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+    "buffer_font_features": {
+        "calt": true
     },
-    "model_parameters": [],
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
-  "icon_theme": "Material Icon Theme",
-  "format_on_save": "off",
-  "vim_mode": false,
-  "wsl_connections": [
-    {
-      "distro_name": "Ubuntu-24.04",
-      "user": null,
-      "projects": [],
-    },
-  ],
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark Pro",
-  },
-  "languages": {
-    "JavaScript": {
-      "formatter": {
-        "external": {
-          "command": "prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"],
+    "agent": {
+        "tool_permissions": {
+            "default": "allow"
         },
-      },
+        "inline_assistant_model": {
+            "provider": "copilot_chat",
+            "model": "gpt-5-mini"
+        },
+        "default_profile": "write",
+        "default_model": {
+            "provider": "copilot_chat",
+            "model": "claude-sonnet-4.5"
+        },
+        "model_parameters": []
     },
-    "Vue.js": {
-      "language_servers": ["vue-language-server"]
+    "icon_theme": "Symbols Icon Theme",
+    "format_on_save": "off",
+    "vim_mode": false,
+    "file_types": {
+        "GitHub Actions": [
+            ".github/workflows/*.yml",
+            ".github/workflows/*.yaml"
+        ]
+    },
+    "wsl_connections": [
+        {
+            "distro_name": "Ubuntu-24.04",
+            "user": null,
+            "projects": []
+        }
+    ],
+    "ui_font_size": 16,
+    "buffer_font_size": 15,
+    "theme": {
+        "mode": "system",
+        "light": "One Light",
+        "dark": "One Dark Pro"
+    },
+    "lsp_document_colors": "background",
+    "languages": {
+        // "JavaScript": {
+        //     "language_servers": ["typescript-langserver", "..."]
+        // },
+        // "Vue.js": {
+        //   "language_servers": ["vue-language-server", "..."],
+        // },
+        "TypeScript": {
+            "language_servers": ["typescript-language-server", "!vtsls", "..."]
+        },
+        "JavaScript": {
+            "language_servers": ["typescript-language-server", "!vtsls", "..."]
+        }
+    },
+    "theme_overrides": {
+        "One Dark Pro": {
+            "syntax": {
+                "constant.comment.todo": {
+                    "color": "#000000",
+                    "background_color": "#14adca",
+                    "font_weight": 700
+                },
+                "constant.comment.todo.text": {
+                    "color": "#14adca"
+                },
+                "constant.comment.todo.prefix": {
+                    "color": "#14adca"
+                },
+                "string.comment.info": {
+                    "color": "#50a14fff"
+                },
+                "keyword.comment.warn": {
+                    "color": "#c18401ff"
+                },
+                "property.comment.error": {
+                    "color": "#ca1243ff"
+                }
+            }
+        }
     }
-  },
-  "theme_overrides": {
-    "One Dark Pro": {
-      "syntax": {
-        "constant.comment.todo": {
-          "color": "#000000",
-          "background_color": "#14adca",
-          "font_weight": 700,
-        },
-        "constant.comment.todo.text": {
-          "color": "#14adca",
-        },
-        "constant.comment.todo.prefix": {
-          "color": "#14adca",
-        },
-        "string.comment.info": {
-          "color": "#50a14fff",
-        },
-        "keyword.comment.warn": {
-          "color": "#c18401ff",
-        },
-        "property.comment.error": {
-          "color": "#ca1243ff",
-        },
-      },
-    },
-  },
 }

@@ -6,6 +6,15 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
+  // {
+  //   "context": "Editor",
+  //   "bindings": {
+  //     "ctrl-k ctrl-l": [
+  //       "workspace::SendKeystrokes",
+  //       "ctrl-c end enter console.log(\"value: \", $1)",
+  //     ],
+  //   },
+  // },
   {
     "context": "Workspace",
     "bindings": {
@@ -15,7 +24,7 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j k": "vim::NormalBefore"
+      "j k": "vim::NormalBefore",
     },
   },
   {
@@ -33,19 +42,25 @@
   {
     "context": "!ContextEditor > (Editor && mode == full)",
     "bindings": {
-      "ctrl-alt-enter": "assistant::InlineAssist"
+      "ctrl-i": "assistant::InlineAssist",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-c": "editor::CopyPermalinkToLine",
+    },
+  },
+  {
+    "context": "!ContextEditor > (Editor && mode == full)",
+    "bindings": {
+      "ctrl-i": "assistant::InlineAssist"
     }
   },
   {
     "context": "!ContextEditor > (Editor && mode == full)",
     "bindings": {
       "ctrl-enter": "editor::NewlineBelow"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-shift-c": "editor::CopyPermalinkToLine"
     }
   }
 ]
