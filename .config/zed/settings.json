@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "agent_servers": {
+        "claude-acp": {
+            "type": "registry"
+        }
+    },
+    "auto_update": false,
+    "git_panel": {
+        "tree_view": false
+    },
+    "include_ignored": true,
+    "project_panel": {
+        "hide_gitignore": false
+    },
     "soft_wrap": "editor_width",
     "buffer_line_height": "comfortable",
     "edit_predictions": {
@@ -33,7 +46,13 @@
         },
         "model_parameters": []
     },
-    "icon_theme": "Symbols Icon Theme",
+    "symbols.files.associations": {
+        "*.module.ts": "nest",
+        "*.service.ts": "nest",
+        "create-user.pipe.ts": "nest"
+    },
+    "material-icon-theme.activeIconPack": "nest",
+    "icon_theme": "Material Icon Theme",
     "format_on_save": "off",
     "vim_mode": false,
     "file_types": {
@@ -65,6 +84,9 @@
         //   "language_servers": ["vue-language-server", "..."],
         // },
         "TypeScript": {
+            "language_servers": ["typescript-language-server", "!vtsls", "..."]
+        },
+        "TSX": {
             "language_servers": ["typescript-language-server", "!vtsls", "..."]
         },
         "JavaScript": {

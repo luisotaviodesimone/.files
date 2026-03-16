@@ -62,5 +62,11 @@
     "bindings": {
       "ctrl-enter": "editor::NewlineBelow"
     }
+  },
+  {
+    "context": "!(mode == full)",
+    "bindings": {
+      "ctrl-shift-\\": "editor::ToggleFocus"
+    }
   }
 ]
