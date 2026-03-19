@@ -19,6 +19,7 @@ node = "24.14.0"
 aws-cli = "latest"
 opentofu = "latest"
 k9s = "latest"
+lua = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
