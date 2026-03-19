@@ -22,6 +22,7 @@ alias ss="starship"
 alias tf="terraform"
 alias explorer="explorer.exe"
 if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then alias zed="/mnt/c/Users/luiso/scoop/apps/zed/current/Zed.exe"; fi
+alias lg="lazygit"
 
 alias apply="exec $SHELL"
 alias clc="fc -ln -1 | copy"
