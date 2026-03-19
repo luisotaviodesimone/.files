@@ -1,4 +1,4 @@
-export PATH="$HOME/.platformio/penv/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.krew/bin:$PATH:$HOME/.dotnet:$DOTNET_ROOT/tools:$HOME/.bun/bin:$HOME/.turso"
+export PATH="$HOME/.platformio/penv/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.krew/bin:$PATH:$HOME/.dotnet:$DOTNET_ROOT/tools:$HOME/.bun/bin:$HOME/.turso:/home/linuxbrew/.linuxbrew/bin"
 export DOTNET_ROOT=$HOME/.dotnet
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
 export KITTY_CONFIG_DIRECTORY="$DOT_FILES_DIR/kitty"
@@ -35,3 +35,6 @@ source /etc/os-release
 
 eval "$($HOME/.local/bin/mise activate zsh)"
 source <(fzf --zsh)
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+
