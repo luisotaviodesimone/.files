@@ -1,0 +1,38 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "edit": "ask",
+    "bash": "ask"
+  },
+  "mcp": {
+    "pencil": {
+      "type": "local",
+      "command": [
+        "/mnt/c/Users/luiso/AppData/Local/Programs/Pencil/resources/app.asar.unpacked/out/mcp-server-windows-x64.exe",
+        "--app",
+        "desktop"
+      ],
+      "enabled": true
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      }
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "command": [
+        "opencode",
+        "x",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "enabled": true
+    }
+  },
+  "instructions": [
+    "/home/luisotaviodesimone/.config/opencode/rules/*.md"
+  ]
+}
