@@ -13,13 +13,14 @@ pipx = "latest"
 redis = "latest"
 usage = "latest"
 uv = "latest"
-yarn = "1.22.22"
+yarn = "latest"
 node = "24.14.0"
 "github-cli" = "latest"
 aws-cli = "latest"
 opentofu = "latest"
 k9s = "latest"
 lua = "latest"
+k6 = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]

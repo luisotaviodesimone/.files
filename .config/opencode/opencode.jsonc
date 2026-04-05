@@ -4,6 +4,40 @@
     "edit": "ask",
     "bash": "ask"
   },
+  "provider": {
+    "ollama": {
+      "models": {
+        "glm-4.7-flash": {
+          "_launch": true,
+          "name": "glm-4.7-flash"
+        },
+        "glm-4.7:cloud": {
+          "_launch": true,
+          "name": "glm-4.7:cloud"
+        },
+        "qwen3.5": {
+          "_launch": true,
+          "name": "qwen3.5",
+          "options": {
+            "num_ctx": 32000
+          }
+        },
+        "qwen3-coder": {
+          "_launch": true,
+          "name": "qwen3-coder"
+          // "options": {
+          //   "num_ctx": 32000
+          // }
+        }
+      },
+      "name": "Ollama",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1"
+        // "num_ctx": 32000
+      }
+    }
+  },
   "mcp": {
     "pencil": {
       "type": "local",
@@ -22,14 +56,20 @@
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
     },
+    "figma": {
+      "type": "remote",
+      "url": "https://mcp.figma.com/mcp",
+      "oauth": {},
+      "enabled": false
+    },
     "sequential-thinking": {
       "type": "local",
+      "enabled": true,
       "command": [
         "opencode",
         "x",
         "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "enabled": true
+      ]
     }
   },
   "instructions": [

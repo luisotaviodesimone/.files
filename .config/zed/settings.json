@@ -14,7 +14,7 @@
     },
     "auto_update": false,
     "git_panel": {
-        "tree_view": false
+        "tree_view": true
     },
     "include_ignored": true,
     "project_panel": {
@@ -81,16 +81,31 @@
         //     "language_servers": ["typescript-langserver", "..."]
         // },
         // "Vue.js": {
-        //   "language_servers": ["vue-language-server", "..."],
+        //     "language_servers": ["!biome", "..."]
         // },
         "TypeScript": {
-            "language_servers": ["typescript-language-server", "!vtsls", "..."]
+            "language_servers": [
+                "typescript-language-server",
+                "!vtsls",
+                "!biome",
+                "..."
+            ]
         },
         "TSX": {
-            "language_servers": ["typescript-language-server", "!vtsls", "..."]
+            "language_servers": [
+                "typescript-language-server",
+                "!vtsls",
+                "!biome",
+                "..."
+            ]
         },
         "JavaScript": {
-            "language_servers": ["typescript-language-server", "!vtsls", "..."]
+            "language_servers": [
+                "typescript-language-server",
+                "!vtsls",
+                "!biome",
+                "..."
+            ]
         }
     },
     "theme_overrides": {
