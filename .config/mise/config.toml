@@ -21,6 +21,8 @@ opentofu = "latest"
 k9s = "latest"
 lua = "latest"
 k6 = "latest"
+ollama = "latest"
+tmux = "3.6a"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]

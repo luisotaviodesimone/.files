@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "diff_view_style": "split",
     "agent_servers": {
         "claude-acp": {
             "type": "registry"
@@ -14,6 +15,7 @@
     },
     "auto_update": false,
     "git_panel": {
+        "sort_by_path": true,
         "tree_view": true
     },
     "include_ignored": true,
@@ -59,6 +61,9 @@
         "GitHub Actions": [
             ".github/workflows/*.yml",
             ".github/workflows/*.yaml"
+        ],
+        "Dockerfile": [
+            "Dockerfile*"
         ]
     },
     "wsl_connections": [
@@ -77,12 +82,15 @@
     },
     "lsp_document_colors": "background",
     "languages": {
-        // "JavaScript": {
-        //     "language_servers": ["typescript-langserver", "..."]
         // },
-        // "Vue.js": {
-        //     "language_servers": ["!biome", "..."]
-        // },
+        "Vue.js": {
+            "language_servers": [
+                "typescript-language-server",
+                "!vtsls",
+                "!biome",
+                "..."
+            ]
+        },
         "TypeScript": {
             "language_servers": [
                 "typescript-language-server",
