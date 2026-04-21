@@ -64,6 +64,10 @@ bindsym Shift+Print exec grim - | wl-copy
 # capture the specified screen area to clipboard
 bindsym Shift+$mod+Print exec grim -g "$(slurp)" - | wl-copy
 
+# record selected area
+bindsym Shift+$mod+r exec wf-recorder -f "$HOME/Videos/$(date +"%Y%m%d%H%M%S")_recording.mp4" -g "$(slurp)"
+bindsym Shift+$mod+s exec killall wf-recorder
+
 # capture the focused monitor to clipboard
 # bindsym Shift+Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
 

@@ -112,6 +112,7 @@ pacman_apps=(
     wireguard-tools
     wireless_tools
     wl-clipboard
+    wf-recorder
     # xautolock
     # xclip
     # xorg-apps
