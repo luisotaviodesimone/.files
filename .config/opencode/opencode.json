@@ -1,8 +1,55 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "ollama/gemma4",
+  "instructions": [
+    "/home/luisotaviodesimone/.config/opencode/rules/*.md"
+  ],
+  "theme": "system",
+  "model": "ollama/qwen2.5-coder:14b",
+  "permission": {
+    "bash": "ask",
+    "edit": "ask"
+  },
+  "mcp": {
+    "context7": {
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      },
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "figma": {
+      "enabled": false,
+      "oauth": {},
+      "type": "remote",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "pencil": {
+      "command": [
+        "/mnt/c/Users/luiso/AppData/Local/Programs/Pencil/resources/app.asar.unpacked/out/mcp-server-windows-x64.exe",
+        "--app",
+        "desktop"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "sequential-thinking": {
+      "command": [
+        "opencode",
+        "x",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  },
   "provider": {
     "ollama": {
+      "name": "Ollama",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1"
+      },
       "models": {
         "gemma4": {
           "_launch": true,
@@ -11,27 +58,35 @@
         },
         "gemma4:31b": {
           "_launch": true,
-          "name": "gemma4:31b",
           "limit": {
             "context": 128000,
             "output": 8192
-          }
+          },
+          "name": "gemma4:31b"
         },
         "glm-4.7-flash": {
           "_launch": true,
           "name": "glm-4.7-flash"
         },
+        "qwen2.5-coder:14b": {
+          "_launch": true,
+          "name": "qwen2.5-coder:14b"
+        },
+        "gemma4:e4b": {
+          "_launch": true,
+          "name": "gemma4:e4b",
+          "options": {
+            "num_ctx": 65536
+          }
+        },
         "qwen3.5": {
           "_launch": true,
-          "name": "qwen3.5"
+          "name": "qwen3.5",
+          "options": {
+            "num_ctx": 32000
+          }
         }
-      },
-      "name": "Ollama",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "http://127.0.0.1:11434/v1"
       }
     }
   }
 }
-
