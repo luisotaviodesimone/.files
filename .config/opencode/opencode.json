@@ -4,7 +4,6 @@
     "/home/luisotaviodesimone/.config/opencode/rules/*.md"
   ],
   "theme": "system",
-  "model": "ollama/qwen2.5-coder:14b",
   "permission": {
     "bash": "ask",
     "edit": "ask"
