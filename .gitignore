@@ -7,4 +7,4 @@ plugins/*
 **/mise/conf.d/env.toml
 node_modules/
 .config/opencode/package.json
-.config/opencode/*.lock
+.config/opencode/*lock*
