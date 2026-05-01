@@ -23,6 +23,7 @@ lua = "latest"
 k6 = "latest"
 ollama = "latest"
 tmux = "3.6a"
+pi = "0.70.2"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]

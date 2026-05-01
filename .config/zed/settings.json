@@ -16,7 +16,10 @@
     "diff_view_style": "unified",
     "agent_servers": {
         "claude-acp": {
-            "type": "registry"
+            "type": "registry",
+            "env": {
+                "CLAUDE_CODE_EXECUTABLE": "/home/luisotaviodesimone/.local/bin/claude"
+            }
         }
     },
     "auto_update": false,
@@ -24,6 +27,9 @@
         "dock": "left",
         "sort_by_path": true,
         "tree_view": true
+    },
+    "git": {
+        "worktree_directory": ".git/worktrees"
     },
     "include_ignored": true,
     "project_panel": {
@@ -42,9 +48,10 @@
         "calt": true
     },
     "agent": {
+        "notify_when_agent_waiting": "all_screens",
         "dock": "right",
         "tool_permissions": {
-            "default": "allow"
+            "default": "confirm"
         },
         "inline_assistant_model": {
             "provider": "copilot_chat",
@@ -58,7 +65,6 @@
         "model_parameters": [],
         "play_sound_when_agent_done": "always",
         "expand_terminal_card": false
-
     },
     "symbols.files.associations": {
         "*.module.ts": "nest",
@@ -92,6 +98,13 @@
         "dark": "One Dark Pro"
     },
     "lsp_document_colors": "background",
+    "lsp": {
+        "biome": {
+            "settings": {
+                "require_config_file": true
+            }
+        }
+    },
     "languages": {
         "Vue.js": {
             "language_servers": [
