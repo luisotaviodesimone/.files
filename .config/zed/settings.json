@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "cli_default_open_behavior": "existing_window",
     "outline_panel": {
         "dock": "left"
     },
@@ -39,7 +40,13 @@
     "soft_wrap": "editor_width",
     "buffer_line_height": "comfortable",
     "edit_predictions": {
-        "provider": "copilot"
+        "provider": "ollama",
+        "ollama": {
+            "api_url": "http://localhost:11434",
+            "model": "qwen2.5-coder:7b",
+            "prompt_format": "infer",
+            "max_output_tokens": 512
+        }
     },
     "ui_font_family": "JetBrainsMono Nerd Font Mono",
     "show_whitespaces": "trailing",
@@ -59,8 +66,10 @@
         },
         "default_profile": "write",
         "default_model": {
+            "effort": "high",
+            "enable_thinking": true,
             "provider": "copilot_chat",
-            "model": "claude-sonnet-4.5"
+            "model": "gpt-5.2-codex"
         },
         "model_parameters": [],
         "play_sound_when_agent_done": "always",
@@ -115,6 +124,7 @@
             ]
         },
         "TypeScript": {
+            // "formatter": { "language_server": { "name": "biome" } },
             "language_servers": [
                 "typescript-language-server",
                 "!vtsls",
@@ -123,6 +133,7 @@
             ]
         },
         "TSX": {
+            // "formatter": { "language_server": { "name": "biome" } },
             "language_servers": [
                 "typescript-language-server",
                 "!vtsls",
@@ -131,12 +142,16 @@
             ]
         },
         "JavaScript": {
+            // "formatter": { "language_server": { "name": "biome" } },
             "language_servers": [
                 "typescript-language-server",
                 "!vtsls",
                 "!biome",
                 "..."
             ]
+        },
+        "JSON": {
+            // "formatter": { "language_server": { "name": "biome" } }
         }
     },
     "theme_overrides": {
