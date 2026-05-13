@@ -1,0 +1,53 @@
+{
+  "model": "sonnet[1m]",
+  "permissions": {
+    "allow": [
+      "Bash(yarn test *)",
+      "Bash(yarn lint *)",
+      "Bash(yarn lint:fix *)",
+      "Bash(yarn typecheck *)",
+      "Bash(npx tsc --noEmit *)",
+      "Bash(* --version)",
+      "Bash(* --help *)"
+    ],
+    "deny": [
+      "Bash(git push *)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/notify.sh"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/notify.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "ccline",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "syntaxHighlightingDisabled": false,
+  "effortLevel": "medium",
+  "theme": "dark-ansi",
+  "skipAutoPermissionPrompt": true
+}
