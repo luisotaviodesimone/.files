@@ -3,6 +3,7 @@
   "instructions": [
     "/home/luisotaviodesimone/.config/opencode/rules/*.md"
   ],
+  "theme": "system",
   "permission": {
     "bash": "ask",
     "edit": "ask"
