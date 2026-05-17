@@ -1,0 +1,6 @@
+{
+  "lastChangelogVersion": "0.74.1",
+  "defaultProvider": "openrouter",
+  "defaultModel": "nvidia/nemotron-3-super-120b-a12b:free",
+  "defaultThinkingLevel": "medium"
+}
