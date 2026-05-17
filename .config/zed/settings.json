@@ -16,6 +16,9 @@
     },
     "diff_view_style": "unified",
     "agent_servers": {
+        "opencode": {
+            "type": "registry"
+        },
         "claude-acp": {
             "type": "registry",
             "env": {
@@ -40,7 +43,7 @@
     "soft_wrap": "editor_width",
     "buffer_line_height": "comfortable",
     "edit_predictions": {
-        "provider": "ollama",
+        "provider": "copilot",
         "ollama": {
             "api_url": "http://localhost:11434",
             "model": "qwen2.5-coder:7b",

@@ -3,9 +3,13 @@
   "permissions": {
     "allow": [
       "Bash(yarn test *)",
+      "Bash(yarn test:e2e *)",
       "Bash(yarn lint *)",
       "Bash(yarn lint:fix *)",
       "Bash(yarn typecheck *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr diff *)",
       "Bash(npx tsc --noEmit *)",
       "Bash(* --version)",
       "Bash(* --help *)"
