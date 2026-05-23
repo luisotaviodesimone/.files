@@ -36,5 +36,4 @@ source /etc/os-release
 eval "$($HOME/.local/bin/mise activate zsh)"
 source <(fzf --zsh)
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
-
+[[ -d /home/linuxbrew ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"

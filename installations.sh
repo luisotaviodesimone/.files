@@ -78,10 +78,12 @@ pacman_apps=(
     jq
     kubectl
     # libnotify
+    less
     libqalculate
     # lib32-systemd
     # maim
     fastfetch
+    fzf
     ncdu
     net-tools
     neovim
@@ -95,11 +97,12 @@ pacman_apps=(
     ripgrep
     # rofi
     sshpass
+    sway
     swaylock
     swaybg
     systemd-resolvconf
     terminus-font
-    tmux
+    # tmux
     ttf-dejavu
     ttf-droid
     ttf-firacode-nerd

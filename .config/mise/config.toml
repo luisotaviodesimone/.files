@@ -22,7 +22,7 @@ k9s = "latest"
 lua = "latest"
 k6 = "latest"
 ollama = "latest"
-tmux = "3.6a"
+tmux = "3.6b"
 pi = "0.74.1"
 
 [settings]
