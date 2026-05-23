@@ -95,7 +95,7 @@ pacman_apps=(
     python-setuptools
     python-pipx
     ripgrep
-    # rofi
+    rofi
     sshpass
     sway
     swaylock
@@ -111,6 +111,7 @@ pacman_apps=(
     ttf-liberation
     ttf-roboto
     ttf-ubuntu-font-family
+    waybar
     wget
     wireguard-tools
     wireless_tools
