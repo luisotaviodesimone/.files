@@ -14,6 +14,10 @@ if (which kubectl > /dev/null && [[ $SHELL == "/bin/zsh" ]] || [[ $SHELL == "/us
     compdef kubecolor="kubectl"
 fi
 
+obsidian_function() {
+    /mnt/c/Users/luiso/scoop/apps/obsidian/current/Obsidian.exe "$@" 2>&1 | tr -d '\r'
+}
+
 # Tools shortcuts
 alias k="kubectl"
 alias vim="nvim"
@@ -21,8 +25,11 @@ alias t="TERM=xterm-256color tmux"
 alias ss="starship"
 alias tf="terraform"
 alias explorer="explorer.exe"
-if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then alias zed="/mnt/c/Users/luiso/scoop/apps/zed/current/Zed.exe"; fi
 alias lg="lazygit"
+if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
+    alias zed="/mnt/c/Users/luiso/scoop/apps/zed/current/Zed.exe";
+    alias obsidian=obsidian_function;
+fi
 
 alias apply="exec $SHELL"
 alias clc="fc -ln -1 | copy"
@@ -65,9 +72,11 @@ case "$ID" in
 esac
 
 # Bat alias with fallback in case batcat is called only bat
-
 command -v batcat > /dev/null && CMD=batcat || CMD=bat && alias cat="$CMD -p -P"
 unset CMD
+
+# Pi alias for quick questions. (e.g.: `q "What is the capital of France?"`)
+alias q="pi -p --tools read,grep,find,ls --model opencode/big-pickle"
 
 copyk3s ()
 {
