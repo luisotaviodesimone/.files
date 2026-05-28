@@ -27,7 +27,7 @@ fi
 cd "$HOME/.files" || exit
 source ./utils.sh
 
-export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
+export DOT_FILES_DIR="$HOME/.files"
 
 apt_apps=(
     bat
@@ -35,7 +35,6 @@ apt_apps=(
     dnsutils
     eza
     fuse
-    fzf
     httpie
     jq
     libbz2-dev
