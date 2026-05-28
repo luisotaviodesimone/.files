@@ -1,3 +1,5 @@
+source $DOT_FILES_DIR/utils.sh
+
 export PATH="$HOME/.platformio/penv/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.krew/bin:$PATH:$HOME/.dotnet:$DOTNET_ROOT/tools:$HOME/.bun/bin:$HOME/.turso:/home/linuxbrew/.linuxbrew/bin"
 export DOTNET_ROOT=$HOME/.dotnet
 export DOT_FILES_DIR="$(dirname "$(readlink -f "$0")")"
@@ -33,7 +35,9 @@ fi
 # Set environment vars in file
 source /etc/os-release
 
-eval "$($HOME/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 source <(fzf --zsh)
 
-[[ -d /home/linuxbrew ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+[[ -d /home/linuxbrew ]] && eval "$(brew shellenv zsh)"
+
+if isCommandInstalled wt; then eval "$(command wt config shell init zsh)"; fi

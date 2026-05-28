@@ -1,4 +1,3 @@
-source $DOT_FILES_DIR/utils.sh
 autoload -U +X bashcompinit && bashcompinit
 
 if isCommandInstalled "terraform"; then
