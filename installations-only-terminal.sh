@@ -17,6 +17,11 @@ if [ ! -d "$HOME/.files" ] && [ -n "$GITHUB_PAT" ]; then
     echo -e "Cloning '.files' dir"
     git clone "https://$GITHUB_PAT@github.com/luisotaviodesimone/.files.git" "$HOME/.files" --recurse-submodules
     unset GITHUB_PAT
+elif [[ ! -d "$HOME/.files" ]]; then
+    echo -e "$YELLOW .files directory not found and no PAT provided. Cloning without recursive submodules.$RESET"
+    git clone "https://github.com/luisotaviodesimone/.files.git" "$HOME/.files"
+else
+    echo -e "$GREEN .files directory already exists. Skipping clone.$RESET"
 fi
 
 cd "$HOME/.files" || exit
