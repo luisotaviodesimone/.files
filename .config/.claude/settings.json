@@ -1,5 +1,4 @@
 {
-  "model": "sonnet[1m]",
   "permissions": {
     "allow": [
       "Bash(yarn test *)",
@@ -7,9 +6,18 @@
       "Bash(yarn lint *)",
       "Bash(yarn lint:fix *)",
       "Bash(yarn typecheck *)",
+      "Bash(bun run test *)",
+      "Bash(bun run test:e2e *)",
+      "Bash(bun run lint *)",
+      "Bash(bun run lint:fix *)",
+      "Bash(bun run typecheck *)",
+      "Bash(yarn tsc --noEmit *)",
+      "Bash(bunx tsc --noEmit *)",
       "Bash(gh pr list *)",
       "Bash(gh pr view *)",
       "Bash(gh pr diff *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
       "Bash(npx tsc --noEmit *)",
       "Bash(* --version)",
       "Bash(* --help *)"
@@ -18,6 +26,7 @@
       "Bash(git push *)"
     ]
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "Stop": [
       {
