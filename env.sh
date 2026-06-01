@@ -1,4 +1,4 @@
-source $DOT_FILES_DIR/utils.sh
+source $HOME/.files/utils.sh
 
 export PATH="$HOME/.platformio/penv/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.krew/bin:$PATH:$HOME/.dotnet:$DOTNET_ROOT/tools:$HOME/.bun/bin:$HOME/.turso:/home/linuxbrew/.linuxbrew/bin"
 export DOTNET_ROOT=$HOME/.dotnet
