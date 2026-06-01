@@ -42,3 +42,20 @@ tar -xzf kubeconform-linux-amd64.tar.gz
 mv ./kubeconform $HOME/.local/bin
 
 rm -r ./kubeconform-linux-amd64.tar.gz LICENSE
+
+# Install krew plugin manager
+(
+  set -x; cd "$(mktemp -d)" &&
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+  KREW="krew-${OS}_${ARCH}" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+  tar zxvf "${KREW}.tar.gz" &&
+  ./"${KREW}" install krew
+)
+
+# install kompose
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.34.0/kompose-linux-amd64 -o kompose
+
+chmod +x kompose
+mv kompose $HOME/.local/bin/
