@@ -24,6 +24,7 @@ k6 = "latest"
 ollama = "latest"
 tmux = "3.6b"
 pi = "0.74.1"
+neovim = "0.12.2"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
