@@ -92,6 +92,7 @@ pacman_apps=(
     # ntfs-3g
     # picom
     # polybar
+    obsidian
     python-setuptools
     python-pipx
     ripgrep
