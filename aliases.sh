@@ -25,6 +25,12 @@ alias t="TERM=xterm-256color tmux"
 alias ss="starship"
 alias tf="terraform"
 alias explorer="explorer.exe"
+if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
+    alias zed="/mnt/c/Users/luiso/scoop/apps/zed/current/Zed.exe";
+elif [[ $ID == arch || $ID == manjaro || $ID == endeavouros || $ID == cachyos ]]; then
+    alias zed="zeditor"
+fi
+
 alias lg="lazygit"
 if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
     alias zed="/mnt/c/Users/luiso/scoop/apps/zed/current/Zed.exe";
