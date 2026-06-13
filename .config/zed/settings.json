@@ -43,6 +43,9 @@
     "soft_wrap": "editor_width",
     "buffer_line_height": "comfortable",
     "edit_predictions": {
+        "copilot": {
+            "enable_next_edit_suggestions": true
+        },
         "provider": "copilot",
         "ollama": {
             "api_url": "http://localhost:11434",
