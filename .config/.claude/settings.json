@@ -13,6 +13,8 @@
       "Bash(bun run typecheck *)",
       "Bash(yarn tsc --noEmit *)",
       "Bash(bunx tsc --noEmit *)",
+      "Bash(yarn vue-tsc --noEmit *)",
+      "Bash(bunx vue-tsc --noEmit *)",
       "Bash(gh pr list *)",
       "Bash(gh pr view *)",
       "Bash(gh pr diff *)",
@@ -20,13 +22,14 @@
       "Bash(git diff *)",
       "Bash(npx tsc --noEmit *)",
       "Bash(* --version)",
-      "Bash(* --help *)"
+      "Bash(* --help *)",
+      "Bash(pencil *)"
     ],
     "deny": [
       "Bash(git push *)"
     ]
   },
-  "model": "sonnet[1m]",
+  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -60,7 +63,8 @@
     "rust-analyzer-lsp@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": false,
-  "effortLevel": "medium",
-  "theme": "dark-ansi",
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "theme": "auto",
   "skipAutoPermissionPrompt": true
 }
