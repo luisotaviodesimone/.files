@@ -4,7 +4,23 @@
     "/home/luisotaviodesimone/.config/opencode/rules/*.md"
   ],
   "permission": {
-    "bash": "ask",
+    "bash": {
+      "*": "ask",
+      "kubectl get *": "allow",
+      "kubectl describe *": "allow",
+      "kubectl logs *": "allow",
+      "helm list *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git status * ": "allow",
+      "pencil * ": "allow",
+      "head * ": "allow",
+      "echo * ": "allow",
+      "rg * ": "allow",
+      "wc * ": "allow",
+      "ls * ": "allow"
+    },
     "edit": "ask"
   },
   "mcp": {
@@ -24,7 +40,7 @@
     },
     "pencil": {
       "command": [
-        "/mnt/c/Users/luiso/AppData/Local/Programs/Pencil/resources/app.asar.unpacked/out/mcp-server-windows-x64.exe",
+        "/mnt/c/Program Files/Pencil/resources/app.asar.unpacked/out/mcp-server-windows-x64.exe",
         "--app",
         "desktop"
       ],
