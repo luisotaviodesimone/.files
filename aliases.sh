@@ -50,8 +50,8 @@ alias kn="kubectl config set-context --current --namespace"
 # Docker shortcuts
 alias dcu="docker context use"
 
-# Git Aliases
-alias gst="git status"
+# Claude alias
+alias cc-personal="CLAUDE_CONFIG_DIR=$HOME/.claude-personal claude"
 
 # Directory Aliases
 alias ..="cd .."
