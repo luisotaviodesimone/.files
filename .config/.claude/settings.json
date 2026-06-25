@@ -18,9 +18,26 @@
       "Bash(gh pr list *)",
       "Bash(gh pr view *)",
       "Bash(gh pr diff *)",
+      "Bash(gh repo view *)",
       "Bash(git log *)",
       "Bash(git diff *)",
+      "Bash(git --no-pager diff *)",
       "Bash(npx tsc --noEmit *)",
+      "Bash(kubectl get *)",
+      "Bash(kubectl describe *)",
+      "Bash(kubectl logs *)",
+      "Bash(kubectl top *)",
+      "Bash(docker compose ps *)",
+      "Bash(docker compose logs *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git status *)",
+      "Bash(head *)",
+      "Bash(echo *)",
+      "Bash(rg *)",
+      "Bash(wc *)",
+      "Bash(ls *)",
       "Bash(* --version)",
       "Bash(* --help *)",
       "Bash(pencil *)"
@@ -60,7 +77,16 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "ponytail@ponytail": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
   },
   "syntaxHighlightingDisabled": false,
   "effortLevel": "high",
