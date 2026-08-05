@@ -55,7 +55,7 @@ rm -r ./kubeconform-linux-amd64.tar.gz LICENSE
 )
 
 # install kompose
-curl -L https://github.com/kubernetes/kompose/releases/download/v1.34.0/kompose-linux-amd64 -o kompose
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-amd64 -o kompose
 
 chmod +x kompose
 mv kompose $HOME/.local/bin/
