@@ -20,12 +20,12 @@ opentofu = "latest"
 k9s = "latest"
 lua = "latest"
 k6 = "latest"
-ollama = "latest"
 tmux = "3.6b"
 pi = "0.74.1"
 neovim = "0.12.2"
 rclone = "latest"
 yarn = "1.22.22"
+yq = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
