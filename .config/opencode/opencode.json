@@ -55,6 +55,23 @@
       ],
       "enabled": true,
       "type": "local"
+    },
+    "arxiv-mcp-server": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "arxiv-mcp-server"
+      ]
+    },
+    "zotero-mcp": {
+      "type": "local",
+      "command": [
+        "zotero-mcp"
+      ],
+      "environment": {
+        "ZOTERO_API_KEY": "{env:ZOTERO_API_KEY}",
+        "ZOTERO_LIBRARY_ID": "21190845"
+      }
     }
   },
   "provider": {
@@ -93,11 +110,34 @@
             "num_ctx": 65536
           }
         },
+        "ornith:9b": {
+          "_launch": true,
+          "name": "ornith:9b",
+          "options": {
+            "num_ctx": 65536
+          }
+        },
         "qwen3.5": {
           "_launch": true,
           "name": "qwen3.5",
           "options": {
             "num_ctx": 32000
+          }
+        }
+      }
+    },
+    "llamacpp": {
+      "name": "Llamacpp",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:8080/v1"
+      },
+      "models": {
+        "NousResearch/Hermes-3-Llama-3.1-8B-GGUF:Q8_0": {
+          "_launch": true,
+          "name": "NousResearch/Hermes-3-Llama-3.1-8B-GGUF:Q8_0",
+          "options": {
+            "num_ctx": 32768
           }
         }
       }
