@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "disable_ai": false,
     "cli_default_open_behavior": "existing_window",
     "outline_panel": {
         "dock": "left"
@@ -20,6 +21,11 @@
             "type": "registry"
         },
         "claude-acp": {
+            "default_config_options": {
+                "mode": "auto",
+                "effort": "high",
+                "model": "default"
+            },
             "type": "registry",
             "env": {
                 "CLAUDE_CODE_EXECUTABLE": "/home/luisotaviodesimone/.local/bin/claude"
@@ -43,9 +49,6 @@
     "soft_wrap": "editor_width",
     "buffer_line_height": "comfortable",
     "edit_predictions": {
-        "copilot": {
-            "enable_next_edit_suggestions": true
-        },
         "provider": "copilot",
         "ollama": {
             "api_url": "http://localhost:11434",
@@ -64,22 +67,38 @@
         "notify_when_agent_waiting": "all_screens",
         "dock": "right",
         "tool_permissions": {
+            "tools": {
+                "create_directory": {
+                    "always_allow": [
+                        {
+                            "pattern": "^ansible-playbooks-CI/playbooks/roles/netbird-peer/"
+                        }
+                    ]
+                },
+                "terminal": {
+                    "always_allow": [
+                        {
+                            "pattern": "^uvx\\s+ansible-lint(\\s|$)"
+                        }
+                    ]
+                }
+            },
             "default": "confirm"
-        },
-        "inline_assistant_model": {
-            "provider": "copilot_chat",
-            "model": "gpt-5-mini"
         },
         "default_profile": "write",
         "default_model": {
-            "effort": "high",
+            "effort": "medium",
             "enable_thinking": true,
             "provider": "copilot_chat",
             "model": "gpt-5.2-codex"
         },
         "model_parameters": [],
         "play_sound_when_agent_done": "always",
-        "expand_terminal_card": false
+        "expand_terminal_card": false,
+        "inline_assistant_model": {
+            "provider": "opencode",
+            "model": "free/big-pickle"
+        },
     },
     "symbols.files.associations": {
         "*.module.ts": "nest",
