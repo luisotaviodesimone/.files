@@ -1,0 +1,16 @@
+[
+    {
+        "label": "NestJS: attach to :9229",
+        "adapter": "JavaScript",
+        "request": "attach",
+        "type": "pwa-node",
+        "cwd": "$ZED_WORKTREE_ROOT",
+        "port": 9229,
+        "restart": true,
+        "sourceMaps": true,
+        "skipFiles": [
+            "<node_internals>/**",
+            "**/node_modules/**"
+        ]
+    }
+]

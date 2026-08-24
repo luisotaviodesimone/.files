@@ -7,7 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "debugger": {
+        "timeout": 10000
+    },
     "disable_ai": false,
+    "context_servers": {
+        "mcp-server-context7": {
+            "enabled": true,
+            "remote": false,
+            "settings": {
+                "context7_api_key": "ctx7sk-4b2342d1-8ea0-48ce-8161-62c7335d76e6"
+            }
+        }
+    },
     "cli_default_open_behavior": "existing_window",
     "outline_panel": {
         "dock": "left"
@@ -24,7 +36,7 @@
             "default_config_options": {
                 "mode": "auto",
                 "effort": "high",
-                "model": "default"
+                "model": "opus[1m]"
             },
             "type": "registry",
             "env": {
@@ -98,7 +110,7 @@
         "inline_assistant_model": {
             "provider": "opencode",
             "model": "free/big-pickle"
-        },
+        }
     },
     "symbols.files.associations": {
         "*.module.ts": "nest",
