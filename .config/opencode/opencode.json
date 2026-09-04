@@ -9,6 +9,7 @@
       "kubectl get *": "allow",
       "kubectl describe *": "allow",
       "kubectl logs *": "allow",
+      "kubectl explain *": "allow",
       "helm list *": "allow",
       "git diff *": "allow",
       "git log *": "allow",
@@ -19,9 +20,13 @@
       "echo * ": "allow",
       "rg * ": "allow",
       "wc * ": "allow",
-      "ls * ": "allow"
+      "ls * ": "allow",
+      "kubectl get secret": "ask"
     },
-    "edit": "ask"
+    "edit": "ask",
+    "read": {
+      "*secret*": "ask"
+    }
   },
   "mcp": {
     "context7": {

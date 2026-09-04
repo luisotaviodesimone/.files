@@ -61,13 +61,7 @@
     "soft_wrap": "editor_width",
     "buffer_line_height": "comfortable",
     "edit_predictions": {
-        "provider": "copilot",
-        "ollama": {
-            "api_url": "http://localhost:11434",
-            "model": "qwen2.5-coder:7b",
-            "prompt_format": "infer",
-            "max_output_tokens": 512
-        }
+        "provider": "copilot"
     },
     "ui_font_family": "JetBrainsMono Nerd Font Mono",
     "show_whitespaces": "trailing",
@@ -98,19 +92,9 @@
             "default": "confirm"
         },
         "default_profile": "write",
-        "default_model": {
-            "effort": "medium",
-            "enable_thinking": true,
-            "provider": "copilot_chat",
-            "model": "gpt-5.2-codex"
-        },
         "model_parameters": [],
         "play_sound_when_agent_done": "always",
-        "expand_terminal_card": false,
-        "inline_assistant_model": {
-            "provider": "opencode",
-            "model": "free/big-pickle"
-        }
+        "expand_terminal_card": false
     },
     "symbols.files.associations": {
         "*.module.ts": "nest",

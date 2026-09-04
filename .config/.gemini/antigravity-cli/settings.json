@@ -1,0 +1,17 @@
+{
+  "allowNonWorkspaceAccess": true,
+  "enableTelemetry": false,
+  "model": "Gemini 3.7 Flash (High)",
+  "permissions": {
+    "allow": [
+      "command(ls)",
+      "command(echo)",
+      "command(kubectl get)",
+      "command(kubectl logs)",
+      "command(helm show)",
+      "command(helm get)",
+      "command(helm list)",
+      "command(grep)"
+    ]
+  }
+}
