@@ -40,13 +40,28 @@
       "Bash(ls *)",
       "Bash(* --version)",
       "Bash(* --help *)",
-      "Bash(pencil *)"
+      "Bash(pencil *)",
+      "Bash(xo-cli list-objects *)"
     ],
     "deny": [
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Read(./.env*.local)",
+      "Read(./env.toml)",
+      "Read(**/.env*.local)",
+      "Read(**/env.toml)"
+    ],
+    "ask": [
+      "Read(./.env)",
+      "Read(**/.env)",
+      "Bash(psql *)",
+      "Bash(kubectl exec *)",
+      "Bash(kubectl apply *)",
+      "Bash(kubectl delete *)",
+      "Bash(gh pr edit *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr comment *)"
     ]
   },
-  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -77,14 +92,21 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "ponytail@ponytail": true
+    "rust-analyzer-lsp@claude-plugins-official": false,
+    "ponytail@ponytail": false,
+    "mattpocock-skills@mattpocock": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "mattpocock": {
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
       }
     }
   },

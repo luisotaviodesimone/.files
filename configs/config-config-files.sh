@@ -1,6 +1,7 @@
 mkdir -p ~/.config
 
 ln -sf $DOT_FILES_DIR/.config/* ~/.config/
+ln -sf $DOT_FILES_DIR/.config/.gemini ~/.gemini
 
 # Configure default dark theme
 if (which gsettings > /dev/null); then
