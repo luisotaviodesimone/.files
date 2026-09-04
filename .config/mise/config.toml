@@ -8,7 +8,7 @@ go = "latest"
 helm = "latest"
 kubecolor = "0.6.0"
 lazygit = "latest"
-opencode = "1.15.3"
+opencode = "1.18.28"
 pipx = "latest"
 redis = "latest"
 usage = "4.1.0"
@@ -26,6 +26,7 @@ neovim = "0.12.2"
 rclone = "latest"
 yarn = "1.22.22"
 yq = "latest"
+terraform = "1.16.1"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
