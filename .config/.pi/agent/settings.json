@@ -1,6 +1,8 @@
 {
-  "lastChangelogVersion": "0.74.1",
-  "defaultProvider": "openrouter",
-  "defaultModel": "nvidia/nemotron-3-super-120b-a12b:free",
-  "defaultThinkingLevel": "medium"
+  "lastChangelogVersion": "0.85.0",
+  "defaultProvider": "opencode",
+  "defaultModel": "mimo-v2.5-free",
+  "defaultThinkingLevel": "high",
+  "packages": [],
+  "theme": "dark"
 }
