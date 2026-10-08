@@ -16,7 +16,7 @@ uv = "0.11.13"
 node = "24.17.0"
 "github-cli" = "latest"
 aws-cli = "latest"
-opentofu = "latest"
+opentofu = "1.13.1"
 k9s = "latest"
 lua = "latest"
 k6 = "latest"
@@ -27,6 +27,8 @@ rclone = "latest"
 yarn = "1.22.22"
 yq = "latest"
 terraform = "1.16.1"
+just = "latest"
+kubectl = "1.37.1"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]

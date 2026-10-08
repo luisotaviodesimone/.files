@@ -12,3 +12,4 @@ uv generate-shell-completion zsh > ~/.local/completions/_uv
 mise completion zsh > ~/.local/completions/_mise
 opencode completion > ~/.local/completions/_opencode
 rg --generate complete-zsh > ~/.local/completions/_rg
+just --completions zsh > ~/.local/completions/_just
