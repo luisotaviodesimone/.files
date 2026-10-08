@@ -1,19 +1,19 @@
 autoload -U +X bashcompinit && bashcompinit
 
 if isCommandInstalled "terraform"; then
-    complete -o nospace -C /usr/bin/terraform terraform
+    complete -o nospace -C $(which terraform) terraform
 fi
 
 if isCommandInstalled "vagrant"; then
-    complete -o nospace -C /usr/bin/vagrant vagrant
+    complete -o nospace -C $(which vagrant) vagrant
 fi
 
 if isCommandInstalled "vault"; then
-    complete -o nospace -C /usr/bin/vault vault
+    complete -o nospace -C $(which vault) vault
 fi
 
 if isCommandInstalled "tofu"; then
-    complete -o nospace -C /usr/bin/tofu tofu
+    complete -o nospace -C $(which tofu) tofu
 fi
 
 if isCommandInstalled "mc"; then
