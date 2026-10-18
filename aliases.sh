@@ -23,15 +23,15 @@ alias k="kubectl"
 alias vim="nvim"
 alias t="TERM=xterm-256color tmux"
 alias ss="starship"
-alias tf="terraform"
 alias explorer="explorer.exe"
+alias lg="lazygit"
+
 if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
     alias zed="/mnt/c/Users/luiso/scoop/apps/zed/current/Zed.exe";
 elif [[ $ID == arch || $ID == manjaro || $ID == endeavouros || $ID == cachyos ]]; then
     alias zed="zeditor"
 fi
 
-alias lg="lazygit"
 if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
     alias zed="/mnt/c/Users/luiso/scoop/apps/zed/current/Zed.exe";
     alias obsidian=obsidian_function;
@@ -84,6 +84,14 @@ unset CMD
 # Pi alias for quick questions. (e.g.: `q "What is the capital of France?"`)
 alias q="pi -p --tools read,grep,find,ls --model opencode/big-pickle"
 
+# Terraform alias
+alias tf="tofu"
+alias tw="tf workspace select"
+tfplan() {
+    tf plan -out="$1.tfplan" &&
+    tf show -json "$1.tfplan" | tf-summarize -md | glow -
+}
+
 copyk3s ()
 {
     host=$1
@@ -96,18 +104,41 @@ copyk3s ()
     sed -i "s|127.0.0.1|$node_ip|g" $file_to_append_to
 }
 
-topodsbynode ()
-{
-    if [ -z "$1" ]; then
-        echo "Usage: topodsbynode <node-name>"
-        return 1
+topodsbynode() {
+    local sort_by=memory
+    local -a nodes
+
+    while (( $# )); do
+        case $1 in
+            -s|--sort-by)
+                [[ -n $2 ]] || { echo "Faltou o valor de $1 (cpu|memory)" >&2; return 1; }
+                sort_by=$2; shift 2 ;;
+            -h|--help)
+                echo "Uso: topodsbynode [-s cpu|memory] [node ...]"; return 0 ;;
+            *) nodes+=("$1"); shift ;;
+        esac
+    done
+
+    [[ $sort_by == (cpu|memory) ]] || { echo "--sort-by deve ser cpu ou memory" >&2; return 1; }
+
+    local kc=kubectl
+    (( $+commands[kubecolor] )) && kc=kubecolor
+
+    if (( ! ${#nodes} )); then
+        nodes=( ${(f)"$(command kubectl get nodes \
+      -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}')"} ) || return 1
     fi
-    NODE_NAME="$1"
-    echo "Getting metric from pods running on node $NODE_NAME..."
-    kubectl get pods -A -o wide --no-headers | grep "$NODE_NAME" | awk '{print $1, $2}' | xargs -I{} $SHELL -c 'ns=$(echo {} | cut -d" " -f1); pod=$(echo {} | cut -d" " -f2); kubectl top pod --no-headers "$pod" -n "$ns"' | column -t -N NAME,CPU,MEMORY | awk '{print $3, $2, $1}' | sort -h | column -t
+    (( ${#nodes} )) || { echo "Nenhum nó encontrado." >&2; return 1; }
+
+    local node
+    for node in "${nodes[@]}"; do
+        print -P "\n%B%F{cyan}━━ $node ━━%f%b"
+        $kc top node "$node"
+        echo
+        $kc top pod -A --field-selector "spec.nodeName=$node" --sort-by="$sort_by"
+    done
 }
 
-slugify ()
-{
+slugify () {
     echo "$1" | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]'
 }

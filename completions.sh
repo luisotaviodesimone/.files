@@ -17,7 +17,11 @@ if isCommandInstalled "tofu"; then
 fi
 
 if isCommandInstalled "mc"; then
-    complete -o nospace -C /home/luisotaviodesimone/.local/bin/mc mc
+    complete -o nospace -C $(which mc) mc
+fi
+
+if isCommandInstalled "aws"; then
+    complete -o nospace -C $(which aws_completer) aws
 fi
 
 # NVM Cli
