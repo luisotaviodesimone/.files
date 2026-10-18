@@ -1,7 +1,7 @@
 [tools]
-ansible = "latest"
-ansible-core = "latest"
-bun = "1.3.14"
+ansible = { version = "14.5.0", pipx_args = "--include-deps", uvx = "false" }
+ansible-core = "2.21.5"
+bun = "1.4.3"
 fzf = "latest"
 glab = "latest"
 go = "latest"
@@ -26,9 +26,11 @@ neovim = "0.12.2"
 rclone = "latest"
 yarn = "1.22.22"
 yq = "latest"
-terraform = "1.16.1"
+terraform = "1.13.1"
 just = "latest"
 kubectl = "1.37.1"
+glow = "latest"
+tf-summarize = "0.3.20"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
