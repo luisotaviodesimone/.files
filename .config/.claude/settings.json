@@ -48,7 +48,8 @@
       "Read(./.env*.local)",
       "Read(./env.toml)",
       "Read(**/.env*.local)",
-      "Read(**/env.toml)"
+      "Read(**/env.toml)",
+      "Read(**/.ssh/**)"
     ],
     "ask": [
       "Read(./.env)",

@@ -21,6 +21,8 @@
       "rg * ": "allow",
       "wc * ": "allow",
       "ls * ": "allow",
+      "sed * ": "allow",
+      "sed * -i *": "ask",
       "kubectl get secret": "ask"
     },
     "edit": "ask",
