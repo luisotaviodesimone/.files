@@ -55,14 +55,18 @@
       "Read(./.env)",
       "Read(**/.env)",
       "Bash(psql *)",
-      "Bash(kubectl exec *)",
-      "Bash(kubectl apply *)",
-      "Bash(kubectl delete *)",
+      "Bash(*kubectl * exec *)",
+      "Bash(*kubectl * apply *)",
+      "Bash(*kubectl * delete *)",
+      "Bash(*kubectl * patch *)",
+      "Bash(*kubectl * annotate *)",
+      "Bash(*kubectl * drain *)",
       "Bash(gh pr edit *)",
       "Bash(gh pr create *)",
       "Bash(gh pr comment *)"
     ]
   },
+  "model": "sonnet",
   "hooks": {
     "Stop": [
       {
@@ -94,8 +98,10 @@
   },
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": false,
+    "claude-mem@thedotmack": true,
     "ponytail@ponytail": false,
-    "mattpocock-skills@mattpocock": true
+    "mattpocock-skills@mattpocock": true,
+    "delta@zed-industries": false
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -109,11 +115,30 @@
         "source": "github",
         "repo": "mattpocock/skills"
       }
+    },
+    "zed-industries": {
+      "source": {
+        "source": "github",
+        "repo": "zed-industries/delta-claude"
+      }
     }
   },
-  "syntaxHighlightingDisabled": false,
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "pluginConfigs": {
+    "ponytail@ponytail": {
+      "options": {
+        "ledger": true,
+        "sendNames": true
+      }
+    }
+  },
   "tui": "fullscreen",
   "theme": "auto",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "agentPushNotifEnabled": true
 }
