@@ -54,19 +54,23 @@
     "ask": [
       "Read(./.env)",
       "Read(**/.env)",
-      "Bash(psql *)",
-      "Bash(*kubectl * exec *)",
-      "Bash(*kubectl * apply *)",
-      "Bash(*kubectl * delete *)",
       "Bash(*kubectl * patch *)",
       "Bash(*kubectl * annotate *)",
       "Bash(*kubectl * drain *)",
-      "Bash(gh pr edit *)",
-      "Bash(gh pr create *)",
-      "Bash(gh pr comment *)"
+      "Bash(*kubectl * exec *)",
+      "Bash(*kubectl * apply *)",
+      "Bash(*kubectl * delete *)",
+      "Bash(*psql *)",
+      "Bash(*gh pr edit *)",
+      "Bash(*gh pr create *)",
+      "Bash(*gh pr comment *)",
+      "Bash(*tofu * apply *)",
+      "Bash(*terraform * apply *)",
+      "Bash(* aws *)",
+      "Bash(mise exec *)"
     ]
   },
-  "model": "sonnet",
+  "model": "opus",
   "hooks": {
     "Stop": [
       {
