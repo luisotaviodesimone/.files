@@ -29,6 +29,13 @@
     },
     "diff_view_style": "unified",
     "agent_servers": {
+        "antigravity-acp": {
+            "default_config_options": {
+                "mode": "yolo",
+                "model": "gemini-3.8-flash-high"
+            },
+            "type": "registry"
+        },
         "opencode": {
             "type": "registry"
         },
@@ -36,7 +43,7 @@
             "default_config_options": {
                 "mode": "auto",
                 "effort": "high",
-                "model": "opus[1m]"
+                "model": "opus"
             },
             "type": "registry",
             "env": {
@@ -70,6 +77,11 @@
         "calt": true
     },
     "agent": {
+        "default_model": {
+            "enable_thinking": false,
+            "provider": "ollama",
+            "model": "tinyllama:latest",
+        },
         "notify_when_agent_waiting": "all_screens",
         "dock": "right",
         "tool_permissions": {
@@ -94,7 +106,7 @@
         "default_profile": "write",
         "model_parameters": [],
         "play_sound_when_agent_done": "always",
-        "expand_terminal_card": false
+        "expand_terminal_card": false,
     },
     "symbols.files.associations": {
         "*.module.ts": "nest",

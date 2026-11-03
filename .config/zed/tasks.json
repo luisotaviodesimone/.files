@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Branches containing commit: $ZED_GIT_SHA_SHORT",
+    "command": "git",
+    "args": ["branch", "-a", "--contains", "$ZED_GIT_SHA"],
+    "tags": ["git-command"]
+  },
+  {
+    "label": "Check out $ZED_GIT_REF",
+    "command": "git",
+    "args": ["checkout", "$ZED_GIT_REF"],
+    "tags": ["git-command"]
+  }
+]
