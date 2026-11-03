@@ -12,11 +12,11 @@ opencode = { version = "2.0.32", allow_builds = ["@opencode/cli"] }
 pipx = "latest"
 redis = "latest"
 usage = { version = "7.0.2", workflow = "publish-cli.yml" }
-uv = "0.11.13"
+uv = "0.13.4"
 node = "24.17.0"
 "github-cli" = "latest"
 aws-cli = "latest"
-opentofu = "1.13.1"
+opentofu = "1.13.2"
 k9s = "latest"
 lua = "latest"
 k6 = "latest"
@@ -31,6 +31,8 @@ just = "1.59.0"
 kubectl = "1.37.1"
 glow = "latest"
 tf-summarize = "0.3.20"
+mdbook = "latest"
+gdu = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
