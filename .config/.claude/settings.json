@@ -54,19 +54,20 @@
     "ask": [
       "Read(./.env)",
       "Read(**/.env)",
-      "Bash(*kubectl * patch *)",
-      "Bash(*kubectl * annotate *)",
-      "Bash(*kubectl * drain *)",
-      "Bash(*kubectl * exec *)",
-      "Bash(*kubectl * apply *)",
-      "Bash(*kubectl * delete *)",
-      "Bash(*psql *)",
-      "Bash(*gh pr edit *)",
-      "Bash(*gh pr create *)",
-      "Bash(*gh pr comment *)",
-      "Bash(*tofu * apply *)",
-      "Bash(*terraform * apply *)",
-      "Bash(* aws *)",
+      "Bash(kubectl * patch *)",
+      "Bash(kubectl * annotate *)",
+      "Bash(kubectl * drain *)",
+      "Bash(kubectl * exec *)",
+      "Bash(kubectl * apply *)",
+      "Bash(kubectl * delete *)",
+      "Bash(psql *)",
+      "Bash(gh pr edit *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr comment *)",
+      "Bash(tofu * apply *)",
+      "Bash(terraform * apply *)",
+      "Bash(tf * apply *)",
+      "Bash(aws *)",
       "Bash(mise exec *)"
     ]
   },
@@ -103,7 +104,7 @@
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": false,
     "claude-mem@thedotmack": true,
-    "ponytail@ponytail": false,
+    "ponytail@ponytail": true,
     "mattpocock-skills@mattpocock": true,
     "delta@zed-industries": false
   },
@@ -125,6 +126,12 @@
         "source": "github",
         "repo": "zed-industries/delta-claude"
       }
+    },
+    "academic-research-skills": {
+      "source": {
+        "source": "github",
+        "repo": "Imbad0202/academic-research-skills"
+      }
     }
   },
   "effortLevel": "high",
@@ -143,6 +150,6 @@
   },
   "tui": "fullscreen",
   "theme": "auto",
-  "skipAutoPermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
