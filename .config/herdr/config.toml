@@ -15,7 +15,7 @@ reload_config = "prefix+r"
 resize_mode = "prefix+shift+r"
 detach = "prefix+d"
 settings = "prefix+shift+s"
-edit_scrollback = ["prefix+[", "prefix+e"]
+edit_scrollback = "prefix+e" # prefix+[ is copy_mode (tmux-like) by default
 
 # Workspace Managemeng
 new_workspace = "prefix+shift+c"
@@ -45,9 +45,10 @@ tab_bar_right = [
   { type = "command", command = "vmstat 1 2 | awk 'END{printf \"CPU %d%%\", 100-$15}'", interval_seconds = 5, timeout_seconds = 3 },
   { type = "command", command = "free -m | awk '/^Mem/{printf \"RAM %.1f/%.0fGB\", $3/1024, $2/1024}'", interval_seconds = 5 },
 ]
+# command output has its ANSI colors stripped, so a divider is the only way to delimit entries
+tab_bar_right_separator = " │ "
 # "auto" draws a fake static block cursor on WSL, ignoring nvim's bar shape and blink
 host_cursor = "native"
-tab_bar_position = "bottom"
 
 [ui.toast]
 delivery = "herdr"
