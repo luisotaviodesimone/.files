@@ -24,6 +24,10 @@ if isCommandInstalled "aws"; then
     complete -o nospace -C $(which aws_completer) aws
 fi
 
+if isCommandInstalled "wt"; then
+    eval "$(command wt config shell init zsh)";
+fi
+
 # NVM Cli
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
