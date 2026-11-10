@@ -36,6 +36,7 @@ gdu = "latest"
 dua = "latest"
 llmfit = "latest"
 gh = "latest"
+herdr = "0.9.5"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
