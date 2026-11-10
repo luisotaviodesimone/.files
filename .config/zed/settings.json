@@ -27,6 +27,7 @@
     "collaboration_panel": {
         "dock": "left"
     },
+    // ---------- AI Stuff ----------
     "diff_view_style": "unified",
     "agent_servers": {
         "antigravity-acp": {
@@ -51,36 +52,23 @@
             }
         }
     },
-    "auto_update": false,
-    "git_panel": {
-        "dock": "left",
-        "sort_by_path": true,
-        "tree_view": true
-    },
-    "git": {
-        "worktree_directory": ".git/worktrees"
-    },
-    "include_ignored": true,
-    "project_panel": {
-        "dock": "left",
-        "hide_gitignore": false
-    },
-    "soft_wrap": "editor_width",
-    "buffer_line_height": "comfortable",
     "edit_predictions": {
+        "open_ai_compatible_api": {
+            "model": "opencode/deepseek-v4.1-flash-free",
+            "api_url": "https://opencode.ai/inference/openai/v1/chat/completions"
+        },
         "provider": "copilot"
     },
-    "ui_font_family": "JetBrainsMono Nerd Font Mono",
-    "show_whitespaces": "trailing",
-    "buffer_font_family": "JetBrainsMono Nerd Font Mono",
-    "buffer_font_features": {
-        "calt": true
-    },
     "agent": {
+        "inline_assistant_model": {
+            "provider": "opencode",
+            "model": "zen/deepseek-v4.1-flash-free",
+            "enable_thinking": false
+        },
         "default_model": {
             "enable_thinking": false,
-            "provider": "ollama",
-            "model": "tinyllama:latest",
+            "provider": "opencode",
+            "model": "opencode/deepseek-v4.1-flash-free"
         },
         "notify_when_agent_waiting": "all_screens",
         "dock": "right",
@@ -106,7 +94,41 @@
         "default_profile": "write",
         "model_parameters": [],
         "play_sound_when_agent_done": "always",
-        "expand_terminal_card": false,
+        "expand_terminal_card": false
+    },
+    "language_models": {
+        "opencode": {
+            "available_models": [
+                {
+                    "name": "deepseek-v4.1-flash-free",
+                    "display_name": "DeepSeek V4.1 Flash Free",
+                    "max_tokens": 1000000
+                }
+            ]
+        }
+    },
+    // ------------------------------
+    "auto_update": false,
+    "git_panel": {
+        "dock": "left",
+        "sort_by_path": true,
+        "tree_view": true
+    },
+    "git": {
+        "worktree_directory": ".git/worktrees"
+    },
+    "include_ignored": true,
+    "project_panel": {
+        "dock": "left",
+        "hide_gitignore": false
+    },
+    "soft_wrap": "editor_width",
+    "buffer_line_height": "comfortable",
+    "ui_font_family": "JetBrainsMono Nerd Font Mono",
+    "show_whitespaces": "trailing",
+    "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+    "buffer_font_features": {
+        "calt": true
     },
     "symbols.files.associations": {
         "*.module.ts": "nest",
@@ -141,50 +163,81 @@
     },
     "lsp_document_colors": "background",
     "lsp": {
-        "biome": {
-            "settings": {
-                "require_config_file": true
-            }
+        // "oxfmt": {
+        //     "initialization_options": {
+        //         "settings": {
+        //             "fmt.configPath": ".oxfmtrc.json"
+        //         }
+        //     }
+        // }
+    },
+    "formatter": {
+        "external": {
+            "command": "bun",
+            "arguments": [
+                "fmt",
+                "--no-script",
+                "--stdin-filepath",
+                "{buffer_path}"
+            ]
         }
     },
     "languages": {
         "Vue.js": {
-            "language_servers": [
-                "typescript-language-server",
-                "!vtsls",
-                "!biome",
-                "..."
-            ]
+            "language_servers": ["typescript-language-server", "!vtsls", "..."],
+            "formatter": {
+                "external": {
+                    "command": "bun",
+                    "arguments": [
+                        "fmt",
+                        "--no-script",
+                        "--stdin-filepath",
+                        "{buffer_path}"
+                    ]
+                }
+            }
         },
         "TypeScript": {
-            // "formatter": { "language_server": { "name": "biome" } },
-            "language_servers": [
-                "typescript-language-server",
-                "!vtsls",
-                "!biome",
-                "..."
-            ]
+            "language_servers": ["typescript-language-server", "!vtsls", "..."],
+            "formatter": {
+                "external": {
+                    "command": "bun",
+                    "arguments": [
+                        "fmt",
+                        "--no-script",
+                        "--stdin-filepath",
+                        "{buffer_path}"
+                    ]
+                }
+            }
         },
         "TSX": {
-            // "formatter": { "language_server": { "name": "biome" } },
-            "language_servers": [
-                "typescript-language-server",
-                "!vtsls",
-                "!biome",
-                "..."
-            ]
+            "language_servers": ["typescript-language-server", "!vtsls", "..."],
+            "formatter": {
+                "external": {
+                    "command": "bun",
+                    "arguments": [
+                        "fmt",
+                        "--no-script",
+                        "--stdin-filepath",
+                        "{buffer_path}"
+                    ]
+                }
+            }
         },
         "JavaScript": {
-            // "formatter": { "language_server": { "name": "biome" } },
-            "language_servers": [
-                "typescript-language-server",
-                "!vtsls",
-                "!biome",
-                "..."
-            ]
-        },
-        "JSON": {
-            // "formatter": { "language_server": { "name": "biome" } }
+            "language_servers": ["typescript-language-server", "!vtsls", "..."],
+            "formatter": {
+                "external": {
+                    "command": "bun",
+                    "arguments": [
+                        "fmt",
+                        "--no-script",
+                        "--stdin-filepath",
+                        "{buffer_path}"
+                    ]
+                }
+            }
         }
     },
     "theme_overrides": {
