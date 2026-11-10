@@ -1,0 +1,41 @@
+onboarding = false
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+[terminal]
+# Same as tmux `-c "#{pane_current_path}"`: new pane/tab/workspace opens in the source pane's dir
+new_cwd = "follow"
+
+# Mirrors ~/.config/tmux/tmux.conf
+[keys]
+prefix = "ctrl+j"
+reload_config = "prefix+r"
+resize_mode = "prefix+shift+r"
+detach = "prefix+d"
+new_tab = "prefix+c"
+close_tab = "prefix+&"
+close_pane = "prefix+x"
+split_vertical = ["prefix+%", "prefix+v"]
+split_horizontal = ["prefix+\"", "prefix+minus"]
+focus_pane_left = ["prefix+h", "prefix+ctrl+h"]
+focus_pane_down = "prefix+j" # prefix+ctrl+j is reserved (sends a literal ctrl+j)
+focus_pane_up = ["prefix+k", "prefix+ctrl+k"]
+focus_pane_right = ["prefix+l", "prefix+ctrl+l"]
+edit_scrollback = ["prefix+[", "prefix+e"]
+previous_workspace = "prefix+shift+l"
+
+[ui]
+status_indicators = "symbols"
+
+[ui.toast]
+delivery = "herdr"
+
+# tmux-resurrect/continuum equivalent: layout+cwd are saved to session.json automatically;
+# these also bring back agent conversations and pane scrollback after a reboot
+[session]
+resume_agents_on_restore = true
+
+[experimental]
+pane_history = true
