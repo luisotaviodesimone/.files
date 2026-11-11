@@ -1,0 +1,105 @@
+[
+  {
+    "plugin_id": "luis.sync-panes",
+    "name": "Sync panes",
+    "version": "0.1.0",
+    "min_herdr_version": "0.9.5",
+    "description": "tmux synchronize-panes: broadcast typing to every pane in the tab",
+    "manifest_path": "/home/luisotaviodesimone/.files/.config/herdr/plugins/sync-panes/herdr-plugin.toml",
+    "plugin_root": "/home/luisotaviodesimone/.files/.config/herdr/plugins/sync-panes",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "off",
+        "title": "Sync panes off",
+        "command": [
+          "python3",
+          "sync.py",
+          "off"
+        ]
+      },
+      {
+        "id": "on",
+        "title": "Sync panes on",
+        "command": [
+          "python3",
+          "sync.py",
+          "on"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "broadcast",
+        "title": "SYNC",
+        "placement": "split",
+        "command": [
+          "python3",
+          "sync.py",
+          "broadcast"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "local"
+    }
+  },
+  {
+    "plugin_id": "shibayu36.equalize-panes",
+    "name": "Equalize Panes",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.2",
+    "description": "Evenly size panes on split/close (tmux select-layout -E equivalent)",
+    "manifest_path": "/home/luisotaviodesimone/.files/.config/herdr/plugins/github-installations/shibayu36.equalize-panes-8e30bfabf1c7/276892-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/luisotaviodesimone/.files/.config/herdr/plugins/github-installations/shibayu36.equalize-panes-8e30bfabf1c7/276892-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "equalize",
+        "title": "Equalize panes",
+        "contexts": [
+          "pane"
+        ],
+        "command": [
+          "./equalize-panes"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.closed",
+        "command": [
+          "./equalize-panes"
+        ]
+      },
+      {
+        "on": "pane.created",
+        "command": [
+          "./equalize-panes"
+        ]
+      },
+      {
+        "on": "pane.exited",
+        "command": [
+          "./equalize-panes"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "shibayu36",
+      "repo": "herdr-equalize-panes",
+      "resolved_commit": "0c1d940e9af09c632a48a5b179753ef25056ff13",
+      "managed_path": "/home/luisotaviodesimone/.config/herdr/plugins/github-installations/shibayu36.equalize-panes-8e30bfabf1c7/276892-0/checkout",
+      "installed_unix_ms": 1794327612298
+    }
+  }
+]

@@ -15,16 +15,20 @@ reload_config = "prefix+r"
 resize_mode = "prefix+shift+r"
 detach = "prefix+d"
 settings = "prefix+shift+s"
-edit_scrollback = "prefix+e" # prefix+[ is copy_mode (tmux-like) by default
+edit_scrollback = "prefix+e"   # prefix+[ is copy_mode (tmux-like) by default
 
-# Workspace Managemeng
+# Workspace Management
 new_workspace = "prefix+shift+c"
 previous_workspace = "prefix+shift+p"
 next_workspace = "prefix+shift+n"
 goto = "prefix+s"
+switch_workspace = "prefix+shift+1..9"
+
 # Tab Management
 new_tab = "prefix+c"
 close_tab = "prefix+&"
+move_tab_previous = "prefix+,"
+move_tab_next = "prefix+."
 
 # Pane Management
 close_pane = "prefix+x"
@@ -32,9 +36,21 @@ split_vertical = ["prefix+%", "prefix+v"]
 split_horizontal = ["prefix+\"", "prefix+minus"]
 focus_pane_left = ["prefix+ctrl+h"]
 focus_pane_down = "prefix+j"                     # prefix+ctrl+j is reserved (sends a literal ctrl+j)
-focus_pane_up = ["prefix+k", "prefix+ctrl+k"]
+focus_pane_up = ["prefix+ctrl+k"]
 focus_pane_right = ["prefix+ctrl+l"]
 last_pane = "prefix+l"
+
+[[keys.command]]
+key = "prefix+space"
+type = "plugin_action"
+command = "shibayu36.equalize-panes.equalize"
+description = "equalize panes"
+
+[[keys.command]]
+key = "prefix+shift+y"
+type = "plugin_action"
+command = "luis.sync-panes.on"
+description = "sync panes on (prefix+y inside the sync popup turns it off)"
 
 [ui]
 status_indicators = "symbols"

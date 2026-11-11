@@ -1,0 +1,21 @@
+id = "luis.sync-panes"
+name = "Sync panes"
+version = "0.2.0"
+min_herdr_version = "0.9.5"
+description = "tmux synchronize-panes: broadcast typing to every pane in the current tab"
+platforms = ["linux", "macos"]
+
+[[actions]]
+id = "on"
+title = "Sync panes on"
+command = ["python3", "sync.py", "on"]
+
+# A popup leaves the layout untouched; it swallows every key (prefix included),
+# so sync.py itself handles prefix+y to turn sync off.
+[[panes]]
+id = "broadcast"
+title = "SYNC"
+placement = "popup"
+width = "50%"
+height = 3
+command = ["python3", "sync.py", "broadcast"]
