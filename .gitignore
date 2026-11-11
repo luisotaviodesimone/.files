@@ -17,3 +17,11 @@ node_modules/
 !.config/.gemini/antigravity-cli/settings.json
 !.config/.pi/agent/settings.json
 !.config/.pi/agent/auth.json
+
+# herdr runtime state
+.config/herdr/*
+.config/herdr/plugins/*
+!.config/herdr/config.toml
+!.config/herdr/plugins
+!.config/herdr/plugins/sync-panes
+!.config/herdr/plugins.json
