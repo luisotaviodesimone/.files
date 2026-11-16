@@ -1,5 +1,237 @@
 [
   {
+    "plugin_id": "beyondlex.herdr-recent-navigator",
+    "name": "Herdr Recent Navigator",
+    "version": "0.8.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Recent workspaces, tabs, panes, and AI agents switcher for Herdr.",
+    "manifest_path": "/home/luisotaviodesimone/.files/.config/herdr/plugins/github-installations/beyondlex.herdr-recent-navigator-0ad88a9d386a/541363-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/luisotaviodesimone/.files/.config/herdr/plugins/github-installations/beyondlex.herdr-recent-navigator-0ad88a9d386a/541363-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "macos",
+          "linux"
+        ],
+        "command": [
+          "cargo",
+          "build",
+          "--release"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "focus-agents",
+        "title": "Quick Focus: Agents",
+        "description": "Open navigator focused on Agents tab",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "--pane-open",
+          "--view",
+          "agents"
+        ]
+      },
+      {
+        "id": "focus-agents-grouped",
+        "title": "Quick Focus: Agents (grouped)",
+        "description": "Open navigator focused on Agents tab, ordered like the sidebar's grouped mode",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "--pane-open",
+          "--view",
+          "agents",
+          "--sort",
+          "grouped"
+        ]
+      },
+      {
+        "id": "focus-agents-priority",
+        "title": "Quick Focus: Agents (priority)",
+        "description": "Open navigator focused on Agents tab, ordered like the sidebar's priority mode",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "--pane-open",
+          "--view",
+          "agents",
+          "--sort",
+          "priority"
+        ]
+      },
+      {
+        "id": "focus-all",
+        "title": "Quick Focus: All",
+        "description": "Open navigator focused on All tab (cmd/ssh/cwd + full-text buffer search)",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "--pane-open",
+          "--view",
+          "all"
+        ]
+      },
+      {
+        "id": "focus-panes",
+        "title": "Quick Focus: Panes",
+        "description": "Open navigator focused on Panes tab",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "--pane-open",
+          "--view",
+          "panes"
+        ]
+      },
+      {
+        "id": "focus-previous-agent",
+        "title": "Quick Focus: Previous Agent",
+        "description": "Jump to the most recently used agent without opening the navigator",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "quick-focus-previous-agent"
+        ]
+      },
+      {
+        "id": "focus-previous-pane",
+        "title": "Quick Focus: Previous Pane",
+        "description": "Jump to the most recently focused pane without opening the navigator",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "quick-focus-previous-pane"
+        ]
+      },
+      {
+        "id": "focus-previous-tab",
+        "title": "Quick Focus: Previous Tab",
+        "description": "Jump to the most recently focused tab without opening the navigator",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "quick-focus-previous-tab"
+        ]
+      },
+      {
+        "id": "focus-tabs",
+        "title": "Quick Focus: Tabs",
+        "description": "Open navigator focused on Tabs tab",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "--pane-open",
+          "--view",
+          "tabs"
+        ]
+      },
+      {
+        "id": "focus-workspaces",
+        "title": "Quick Focus: Workspaces",
+        "description": "Open navigator focused on Workspaces tab",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "--pane-open",
+          "--view",
+          "workspaces"
+        ]
+      },
+      {
+        "id": "open",
+        "title": "Open Navigator",
+        "description": "Open the recent items navigator",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "--pane-open"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.focused",
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "track"
+        ]
+      },
+      {
+        "on": "tab.focused",
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "track"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "command": [
+          "./target/release/herdr-recent-navigator",
+          "track"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "navigator",
+        "title": "Recent Navigator",
+        "placement": "popup",
+        "width": "60%",
+        "command": [
+          "./target/release/herdr-recent-navigator"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "beyondlex",
+      "repo": "herdr-recent-navigator",
+      "resolved_commit": "5940b98ed52b8f87404699bda61eb46badd83605",
+      "managed_path": "/home/luisotaviodesimone/.config/herdr/plugins/github-installations/beyondlex.herdr-recent-navigator-0ad88a9d386a/541363-0/checkout",
+      "installed_unix_ms": 1794429775946
+    }
+  },
+  {
     "plugin_id": "luis.sync-panes",
     "name": "Sync panes",
     "version": "0.1.0",
@@ -100,6 +332,71 @@
       "resolved_commit": "0c1d940e9af09c632a48a5b179753ef25056ff13",
       "managed_path": "/home/luisotaviodesimone/.config/herdr/plugins/github-installations/shibayu36.equalize-panes-8e30bfabf1c7/276892-0/checkout",
       "installed_unix_ms": 1794327612298
+    }
+  },
+  {
+    "plugin_id": "third774.last-workspace",
+    "name": "Last Workspace",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Toggle between the current and previously focused Herdr workspace.",
+    "manifest_path": "/home/luisotaviodesimone/.files/.config/herdr/plugins/github-installations/third774.last-workspace-5de7aeab3665/482186-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/luisotaviodesimone/.files/.config/herdr/plugins/github-installations/third774.last-workspace-5de7aeab3665/482186-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "cargo",
+          "build",
+          "--release"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "toggle",
+        "title": "Last workspace",
+        "contexts": [
+          "global",
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-last-workspace",
+          "toggle"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "workspace.closed",
+        "command": [
+          "./target/release/herdr-last-workspace",
+          "closed"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "command": [
+          "./target/release/herdr-last-workspace",
+          "focused"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "third774",
+      "repo": "herdr-last-workspace",
+      "resolved_commit": "8b55ebf15deaa52b49ff1c2500aab0c19c729420",
+      "managed_path": "/home/luisotaviodesimone/.config/herdr/plugins/github-installations/third774.last-workspace-5de7aeab3665/482186-0/checkout",
+      "installed_unix_ms": 1794845942539
     }
   }
 ]
