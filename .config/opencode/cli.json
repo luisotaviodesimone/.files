@@ -3,5 +3,9 @@
   "theme": {
     "name": "system"
   },
-  "plugins": ["./herdr-opencode"]
+  "plugins": [
+    "./plugins/herdr-opencode",
+    "./plugins/notify",
+    "@dietrichgebert/ponytail"
+  ]
 }

@@ -1,0 +1,1 @@
+/home/luisotaviodesimone/.config/tmux/plugins/tmux-agent-sidebar/.opencode/plugins/tmux-agent-sidebar.js

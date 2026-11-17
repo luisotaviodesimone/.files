@@ -1,7 +1,7 @@
 ---
 name: pencil-design
 description: >
-  Create high-quality visual designs â€” websites, app screens, dashboards, slides, marketing materials, social media graphics â€” using the Pencil CLI tool. Use this skill whenever the user wants to create, generate, or visualize any kind of UI design, mockup, wireframe, layout, webpage, app screen, presentation slide, poster, banner, or marketing asset. Also use it when the user says things like "design me a...", "make a visual for...", "create a mockup of...", "what would X look like?", or wants to turn an idea into a visual. Even if the user doesn't mention "Pencil" or "design tool" explicitly â€” if they want something visual created, this is the skill to use.
+  Create high-quality visual designs — websites, app screens, dashboards, slides, marketing materials, social media graphics — using the Pencil CLI tool. Use this skill whenever the user wants to create, generate, or visualize any kind of UI design, mockup, wireframe, layout, webpage, app screen, presentation slide, poster, banner, or marketing asset. Also use it when the user says things like "design me a...", "make a visual for...", "create a mockup of...", "what would X look like?", or wants to turn an idea into a visual. Even if the user doesn't mention "Pencil" or "design tool" explicitly — if they want something visual created, this is the skill to use.
 ---
 
 # Pencil Design
@@ -85,16 +85,16 @@ Use `@latest` for the newest publish, or pin (e.g. `@0.2.4`) for a reproducible 
 Agents donâ€™t always get the skills directory from context. When the path isnâ€™t obvious:
 
 - **Ask the user** where their agent or IDE loads skills from, or where they want this skill installed.
-- **Check the productâ€™s docs** for â€œskillsâ€, â€œagent skillsâ€, or â€œpluginsâ€ â€” paths differ by tool and version.
+- **Check the productâ€™s docs** for â€œskillsâ€, â€œagent skillsâ€, or â€œpluginsâ€ — paths differ by tool and version.
 - You can still **use the skill content without installing**: fetch or open the **`SKILL.md` URL above** (unpkg/jsDelivr) in the session so guidance applies even when the on-disk path is unknown. For a persistent install, copy the fetched file into the path the user or docs specify.
 
-**Typical skill locations** (confirm with your toolâ€™s current docs â€” layouts change):
+**Typical skill locations** (confirm with your toolâ€™s current docs — layouts change):
 
 | Environment | Where to put `SKILL.md` |
 |-------------|-------------------------|
 | **Cursor** | Project: `.cursor/skills/pencil-design/SKILL.md`; user-level: under `~/.cursor/skills/` |
 | **Claude Code** | Often `.claude/skills/pencil-design/SKILL.md` or user-level under `~/.claude/` |
-| **OpenClaw** | Often `~/.openclaw/skills/`, workspace `.agents/skills/`, or paths in [OpenClaw skills docs](https://docs.openclaw.ai/skills/) â€” verify for the userâ€™s setup |
+| **OpenClaw** | Often `~/.openclaw/skills/`, workspace `.agents/skills/`, or paths in [OpenClaw skills docs](https://docs.openclaw.ai/skills/) — verify for the userâ€™s setup |
 | **Other agents (Codex, etc.)** | Use the directory your product uses for skills or prompts |
 
 Example (adjust the destination path to match your agent):
@@ -107,7 +107,7 @@ curl -fsSL "https://unpkg.com/@pencil.dev/cli@latest/SKILL.md" -o .cursor/skills
 
 - **Early in the session**, before the first Pencil design run (compare `npm view @pencil.dev/cli version` to the installed CLI), so you arenâ€™t following stale instructions.
 - **Again** if the user says they upgraded the CLI, or if behavior doesnâ€™t match this doc (flags, auth, timing).
-- **Not** before every single command â€” once per session is enough unless something changed or errors suggest a version mismatch.
+- **Not** before every single command — once per session is enough unless something changed or errors suggest a version mismatch.
 
 ## Creating a Design
 
@@ -118,24 +118,24 @@ pencil --out <output.pen> --prompt "<design description>" --export <output.png> 
 ```
 
 Key flags:
-- `--out, -o` â€” where to save the `.pen` file (required)
-- `--prompt, -p` â€” what to design (required)
-- `--prompt-file, -f` â€” attach an image or text file to send with the prompt (repeatable). Same idea as attaching reference images in the Pencil editor chat; not for loading the prompt text from a file.
-- `--export, -e` â€” export an image of the result
-- `--export-scale` â€” image resolution multiplier (use 2 for crisp output)
-- `--export-type` â€” format: `png` (default), `jpeg`, `webp`, `pdf`
-- `--in, -i` â€” start from an existing `.pen` file (for iteration)
-- `--model, -m` â€” Claude model to use (defaults to Opus)
+- `--out, -o` — where to save the `.pen` file (required)
+- `--prompt, -p` — what to design (required)
+- `--prompt-file, -f` — attach an image or text file to send with the prompt (repeatable). Same idea as attaching reference images in the Pencil editor chat; not for loading the prompt text from a file.
+- `--export, -e` — export an image of the result
+- `--export-scale` — image resolution multiplier (use 2 for crisp output)
+- `--export-type` — format: `png` (default), `jpeg`, `webp`, `pdf`
+- `--in, -i` — start from an existing `.pen` file (for iteration)
+- `--model, -m` — Claude model to use (defaults to Opus)
 
 ### Passing the Prompt
 
-Pass the user's request directly as the prompt â€” do not expand, or add detail beyond what the user actually said. The Pencil CLI has its own AI designer agent that handles creative decisions like layout structure, color palettes, typography, spacing, and content. Adding your own design specifics on top of the user's request will conflict with the CLI agent's own judgment and produce worse results.
+Pass the user's request directly as the prompt — do not expand, or add detail beyond what the user actually said. The Pencil CLI has its own AI designer agent that handles creative decisions like layout structure, color palettes, typography, spacing, and content. Adding your own design specifics on top of the user's request will conflict with the CLI agent's own judgment and produce worse results.
 
-If the user says "make me a landing page for a coffee shop", the prompt should be exactly that â€” not a paragraph with hero sections, color palettes, and font choices you invented.
+If the user says "make me a landing page for a coffee shop", the prompt should be exactly that — not a paragraph with hero sections, color palettes, and font choices you invented.
 
 ### Timing Expectations
 
-Design generation is not instant â€” the CLI runs an AI agent that plans the layout, creates each element, and validates the result visually. Expect:
+Design generation is not instant — the CLI runs an AI agent that plans the layout, creates each element, and validates the result visually. Expect:
 
 - **Simple designs** (a card, a single component): 1-2 minutes
 - **Medium designs** (an app screen, a landing page section): 2-3 minutes
@@ -152,9 +152,9 @@ After the command completes, read the exported image to show it to the user:
 pencil --out design.pen --prompt "..." --export design.png --export-scale 2
 ```
 
-Then use the Read tool on the exported PNG â€” it will render visually since you're a multimodal model.
+Then use the Read tool on the exported PNG — it will render visually since you're a multimodal model.
 
-Always show the image to the user after creating it. This is the whole point â€” they want to see the visual.
+Always show the image to the user after creating it. This is the whole point — they want to see the visual.
 
 ## Iterating on a Design
 
@@ -172,4 +172,4 @@ For quick successive iterations, keep a consistent naming pattern:
 
 ## Working Directory
 
-Save design files in the user's current working directory or a subdirectory like `designs/`. Don't use temp directories â€” the user will want to find and iterate on these files later.
+Save design files in the user's current working directory or a subdirectory like `designs/`. Don't use temp directories — the user will want to find and iterate on these files later.

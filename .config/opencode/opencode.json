@@ -1,83 +1,130 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "instructions": [
-    "/home/luisotaviodesimone/.config/opencode/rules/*.md"
+  "instructions": ["/home/luisotaviodesimone/.config/opencode/rules/*.md"],
+  "permissions": [
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "edit", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "yarn test *", "effect": "allow" },
+    { "action": "shell", "resource": "yarn test:e2e *", "effect": "allow" },
+    { "action": "shell", "resource": "yarn lint *", "effect": "allow" },
+    { "action": "shell", "resource": "yarn lint:fix *", "effect": "allow" },
+    { "action": "shell", "resource": "yarn typecheck *", "effect": "allow" },
+    { "action": "shell", "resource": "bun run test *", "effect": "allow" },
+    { "action": "shell", "resource": "bun run test:e2e *", "effect": "allow" },
+    { "action": "shell", "resource": "bun run lint *", "effect": "allow" },
+    { "action": "shell", "resource": "bun run lint:fix *", "effect": "allow" },
+    { "action": "shell", "resource": "bun run typecheck *", "effect": "allow" },
+    { "action": "shell", "resource": "yarn tsc --noEmit *", "effect": "allow" },
+    { "action": "shell", "resource": "bunx tsc --noEmit *", "effect": "allow" },
+    { "action": "shell", "resource": "npx tsc --noEmit *", "effect": "allow" },
+    { "action": "shell", "resource": "yarn vue-tsc --noEmit *", "effect": "allow" },
+    { "action": "shell", "resource": "bunx vue-tsc --noEmit *", "effect": "allow" },
+    { "action": "shell", "resource": "gh pr list *", "effect": "allow" },
+    { "action": "shell", "resource": "gh pr view *", "effect": "allow" },
+    { "action": "shell", "resource": "gh pr diff *", "effect": "allow" },
+    { "action": "shell", "resource": "gh repo view *", "effect": "allow" },
+    { "action": "shell", "resource": "git log", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git --no-pager diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
+    { "action": "shell", "resource": "git status", "effect": "allow" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl get *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl describe *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl logs *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl top *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl explain *", "effect": "allow" },
+    { "action": "shell", "resource": "helm list *", "effect": "allow" },
+    { "action": "shell", "resource": "docker compose ps *", "effect": "allow" },
+    { "action": "shell", "resource": "docker compose logs *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "ls", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "pencil *", "effect": "allow" },
+    { "action": "shell", "resource": "xo-cli list-objects *", "effect": "allow" },
+    { "action": "shell", "resource": "* --version", "effect": "allow" },
+    { "action": "shell", "resource": "* --help *", "effect": "allow" },
+    { "action": "shell", "resource": "sed *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl get secret*", "effect": "ask" },
+    { "action": "shell", "resource": "sed * -i *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * patch *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * annotate *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * drain *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * exec *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * apply *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * delete *", "effect": "ask" },
+    { "action": "shell", "resource": "psql *", "effect": "ask" },
+    { "action": "shell", "resource": "gh pr edit *", "effect": "ask" },
+    { "action": "shell", "resource": "gh pr create *", "effect": "ask" },
+    { "action": "shell", "resource": "gh pr comment *", "effect": "ask" },
+    { "action": "shell", "resource": "tofu * apply *", "effect": "ask" },
+    { "action": "shell", "resource": "terraform * apply *", "effect": "ask" },
+    { "action": "shell", "resource": "tf * apply *", "effect": "ask" },
+    { "action": "shell", "resource": "aws *", "effect": "ask" },
+    { "action": "shell", "resource": "mise exec *", "effect": "ask" },
+    { "action": "read", "resource": "*.env", "effect": "ask" },
+    { "action": "read", "resource": "*secret*", "effect": "ask" },
+    { "action": "shell", "resource": "git push *", "effect": "deny" },
+    { "action": "read", "resource": "*.env*.local", "effect": "deny" },
+    { "action": "read", "resource": "*env.toml", "effect": "deny" },
+    { "action": "read", "resource": "*/.ssh/*", "effect": "deny" }
   ],
-  "permission": {
-    "bash": {
-      "*": "ask",
-      "kubectl get *": "allow",
-      "kubectl describe *": "allow",
-      "kubectl logs *": "allow",
-      "kubectl explain *": "allow",
-      "helm list *": "allow",
-      "git diff *": "allow",
-      "git log *": "allow",
-      "git show *": "allow",
-      "git status * ": "allow",
-      "pencil * ": "allow",
-      "head * ": "allow",
-      "echo * ": "allow",
-      "rg * ": "allow",
-      "wc * ": "allow",
-      "ls * ": "allow",
-      "sed * ": "allow",
-      "sed * -i *": "ask",
-      "kubectl get secret": "ask"
-    },
-    "edit": "ask",
-    "read": {
-      "*secret*": "ask"
-    }
-  },
   "mcp": {
-    "context7": {
-      "enabled": true,
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+    "servers": {
+      "context7": {
+        "headers": {
+          "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+        },
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
       },
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp"
-    },
-    "figma": {
-      "enabled": false,
-      "oauth": {},
-      "type": "remote",
-      "url": "https://mcp.figma.com/mcp"
-    },
-    "pencil": {
-      "command": [
-        "/mnt/c/Program Files/Pencil/resources/app.asar.unpacked/out/mcp-server-windows-x64.exe",
-        "--app",
-        "desktop"
-      ],
-      "enabled": true,
-      "type": "local"
-    },
-    "sequential-thinking": {
-      "command": [
-        "opencode",
-        "x",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "enabled": true,
-      "type": "local"
-    },
-    "arxiv-mcp-server": {
-      "type": "local",
-      "command": [
-        "uvx",
-        "arxiv-mcp-server"
-      ]
-    },
-    "zotero-mcp": {
-      "type": "local",
-      "command": [
-        "zotero-mcp"
-      ],
-      "environment": {
-        "ZOTERO_API_KEY": "{env:ZOTERO_API_KEY}",
-        "ZOTERO_LIBRARY_ID": "21190845"
+      "figma": {
+        "oauth": {},
+        "type": "remote",
+        "url": "https://mcp.figma.com/mcp",
+        "disabled": true
+      },
+      "pencil": {
+        "command": [
+          "/mnt/c/Program Files/Pencil/resources/app.asar.unpacked/out/mcp-server-windows-x64.exe",
+          "--app",
+          "desktop"
+        ],
+        "type": "local"
+      },
+      "sequential-thinking": {
+        "command": [
+          "opencode",
+          "x",
+          "@modelcontextprotocol/server-sequential-thinking"
+        ],
+        "type": "local"
+      },
+      "arxiv-mcp-server": {
+        "type": "local",
+        "command": ["uvx", "arxiv-mcp-server"]
+      },
+      "zotero-mcp": {
+        "type": "local",
+        "command": ["zotero-mcp"],
+        "environment": {
+          "ZOTERO_API_KEY": "{env:ZOTERO_API_KEY}",
+          "ZOTERO_LIBRARY_ID": "21190845"
+        }
+      },
+      "repomix": {
+        "type": "local",
+        "command": ["npx", "-y", "repomix", "--mcp"]
+      },
+      "rea": {
+        "type": "local",
+        "command": ["npx", "-y", "rea-agents@6.7.0", "mcp"]
       }
     }
   },
