@@ -46,6 +46,8 @@
     { "action": "shell", "resource": "wc *", "effect": "allow" },
     { "action": "shell", "resource": "ls", "effect": "allow" },
     { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
     { "action": "shell", "resource": "pencil *", "effect": "allow" },
     { "action": "shell", "resource": "xo-cli list-objects *", "effect": "allow" },
     { "action": "shell", "resource": "* --version", "effect": "allow" },

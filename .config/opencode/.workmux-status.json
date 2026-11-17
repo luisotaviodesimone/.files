@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "files": {
+    "plugins/workmux-status/index.ts": "3a5903c7cfbab7e316632b7cf061207bca9ca39ec540001c5db1b24249593998",
+    "plugins/workmux-status/status.ts": "1ad0a987c49edd1c2891be9e4ea5598a8328489ee6985ddbb875408426fbb2e9",
+    "plugins/workmux-status/tui.ts": "b1eb873fad927315322884caa122fa4fa2fe1a51a1bd10d3b33cb36e718ad844"
+  }
+}
