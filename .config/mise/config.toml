@@ -8,7 +8,7 @@ go = "latest"
 helm = "latest"
 kubecolor = "0.6.0"
 lazygit = "latest"
-opencode = { version = "2.0.32", allow_builds = ["@opencode/cli"] }
+opencode = { version = "2.3.0", allow_builds = ["@opencode/cli"] }
 pipx = "latest"
 redis = "latest"
 usage = { version = "7.0.2", workflow = "publish-cli.yml" }
@@ -19,8 +19,8 @@ aws-cli = "latest"
 opentofu = "1.13.2"
 k9s = "latest"
 lua = "latest"
-k6 = "latest"
-tmux = "3.6b"
+k6 = "2.4.0"
+tmux = "3.8"
 pi = "1.5.0"
 neovim = "0.12.2"
 rclone = "1.75.2"
@@ -37,6 +37,7 @@ dua = "latest"
 llmfit = "latest"
 gh = "latest"
 herdr = "0.9.5"
+workmux = "0.1.282"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
