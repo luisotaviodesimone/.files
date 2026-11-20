@@ -4,3 +4,4 @@ sidebar:
       - "{agent_icon} {primary} {pane_suffix} {fill}"
       - "{secondary} {fill} {git_stats}"
       - "{pane_title} {fill} {pr_number} {pr_checks}"
+nerdfont: true

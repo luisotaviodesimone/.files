@@ -68,18 +68,20 @@
       "Bash(terraform * apply *)",
       "Bash(tf * apply *)",
       "Bash(aws *)",
-      "Bash(mise exec *)"
+      "Bash(mise exec *)",
+      "Bash(helm upgrade *)",
+      "Bash(helm install *)"
     ]
   },
   "model": "opus",
   "hooks": {
-    "Stop": [
+    "Notification": [
       {
-        "matcher": "",
+        "matcher": "permission_prompt|elicitation_dialog",
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.claude/notify.sh"
+            "command": "workmux set-window-status waiting"
           }
         ]
       }
@@ -95,6 +97,27 @@
         ]
       }
     ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "workmux set-window-status working"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME\"'/.config/tmux/plugins/tmux-assistant-resurrect/hooks/claude-session-cleanup.sh'"
+          }
+        ]
+      }
+    ],
     "SessionStart": [
       {
         "matcher": "^(startup|resume|clear|compact|fork)$",
@@ -103,6 +126,53 @@
             "type": "command",
             "command": "bash '/home/luisotaviodesimone/.claude/hooks/herdr-agent-state.sh' session",
             "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME\"'/.config/tmux/plugins/tmux-assistant-resurrect/hooks/claude-session-track.sh'"
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume|clear|fork",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "workmux register-agent"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/notify.sh"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "workmux set-window-status done"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "workmux set-window-status working"
           }
         ]
       }
@@ -114,17 +184,17 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": false,
     "claude-mem@thedotmack": true,
-    "ponytail@ponytail": true,
+    "delta@zed-industries": false,
     "mattpocock-skills@mattpocock": true,
-    "delta@zed-industries": false
+    "ponytail@ponytail": true,
+    "rust-analyzer-lsp@claude-plugins-official": false
   },
   "extraKnownMarketplaces": {
-    "ponytail": {
+    "academic-research-skills": {
       "source": {
         "source": "github",
-        "repo": "DietrichGebert/ponytail"
+        "repo": "Imbad0202/academic-research-skills"
       }
     },
     "mattpocock": {
@@ -133,25 +203,31 @@
         "repo": "mattpocock/skills"
       }
     },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
     "zed-industries": {
       "source": {
         "source": "github",
         "repo": "zed-industries/delta-claude"
       }
     },
-    "academic-research-skills": {
+    "thedotmack": {
       "source": {
         "source": "github",
-        "repo": "Imbad0202/academic-research-skills"
+        "repo": "thedotmack/claude-mem"
       }
     }
   },
   "effortLevel": "high",
   "modelSettings": {
-    "claude-sonnet-5-5": {
+    "claude-opus-5-5": {
       "effortLevel": "high"
     },
-    "claude-opus-5-5": {
+    "claude-sonnet-5-5": {
       "effortLevel": "high"
     }
   },
@@ -165,6 +241,5 @@
   },
   "tui": "fullscreen",
   "theme": "auto",
-  "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "agentPushNotifEnabled": true
 }

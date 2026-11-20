@@ -76,6 +76,7 @@
     { "action": "read", "resource": "*.env*.local", "effect": "deny" },
     { "action": "read", "resource": "*env.toml", "effect": "deny" },
     { "action": "read", "resource": "*/.ssh/*", "effect": "deny" }
+    { "action": "external_directory", "resource": "*", "effect": "deny" },
   ],
   "mcp": {
     "servers": {
