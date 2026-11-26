@@ -25,3 +25,7 @@ node_modules/
 !.config/herdr/plugins
 !.config/herdr/plugins/sync-panes
 !.config/herdr/plugins.json
+
+# Atuin data/logs files
+.config/atuin/data/*
+.config/atuin/logs/*
