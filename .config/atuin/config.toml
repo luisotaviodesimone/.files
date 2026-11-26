@@ -1,4 +1,4 @@
-sync_address = "https://atuin.lotds.duckdns.org"
+sync_address = "https://atuin.lotds.duckdns.org/"
 search_mode = "daemon-fuzzy"
 
 bind_up_arrow = false
