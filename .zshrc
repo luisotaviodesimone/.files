@@ -61,6 +61,11 @@ if (which starship > /dev/null); then
   eval "$(starship init zsh)"
 fi
 
+# Load atuin
+if (which starship > /dev/null); then
+  eval "$(atuin init zsh)"
+fi
+
 # User aliases
 . ~/.files/aliases.sh
 

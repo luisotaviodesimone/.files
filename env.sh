@@ -16,6 +16,8 @@ export TERM="xterm-256color"
 export PIPENV_VENV_IN_PROJECT=1
 # this is necessary in order to use lombok in java projects
 export JDTLS_JVM_ARGS="-javaagent:/home/luisotaviodesimone/.local/share/nvim/mason/share/jdtls/lombok.jar"
+export ATUIN_HOME="$HOME/.config/atuin"
+export SOPS_AGE_KEY_FILE="$HOME/.config/sops/age/keys.txt"
 
 # >>> juliaup initialize >>>
 
