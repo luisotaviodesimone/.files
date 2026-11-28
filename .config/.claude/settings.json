@@ -1,4 +1,9 @@
 {
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash(yarn test *)",
@@ -272,10 +277,5 @@
   },
   "tui": "fullscreen",
   "theme": "auto",
-  "agentPushNotifEnabled": true,
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
-  "includeCoAuthoredBy": false
+  "agentPushNotifEnabled": true
 }
